@@ -17,15 +17,7 @@ EXCEPTION
         NULL; 
 END; 
 
-CREATE TABLE Createur (
-    nCreateur INT PRIMARY KEY,
-    prenom VARCHAR(50),
-    nom VARCHAR(50),
-    dateNaissance DATE,
-    nationalite VARCHAR(50),
-    anneeExperienceCreateur INT,
-    nomMaisonMode VARCHAR(50) 
-);
+
 
 CREATE TABLE MaisonMode (
     nomMaisonMode VARCHAR(50) PRIMARY KEY,
@@ -34,6 +26,17 @@ CREATE TABLE MaisonMode (
     localisation VARCHAR(100),
     logo VARCHAR(100),
     siteWEB VARCHAR(100)
+);
+
+CREATE TABLE Createur (
+    nCreateur INT PRIMARY KEY,
+    prenom VARCHAR(50),
+    nom VARCHAR(50),
+    dateNaissance DATE,
+    nationalite VARCHAR(50),
+    anneeExperienceCreateur INT,
+    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE SET NULL
+
 );
 
 CREATE TABLE Mannequin (
