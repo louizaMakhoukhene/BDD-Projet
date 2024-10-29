@@ -15,8 +15,7 @@ BEGIN
 EXCEPTION
     WHEN OTHERS THEN
         NULL; 
-END;
-/ 
+END; 
 
 CREATE TABLE Createur (
     nCreateur INT PRIMARY KEY,
@@ -97,7 +96,7 @@ CREATE TABLE Collection (
     nbrTenues INT,
     nCreateur INT, 
     nomMaisonMode VARCHAR(50), 
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE CASCADE,
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
 );
 
@@ -110,8 +109,8 @@ CREATE TABLE Tenue (
     categorieTenue VARCHAR(50),
     nCollection INT, 
     nCreateur INT, 
-    FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE CASCADE,
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE CASCADE
+    FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE SET NULL,
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
 
 CREATE TABLE Assister (
@@ -123,8 +122,8 @@ CREATE TABLE Assister (
     nInvite INT,
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE CASCADE,
-    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE CASCADE
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
+    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL
 );
 
 CREATE TABLE Interview (
@@ -136,9 +135,9 @@ CREATE TABLE Interview (
     nMannequin INT, 
     nCreateur INT, 
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
-    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE CASCADE,
-    FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE CASCADE
+    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL,
+    FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE SET NULL,
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
 
 CREATE TABLE Sponsoriser (
@@ -156,5 +155,5 @@ CREATE TABLE Participer (
     nTenue INT, 
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
-    FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE CASCADE
+    FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE SET NULL
 );
