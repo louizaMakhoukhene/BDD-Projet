@@ -795,3 +795,110 @@ VALUES (29, 'FashionInspire', 'Mode', 'contact@fashioninspire.com', '8901234568'
 
 INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
 VALUES (30, 'StyleFusion', 'Accessoires', 'info@stylefusion.com', '9012345679');
+
+
+
+
+
+
+
+
+---------------------------------
+
+-- INSERTION A LA TABLE Createur
+
+
+---------------------------------
+
+
+
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (1, 'Alice', 'Dupont', TO_DATE('1985-06-15', 'YYYY-MM-DD'), 'Italienne', 10, 'Chanel');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (2, 'Benjamin', 'Martin', TO_DATE('1990-03-22', 'YYYY-MM-DD'), 'Francais', 8, 'Dior');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (3, 'Clara', 'Leroy', TO_DATE('1988-11-05', 'YYYY-MM-DD'), 'Anglaise', 12, 'Louis Vuitton');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (4, 'David', 'Bernard', TO_DATE('1992-01-30', 'YYYY-MM-DD'), 'Australien', 6, 'Gucci');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (5, 'Emma', 'Rousseau', TO_DATE('1980-04-10', 'YYYY-MM-DD'), 'Russe', 15, 'Prada');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (6, 'Francois', 'Girard', TO_DATE('1983-07-25', 'YYYY-MM-DD'), 'Russe', 12, 'Versace');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (7, 'Gabrielle', 'Parker', TO_DATE('1989-08-18', 'YYYY-MM-DD'), 'Allemand', 7, 'Fendi');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (8, 'Henri', 'Lafleur', TO_DATE('1987-05-12', 'YYYY-MM-DD'), 'Malien', 9, 'Balenciaga');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (9, 'Isabelle', 'Moreau', TO_DATE('1991-09-30', 'YYYY-MM-DD'), 'Norvegienne', 5, 'Givenchy');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (10, 'Julien', 'Benoit', TO_DATE('1984-12-20', 'YYYY-MM-DD'), 'Francais', 11, 'Hermes');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (11, 'Karine', 'Dufresne', TO_DATE('1986-10-05', 'YYYY-MM-DD'), 'Francaise', 8, 'Celine');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (12, 'Louis', 'Chevalier', TO_DATE('1993-02-17', 'YYYY-MM-DD'), 'Argentin', 4, 'Saint Laurent');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (13, 'Marie', 'Gautier', TO_DATE('1981-08-14', 'YYYY-MM-DD'), 'Colombienne', 14, 'Dolce Gabbana');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (14, 'Nicolas', 'Fischer', TO_DATE('1989-11-11', 'YYYY-MM-DD'), 'Canadien', 6, 'Miu Miu');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (15, 'Olivia', 'Simon', TO_DATE('1982-07-23', 'YYYY-MM-DD'), 'Japonaise', 13, 'Lacoste');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (16, 'Pierre', 'Blanc', TO_DATE('1990-01-18', 'YYYY-MM-DD'), 'Algerien', 8, 'Kenzo');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (17, 'Quentin', 'Caron', TO_DATE('1995-03-08', 'YYYY-MM-DD'), 'Francais', 3, 'Kenzo');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (18, 'Rachel', 'Garnier', TO_DATE('1988-12-12', 'YYYY-MM-DD'), 'Francaise', 9, 'Marc Jacobs');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (19, 'Sebastien', 'Pichon', TO_DATE('1984-06-27', 'YYYY-MM-DD'), 'Italien', 10, 'Moschino');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (20, 'Tatiana', 'Laurent', TO_DATE('1991-05-30', 'YYYY-MM-DD'), 'Italienne', 5, 'Isabel Marant');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (21, 'Ulysse', 'Faure', TO_DATE('1992-09-25', 'YYYY-MM-DD'), 'Italien', 4, 'Moschino');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (22, 'Veronique', 'Briand', TO_DATE('1987-04-14', 'YYYY-MM-DD'), 'Francaise', 11, 'Ralph Lauren');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (23, 'William', 'Bourgeois', TO_DATE('1990-10-10', 'YYYY-MM-DD'), 'Francais', 7, 'Givenchy');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (24, 'Xavier', 'Clement', TO_DATE('1985-03-03', 'YYYY-MM-DD'), 'Tunisien', 9, 'Bottega Veneta');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (25, 'Yasmine', 'Sorel', TO_DATE('1983-11-19', 'YYYY-MM-DD'), 'Marocaine', 12, 'Ermenegildo Zegna');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (26, 'Zacharie', 'Gros', TO_DATE('1994-02-01', 'YYYY-MM-DD'), 'Turque', 2, 'Balenciaga');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (27, 'Amelie', 'Bonnet', TO_DATE('1988-08-27', 'YYYY-MM-DD'), 'Algerienne', 7, 'Alexander McQueen');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (28, 'Boris', 'Vasseur', TO_DATE('1992-05-09', 'YYYY-MM-DD'), 'Indien', 5, 'Givenchy');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (29, 'Cecile', 'Marin', TO_DATE('1985-01-15', 'YYYY-MM-DD'), 'Belge', 10, 'Burberry');
+
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
+VALUES (30, 'Dorian', 'Renaud', TO_DATE('1984-06-20', 'YYYY-MM-DD'), 'Albanaise', 12, 'Armani');
