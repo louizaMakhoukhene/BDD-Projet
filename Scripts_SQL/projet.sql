@@ -143,7 +143,7 @@ CREATE TABLE Createur (
     prenom VARCHAR(50),
     nom VARCHAR(50),
     --dateNaissance DATE CHECK (dateNaissance <= TO_DATE('2006-10-30', 'YYYY-MM-DD'))
-    dateNaissance DATE CHECK (dateNaissance <= ADD_MONTHS(SYSDATE, -18 * 12)),
+    dateNaissance DATE,
     nationalite VARCHAR(50),
     anneeExperienceCreateur INT,
     nomMaisonMode VARCHAR(50) NOT NULL,
@@ -155,8 +155,8 @@ CREATE TABLE Mannequin (
     nMannequin INT PRIMARY KEY,
     nom VARCHAR(50),
     prenom VARCHAR(50),
-    age INT,
-    taille NUMBER(5, 2),
+    age INT CHECK (age >= 16),
+    taille NUMBER(5, 2) CHECK (taille >= 170),
     poids NUMBER(5, 2),
     nationalite VARCHAR(50),
     genre VARCHAR(10),
@@ -268,7 +268,7 @@ CREATE TABLE Sponsoriser (
 CREATE TABLE Participer (
     nMannequin INT, 
     nDefile INT, 
-    nTenue INT, 
+    nTenue INT NOT NULL, 
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
     FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE CASCADE
@@ -306,8 +306,81 @@ BEGIN
 END;
 
 
+--Un Ceateur doit avoir au minimun 18 ans 
+CREATE OR REPLACE TRIGGER Verif_Age_Createur
+BEFORE INSERT OR UPDATE ON Createur
+FOR EACH ROW
+DECLARE
+    v_age INT;
+BEGIN
+    v_age := TRUNC(MONTHS_BETWEEN(SYSDATE, :NEW.dateNaissance) / 12);
+    
+    -- Verification de l'age
+    IF v_age < 18 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins 18 ans.');
+    END IF;
+END;
 
 
+
+-----------Sponsor---------
+
+CREATE OR REPLACE TRIGGER Verif_Nb_Defiles_Sponsor
+BEFORE INSERT ON Sponsoriser
+FOR EACH ROW
+DECLARE
+    v_count INT;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Sponsoriser
+    WHERE nSponsor = :NEW.nSponsor;
+
+    IF v_count >= 3 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Un sponsor ne peut pas sponsoriser plus de 3 défilés.');
+    END IF;
+END;
+
+
+
+-----------Mannequin---------
+
+CREATE OR REPLACE TRIGGER Verif_Nb_Defiles_Mannequin
+BEFORE INSERT ON Participer
+FOR EACH ROW
+DECLARE
+    v_count INT;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Participer p
+    JOIN Defile d ON p.nDefile = d.nDefile
+    WHERE p.nMannequin = :NEW.nMannequin
+    AND TRUNC(d.heureDebut) = TRUNC(SYSDATE);  -- Compare la date (sans l'heure)
+
+    IF v_count >= 3 THEN
+        RAISE_APPLICATION_ERROR(-20003, 'Un mannequin ne peut pas défiler plus de 3 fois par jour.');
+    END IF;
+END;
+
+
+
+CREATE OR REPLACE TRIGGER Verif_Nb_Tenues_Mannequin
+BEFORE INSERT ON Participer
+FOR EACH ROW
+DECLARE
+    v_count INT;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Participer
+    WHERE nMannequin = :NEW.nMannequin
+    AND nDefile = :NEW.nDefile;
+
+    IF v_count >= 5 THEN
+        RAISE_APPLICATION_ERROR(-20005, 'Un mannequin ne peut pas être affecté à plus de 5 tenues au cours d''un même défilé.');
+    END IF;
+END;
 
 
 
