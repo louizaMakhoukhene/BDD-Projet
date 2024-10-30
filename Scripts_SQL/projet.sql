@@ -479,3 +479,107 @@ VALUES (29, 'Santos', 'Carlos', 30, 179.00, 77.00, 'Bresilien', 'Masculin', 'Sab
 
 INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
 VALUES (30, 'Chow', 'Ken', 29, 182.00, 81.00, 'Chinois', 'Masculin', 'Sablier');
+
+
+
+
+
+
+
+---------------------------------
+
+-- INSERTION A LA TABLE Invite
+
+
+---------------------------------
+
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (1, 'Dupont', 'Alice', TO_DATE('1990-01-15', 'YYYY-MM-DD'), 'Francaise', 'Styliste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (2, 'Martin', 'Julien', TO_DATE('1985-05-20', 'YYYY-MM-DD'), 'Francais', 'Designer');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (3, 'Leroy', 'Camille', TO_DATE('1992-07-30', 'YYYY-MM-DD'), 'Francaise', 'Journaliste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (4, 'Moreau', 'Paul', TO_DATE('1988-02-12', 'YYYY-MM-DD'), 'Francais', 'Photographe');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (5, 'Garnier', 'Marie', TO_DATE('1987-04-22', 'YYYY-MM-DD'), 'Francaise', 'Modele');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (6, 'Bernard', 'Lucas', TO_DATE('1995-08-05', 'YYYY-MM-DD'), 'Francais', 'Directeur artistique');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (7, 'Lemoine', 'Sophie', TO_DATE('1991-03-19', 'YYYY-MM-DD'), 'Francaise', 'Redactrice');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (8, 'Fournier', 'Juliette', TO_DATE('1986-06-10', 'YYYY-MM-DD'), 'Francaise', 'Couturiere');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (9, 'Rousseau', 'Antoine', TO_DATE('1989-09-25', 'YYYY-MM-DD'), 'Francais', 'Charge de communication');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (10, 'Pichon', 'Nicolas', TO_DATE('1984-11-11', 'YYYY-MM-DD'), 'Francais', 'Styliste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (11, 'Giraud', 'Laura', TO_DATE('1994-12-30', 'YYYY-MM-DD'), 'Francaise', 'Celebrite');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (12, 'Guillaume', 'Maxime', TO_DATE('1990-02-03', 'YYYY-MM-DD'), 'Francais', 'Artiste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (13, 'Lefevre', 'Zoe', TO_DATE('1993-07-21', 'YYYY-MM-DD'), 'Francaise', 'Influenceuse');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (14, 'Fleury', 'Julien', TO_DATE('1986-05-14', 'YYYY-MM-DD'), 'Francais', 'Directeur');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (15, 'Boucher', 'Clara', TO_DATE('1988-09-08', 'YYYY-MM-DD'), 'Francaise', 'Sociologue');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (16, 'Vasseur', 'Thomas', TO_DATE('1995-01-23', 'YYYY-MM-DD'), 'Francais', 'Ecrivain');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (17, 'Leblanc', 'Emilie', TO_DATE('1992-08-17', 'YYYY-MM-DD'), 'Francaise', 'Directrice');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (18, 'Colin', 'Vincent', TO_DATE('1990-03-29', 'YYYY-MM-DD'), 'Francais', 'Architecte');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (19, 'Renaud', 'Alice', TO_DATE('1987-11-05', 'YYYY-MM-DD'), 'Francaise', 'Vendeuse');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (20, 'Dumas', 'Pierre', TO_DATE('1984-02-28', 'YYYY-MM-DD'), 'Francais', 'Producteur');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (21, 'Lemoine', 'Celine', TO_DATE('1991-07-19', 'YYYY-MM-DD'), 'Francaise', 'Artiste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (22, 'Noel', 'Bastien', TO_DATE('1993-10-11', 'YYYY-MM-DD'), 'Francais', 'Musicien');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (23, 'Charpentier', 'Sophie', TO_DATE('1992-04-17', 'YYYY-MM-DD'), 'Francaise', 'Danseuse');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (24, 'Giraud', 'Etienne', TO_DATE('1988-12-12', 'YYYY-MM-DD'), 'Francais', 'Critique');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (25, 'Delaunay', 'Louis', TO_DATE('1985-06-15', 'YYYY-MM-DD'), 'Francais', 'Scenariste');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (26, 'Richard', 'Juliette', TO_DATE('1990-09-09', 'YYYY-MM-DD'), 'Francaise', 'Comedienne');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (27, 'Ferry', 'Alexandre', TO_DATE('1994-11-21', 'YYYY-MM-DD'), 'Francais', 'Consultant');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (28, 'Laurent', 'Chloe', TO_DATE('1991-08-01', 'YYYY-MM-DD'), 'Francaise', 'Photographe');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (29, 'Lamy', 'Marc', TO_DATE('1995-03-13', 'YYYY-MM-DD'), 'Francais', 'Editeur');
+
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession) 
+VALUES (30, 'Gallet', 'Celine', TO_DATE('1993-05-20', 'YYYY-MM-DD'), 'Francaise', 'Graphiste');
