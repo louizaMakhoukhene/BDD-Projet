@@ -233,7 +233,7 @@ CREATE TABLE Assister (
     nDefile INT, 
     nCreateur INT, 
     nInvite INT,
-    FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
+    FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE SET NULL,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
     FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL
