@@ -271,7 +271,7 @@ CREATE TABLE Participer (
     nTenue INT, 
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
-    FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE SET NULL
+    FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE CASCADE
 );
 
 
