@@ -138,6 +138,19 @@ CREATE TABLE MaisonMode (
     siteWEB VARCHAR(100)
 );
 
+CREATE TABLE Createur (
+    nCreateur INT PRIMARY KEY,
+    prenom VARCHAR(50),
+    nom VARCHAR(50),
+    --dateNaissance DATE CHECK (dateNaissance <= TO_DATE('2006-10-30', 'YYYY-MM-DD'))
+    dateNaissance DATE CHECK (dateNaissance <= ADD_MONTHS(SYSDATE, -18 * 12)),
+    nationalite VARCHAR(50),
+    anneeExperienceCreateur INT,
+    nomMaisonMode VARCHAR(50) NOT NULL,
+    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
+);
+
+
 CREATE TABLE Mannequin (
     nMannequin INT PRIMARY KEY,
     nom VARCHAR(50),
@@ -177,16 +190,6 @@ CREATE TABLE Sponsor (
     telephone VARCHAR(20)
 );
 
-CREATE TABLE Createur (
-    nCreateur INT PRIMARY KEY,
-    prenom VARCHAR(50),
-    nom VARCHAR(50),
-    dateNaissance DATE,
-    nationalite VARCHAR(50),
-    anneeExperienceCreateur INT,
-    nomMaisonMode VARCHAR(50),
-    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
-);
 
 CREATE TABLE Defile (
     nDefile INT PRIMARY KEY,
@@ -270,6 +273,48 @@ CREATE TABLE Participer (
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
     FOREIGN KEY (nTenue) REFERENCES Tenue(nTenue) ON DELETE SET NULL
 );
+
+
+---------------------------------
+
+-- Contraintes d'integrite  
+
+---------------------------------
+
+
+-----------Createurs---------
+
+--(Un createur doit avoir au moins une collection pour participer a un defile)
+
+CREATE OR REPLACE TRIGGER Verifier_Collection_Createur
+BEFORE INSERT ON Assister 
+FOR EACH ROW
+
+DECLARE
+    v_count INT;
+BEGIN
+    -- Compter le nombre de collections pour le createur
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Collection
+    WHERE nCreateur = :NEW.nCreateur;
+
+    -- Verification  
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins une collection pour participer à un défilé.');
+    END IF;
+END;
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---------------------------------
