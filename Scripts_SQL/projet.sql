@@ -688,3 +688,110 @@ VALUES (29, 'Lamy', 'Marc', 'Radio Nova', 'Culture', '8901234568', 'marc.lamy@ex
 
 INSERT INTO Journaliste (nJournaliste, nom, prenom, media, specialite, telephone, mail) 
 VALUES (30, 'Gallet', 'Celine', 'Arte', 'Critique', '9012345679', 'celine.gallet@example.com');
+
+
+
+
+
+
+
+
+---------------------------------
+
+-- INSERTION A LA TABLE Sponsor
+
+
+---------------------------------
+
+
+
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (1, 'LuxeCorp', 'Mode', 'contact@luxecorp.com', '0123456789');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (2, 'FashionCo', 'Beaute', 'info@fashionco.com', '0234567890');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (3, 'StyleGroup', 'Accessoires', 'hello@stylegroup.com', '0345678901');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (4, 'ChicBrand', 'Vetements', 'support@chicbrand.com', '0456789012');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (5, 'EliteFashion', 'Mode', 'contact@elitefashion.com', '0567890123');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (6, 'GlamourWorks', 'Cosmetiques', 'info@glamourworks.com', '0678901234');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (7, 'TrendyStyle', 'Accessoires', 'hello@trendystyle.com', '0789012345');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (8, 'FashionHaus', 'Mode', 'support@fashionhaus.com', '0890123456');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (9, 'GlamZone', 'Beaute', 'contact@glamzone.com', '0901234567');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (10, 'ChicSociety', 'Mode', 'info@chicsociety.com', '1012345678');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (11, 'StyleMasters', 'Accessoires', 'hello@stylemasters.com', '1123456789');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (12, 'FashionTrend', 'Mode', 'support@fashiontrend.com', '1234567890');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (13, 'UrbanStyle', 'Vetements', 'contact@urbanstyle.com', '2345678901');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (14, 'CosmeticWorld', 'Cosmetiques', 'info@cosmeticworld.com', '3456789012');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (15, 'VogueHouse', 'Mode', 'hello@voguehouse.com', '4567890123');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (16, 'FashionForward', 'Accessoires', 'support@fashionforward.com', '5678901234');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (17, 'EliteStyle', 'Beaute', 'contact@elitestyle.com', '6789012345');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (18, 'ChicVibes', 'Mode', 'info@chicvibes.com', '7890123456');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (19, 'TrendyBoutique', 'Vetements', 'hello@trendyboutique.com', '8901234567');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (20, 'GlamourScene', 'Cosmetiques', 'support@glamourscene.com', '9012345678');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (21, 'FashionElite', 'Mode', 'contact@fashionelite.com', '0123456780');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (22, 'ChicAndTrendy', 'Accessoires', 'info@chicandtrendy.com', '1234567801');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (23, 'UrbanGlam', 'Beaute', 'hello@urbanglam.com', '2345678902');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (24, 'FashionSphere', 'Mode', 'support@fashionsphere.com', '3456789013');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (25, 'CosmeticLux', 'Cosmetiques', 'contact@cosmeticlux.com', '4567890124');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (26, 'GlamFashion', 'Mode', 'info@glamfashion.com', '5678901235');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (27, 'ChicPalette', 'Accessoires', 'hello@chicpalette.com', '6789012346');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (28, 'EliteGlam', 'Beaute', 'support@eliteglam.com', '7890123457');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (29, 'FashionInspire', 'Mode', 'contact@fashioninspire.com', '8901234568');
+
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone) 
+VALUES (30, 'StyleFusion', 'Accessoires', 'info@stylefusion.com', '9012345679');
