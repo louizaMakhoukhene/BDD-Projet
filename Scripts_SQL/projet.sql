@@ -381,4 +381,101 @@ VALUES ('Ann Demeulemeester', 'Ann Demeulemeester', TO_DATE('1985-01-01', 'YYYY-
 
 
 
+---------------------------------
 
+-- INSERTION A LA TABLE Mannequin
+
+
+---------------------------------
+
+
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (1, 'Hadid', 'Gigi', 29, 178.00, 54.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (2, 'Jenner', 'Kendall', 29, 179.00, 58.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (3, 'Hadid', 'Bella', 28, 175.00, 55.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (4, 'Lima', 'Adriana', 42, 178.00, 60.00, 'Bresilienne', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (5, 'Banks', 'Tyra', 50, 180.00, 61.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (6, 'Delevingne', 'Cara', 31, 173.00, 52.00, 'Britannique', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (7, 'Kroes', 'Doutzen', 38, 178.00, 55.00, 'Neerlandaise', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (8, 'Shayk', 'Irina', 37, 178.00, 57.00, 'Russe', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (9, 'Campbell', 'Naomi', 54, 175.00, 56.00, 'Britannique', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (10, 'Graham', 'Ashley', 36, 175.00, 91.00, 'Americaine', 'Feminin', 'Pomme');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (11, 'Dunn', 'Jourdan', 33, 180.00, 55.00, 'Britannique', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (12, 'Wen', 'Liu', 35, 179.00, 50.00, 'Chinoise', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (13, 'Smith', 'Jasmine', 26, 175.00, 54.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (14, 'Bautista', 'Rita', 32, 177.00, 58.00, 'Espagnole', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (15, 'Stevens', 'Megan', 30, 176.00, 59.00, 'Britannique', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (16, 'Turlington', 'Christy', 55, 178.00, 59.00, 'Americaine', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (17, 'Soo', 'Jing', 28, 175.00, 53.00, 'Chinoise', 'Feminin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (18, 'O’Pry', 'Sean', 34, 183.00, 74.00, 'Americain', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (19, 'Gandy', 'David', 43, 185.00, 85.00, 'Britannique', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (20, 'Mackin', 'Tom', 30, 180.00, 80.00, 'Irlandais', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (21, 'Renn', 'Ethan', 25, 183.00, 76.00, 'Americain', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (22, 'Mason', 'Jaden', 29, 182.00, 79.00, 'Americain', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (23, 'Jagger', 'Jasper', 38, 184.00, 82.00, 'Britannique', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (24, 'Anderson', 'Kieran', 27, 181.00, 77.00, 'Australien', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (25, 'Hansen', 'Lars', 32, 182.00, 85.00, 'Danois', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (26, 'Gonzalez', 'Pablo', 29, 180.00, 78.00, 'Espagnol', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (27, 'Lin', 'Hao', 26, 177.00, 70.00, 'Chinois', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (28, 'Parker', 'Jon', 34, 181.00, 75.00, 'Americain', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (29, 'Santos', 'Carlos', 30, 179.00, 77.00, 'Bresilien', 'Masculin', 'Sablier');
+
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie) 
+VALUES (30, 'Chow', 'Ken', 29, 182.00, 81.00, 'Chinois', 'Masculin', 'Sablier');
