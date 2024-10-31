@@ -218,12 +218,12 @@ CREATE TABLE Collection (
 
 CREATE TABLE Tenue (
     nTenue INT PRIMARY KEY,
-    taille VARCHAR(10),
+    taille NUMBER(5, 2),
     prix NUMBER(10, 2),
     nomTenue VARCHAR(100),
     description VARCHAR(255),
     categorieTenue VARCHAR(50),
-    nCollection INT, 
+    nCollection INT NOT NULL, 
     nCreateur INT, 
     FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE SET NULL,
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
@@ -283,6 +283,26 @@ CREATE TABLE Participer (
 
 
 -----------Createurs---------
+
+CREATE OR REPLACE TRIGGER verif_createur_unique_par_maison_mode
+BEFORE INSERT OR UPDATE ON Createur
+FOR EACH ROW
+DECLARE
+    v_count INT;
+BEGIN
+
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Createur
+    WHERE nomMaisonMode = :NEW.nomMaisonMode
+    AND nCreateur != :NEW.nCreateur; -- S'assurer que l'on ne compte pas le créateur en cours d'insertion ou de mise à jour
+
+    IF v_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Chaque maison de mode ne peut avoir qu"un seul créateur.');
+    END IF;
+END;
+/
+
 
 --(Un createur doit avoir au moins une collection pour participer a un defile)
 
@@ -383,12 +403,51 @@ BEGIN
 END;
 
 
+-----------Tenu---------
+
+CREATE OR REPLACE TRIGGER verif_tenue_unique_par_collection
+BEFORE INSERT OR UPDATE ON Tenue
+FOR EACH ROW
+DECLARE
+    v_count INT;
+BEGIN
+    -- Vérifier si la tenue appartient déjà à une collection
+    SELECT COUNT(*)
+    INTO v_count
+    FROM Tenue
+    WHERE nCollection = :NEW.nCollection
+    AND nTenue != :NEW.nTenue; -- Assurer que l'on ne compte pas la tenue en cours d'insertion ou de mise à jour
+
+    IF v_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Chaque tenue doit appartenir à une seule collection.');
+    END IF;
+END;
 
 
 
+CREATE OR REPLACE TRIGGER Verif_Tenue_Unique_Par_Saison
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    v_saison VARCHAR(20);
+BEGIN
+    -- Recupere la saison du defile associe a la tenue
+    SELECT saison INTO v_saison
+    FROM Defile
+    WHERE nDefile = :NEW.nDefile;
 
-
-
+    -- Verification 
+    IF EXISTS (
+        SELECT 1
+        FROM Participer p
+        JOIN Defile d ON p.nDefile = d.nDefile
+        WHERE p.nTenue = :NEW.nTenue
+        AND d.saison = v_saison
+        AND p.nDefile != :NEW.nDefile
+    ) THEN
+        RAISE_APPLICATION_ERROR(-20008, 'Une tenue ne peut pas être présentée dans plus d’un défilé lors d’une même saison.');
+    END IF;
+END;
 
 ---------------------------------
 
