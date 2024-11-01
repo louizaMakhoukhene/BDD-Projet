@@ -200,7 +200,7 @@ CREATE TABLE Defile (
     theme VARCHAR(50),
     descriptionDefile VARCHAR(255),
     nbrPlaceMax INT,
-    nomMaisonMode VARCHAR(50), 
+    nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
 );
 
@@ -210,8 +210,8 @@ CREATE TABLE Collection (
     themeCollection VARCHAR(50),
     saison VARCHAR(20),
     nbrTenues INT,
-    nCreateur INT, 
-    nomMaisonMode VARCHAR(50), 
+    nCreateur INT NOT NULL,  --je sais pas si chaque collection doit etre associe a un seul createur ? si c'est le cas on fait un trigger. 
+    nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
 );
@@ -224,7 +224,7 @@ CREATE TABLE Tenue (
     description VARCHAR(255),
     categorieTenue VARCHAR(50),
     nCollection INT NOT NULL, 
-    nCreateur INT, 
+    nCreateur INT NOT NULL, --je sais pas si chaque tenue doit etre associe a un seul createur ? si c'est le cas on fait un trigger. 
     FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE SET NULL,
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
