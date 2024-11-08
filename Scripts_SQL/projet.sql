@@ -1,15 +1,6 @@
+CREATE OR REPLACE PROCEDURE drop_table_if_exists (table_name VARCHAR2) IS
 BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Participer CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN 
-            RAISE; 
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Sponsoriser CASCADE CONSTRAINTS';
+    EXECUTE IMMEDIATE 'DROP TABLE ' || table_name || ' CASCADE CONSTRAINTS';
 EXCEPTION
     WHEN OTHERS THEN
         IF SQLCODE != -942 THEN
@@ -19,112 +10,19 @@ END;
 /
 
 BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Interview CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Assister CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Tenue CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Collection CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Defile CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Createur CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Mannequin CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Sponsor CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Invite CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Journaliste CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE MaisonMode CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
+    drop_table_if_exists('Participer');
+    drop_table_if_exists('Sponsoriser');
+    drop_table_if_exists('Interview');
+    drop_table_if_exists('Assister');
+    drop_table_if_exists('Tenue');
+    drop_table_if_exists('Collection');
+    drop_table_if_exists('Defile');
+    drop_table_if_exists('Createur');
+    drop_table_if_exists('Mannequin');
+    drop_table_if_exists('Sponsor');
+    drop_table_if_exists('Invite');
+    drop_table_if_exists('Journaliste');
+    drop_table_if_exists('MaisonMode');
 END;
 /
 
