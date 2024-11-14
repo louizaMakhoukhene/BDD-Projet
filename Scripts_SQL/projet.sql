@@ -104,11 +104,11 @@ CREATE TABLE Defile (
 
 CREATE TABLE Collection (
     nCollection INT PRIMARY KEY,
-    nomCollection VARCHAR(100),
-    themeCollection VARCHAR(50),
-    saison VARCHAR(20),
-    nbrTenues INT,
-    nCreateur INT NOT NULL,  --je sais pas si chaque collection doit etre associe a un seul createur ? si c'est le cas on fait un trigger. 
+    nomCollection VARCHAR(100) NOT NULL,
+    themeCollection VARCHAR(50) NOT NULL,
+    saison VARCHAR(20) NOT NULL,
+    nbrTenues INT DEFAULT 0,
+    nCreateur INT NOT NULL,  
     nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
@@ -122,7 +122,7 @@ CREATE TABLE Tenue (
     description VARCHAR(255),
     categorieTenue VARCHAR(50),
     nCollection INT NOT NULL, 
-    nCreateur INT NOT NULL, --je sais pas si chaque tenue doit etre associe a un seul createur ? si c'est le cas on fait un trigger. 
+    nCreateur INT NOT NULL,  
     FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE SET NULL,
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
@@ -182,27 +182,7 @@ CREATE TABLE Participer (
 
 -----------Createurs---------
 
-CREATE OR REPLACE TRIGGER verif_createur_unique_par_maison_mode
-BEFORE INSERT OR UPDATE ON Createur
-FOR EACH ROW
-DECLARE
-    v_count INT;
-BEGIN
-
-    SELECT COUNT(*)
-    INTO v_count
-    FROM Createur
-    WHERE nomMaisonMode = :NEW.nomMaisonMode
-    AND nCreateur != :NEW.nCreateur; -- S'assurer que l'on ne compte pas le créateur en cours d'insertion ou de mise à jour
-
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Chaque maison de mode ne peut avoir qu"un seul créateur.');
-    END IF;
-END;
-/
-
-
---(Un createur doit avoir au moins une collection pour participer a un defile)
+--Un createur doit avoir au moins une collection pour participer a un defile
 
 CREATE OR REPLACE TRIGGER Verifier_Collection_Createur
 BEFORE INSERT ON Assister 
@@ -222,7 +202,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins une collection pour participer à un défilé.');
     END IF;
 END;
-
+/
 
 --Un Ceateur doit avoir au minimun 18 ans 
 CREATE OR REPLACE TRIGGER Verif_Age_Createur
@@ -238,7 +218,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins 18 ans.');
     END IF;
 END;
-
+/
 
 
 -----------Sponsor---------
@@ -258,7 +238,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20002, 'Un sponsor ne peut pas sponsoriser plus de 3 défilés.');
     END IF;
 END;
-
+/
 
 
 -----------Mannequin---------
@@ -280,9 +260,9 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20003, 'Un mannequin ne peut pas défiler plus de 3 fois par jour.');
     END IF;
 END;
+/
 
-
-
+--
 CREATE OR REPLACE TRIGGER Verif_Nb_Tenues_Mannequin
 BEFORE INSERT ON Participer
 FOR EACH ROW
@@ -299,53 +279,88 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20005, 'Un mannequin ne peut pas être affecté à plus de 5 tenues au cours d''un même défilé.');
     END IF;
 END;
-
+/
 
 -----------Tenu---------
 
-CREATE OR REPLACE TRIGGER verif_tenue_unique_par_collection
-BEFORE INSERT OR UPDATE ON Tenue
-FOR EACH ROW
-DECLARE
-    v_count INT;
-BEGIN
-    -- Vérifier si la tenue appartient déjà à une collection
-    SELECT COUNT(*)
-    INTO v_count
-    FROM Tenue
-    WHERE nCollection = :NEW.nCollection
-    AND nTenue != :NEW.nTenue; -- Assurer que l'on ne compte pas la tenue en cours d'insertion ou de mise à jour
 
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Chaque tenue doit appartenir à une seule collection.');
-    END IF;
-END;
-
-
-
-CREATE OR REPLACE TRIGGER Verif_Tenue_Unique_Par_Saison
+CREATE OR REPLACE TRIGGER tenue_unique_par_saison
 BEFORE INSERT OR UPDATE ON Participer
 FOR EACH ROW
 DECLARE
-    v_saison VARCHAR(20);
+    saison_collection VARCHAR(20);
+    tenue_count NUMBER;
 BEGIN
-    -- Recupere la saison du defile associe a la tenue
-    SELECT saison INTO v_saison
-    FROM Defile
-    WHERE nDefile = :NEW.nDefile;
+    -- Récupérer la saison de la collection associée à la tenue
+    SELECT c.saison INTO saison_collection
+    FROM Tenue t
+    JOIN Collection c ON t.nCollection = c.nCollection
+    WHERE t.nTenue = :NEW.nTenue;
 
-    -- Verification 
-    IF EXISTS (
-        SELECT 1
-        FROM Participer p
-        JOIN Defile d ON p.nDefile = d.nDefile
-        WHERE p.nTenue = :NEW.nTenue
-        AND d.saison = v_saison
-        AND p.nDefile != :NEW.nDefile
-    ) THEN
-        RAISE_APPLICATION_ERROR(-20008, 'Une tenue ne peut pas être présentée dans plus d’un défilé lors d’une même saison.');
+    -- Compter le nombre de défilés pour cette tenue dans la même saison
+    SELECT COUNT(*)
+    INTO tenue_count
+    FROM Participer p
+    JOIN Defile d ON p.nDefile = d.nDefile
+    JOIN Tenue t ON p.nTenue = t.nTenue
+    JOIN Collection c ON t.nCollection = c.nCollection
+    WHERE p.nTenue = :NEW.nTenue
+    AND c.saison = saison_collection
+    AND p.nDefile != :NEW.nDefile;
+
+    -- Si la tenue est déjà présente dans un autre défilé pour la même saison, lever une erreur
+    IF tenue_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La tenue ne peut pas être présentée dans plus d’un défilé pour la même saison.');
     END IF;
 END;
+/
+
+--chaque mannequin porte une tenue de sa taille.
+CREATE OR REPLACE TRIGGER Check_Mannequin_Tenue_Taille
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    mannequin_taille NUMBER(5, 2);
+    tenue_taille NUMBER(5, 2);
+BEGIN
+    -- Récupérer la taille du mannequin
+    SELECT taille INTO mannequin_taille 
+    FROM Mannequin
+    WHERE nMannequin = :NEW.nMannequin;
+
+    -- Récupérer la taille de la tenue
+    SELECT taille INTO tenue_taille 
+    FROM Tenue
+    WHERE nTenue = :NEW.nTenue;
+
+    -- Vérifier la correspondance des tailles
+    IF mannequin_taille != tenue_taille THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La taille de la tenue doit correspondre à la taille du mannequin.');
+    END IF;
+END;
+/
+
+
+-------------------Collection-----------
+--update nbrcollection when inserting or deletting collection 
+CREATE OR REPLACE TRIGGER T 
+AFTER INSERT OR DELETE ON Tenue 
+for each row 
+begin 
+    if inserting then 
+        update Collection set 
+        nbrTenues = nbrTenues + 1 
+        where nCollection = :new.nCollection;
+    end if;
+    
+    if deleting then 
+        update Collection set 
+        nbrTenues = nbrTenues - 1 
+        where nCollection = :old.nCollection;
+    end if;
+end;
+/
+
 
 ---------------------------------
 
