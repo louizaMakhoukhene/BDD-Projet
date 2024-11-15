@@ -1020,3 +1020,33 @@ VALUES (29, 'Cecile', 'Marin', TO_DATE('1985-01-15', 'YYYY-MM-DD'), 'Belge', 10,
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
 VALUES (30, 'Dorian', 'Renaud', TO_DATE('1984-06-20', 'YYYY-MM-DD'), 'Albanaise', 12, 'Armani');
+
+
+
+
+
+
+
+
+
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(1,'Echos Sauvages', 'Evasion et Nature', 'Printemps/Ete', 20,20 );
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(2,'Heritage Intemporel', 'Elegance et Intemporalite', 'Automne/Hiver',12, 19 );
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(3,'Metropole Brulante', 'Moderne et Urbain', 'Automne/Hiver',15, 18 );
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(4,'Rêve Astral', 'Inspirations Mystiques et Feeriques', 'Printemps/Ete',19, 17 );
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(5,'Esprit Vintage', 'Voyage dans le Temps', 'Automne/Hiver', 13, 16);
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(5,'Palette Vivante', ' Art et Création Visuelle', 'Printemps/Ete', 13, 16);
+
+INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur)
+VALUES(5,'Palette Vivante', ' Art et Création Visuelle', 'Printemps/Ete', 13, 16);
