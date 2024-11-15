@@ -313,7 +313,7 @@ BEGIN
 END;
 /
 
------------Tenu---------
+-----------Tenue---------
 
 
 CREATE OR REPLACE TRIGGER tenue_unique_par_saison
@@ -391,6 +391,21 @@ begin
         where nCollection = :old.nCollection;
     end if;
 end;
+/
+
+-------------------Defile-----------
+------------------------------------
+
+------------verifie que chaque defiles commence bien a partir de 14H----------------------------------
+CREATE OR REPLACE TRIGGER chk_heure_debut
+BEFORE INSERT OR UPDATE ON Defile
+FOR EACH ROW
+BEGIN
+    -- Vérifie que l'heure de début est après 14h
+    IF TO_CHAR(:NEW.heureDebut, 'HH24') < '14' THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Un défilé ne peut commencer qu''à partir de 14h.');
+    END IF;
+END;
 /
 
 
@@ -1024,108 +1039,6 @@ VALUES (29, 'Cecile', 'Marin', TO_DATE('1985-01-15', 'YYYY-MM-DD'), 'Belge', 10,
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
 VALUES (30, 'Dorian', 'Renaud', TO_DATE('1984-06-20', 'YYYY-MM-DD'), 'Albanaise', 12, 'Armani');
-
-
-
-
----------------------------------
-
--- INSERTION A LA TABLE Collection
-
-
----------------------------------
-
-
-
-INSERT INTO Collection(nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES(1, 'Echos Sauvages', 'Evasion et Nature', 'Printemps/Ete', 0, 20, 'Chanel');
-
-INSERT INTO Collection(nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES(2, 'Heritage Intemporel', 'Elegance et Intemporalite', 'Automne/Hiver', 0, 19, 'Dior');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(3,'Metropole Brulante', 'Moderne et Urbain', 'Automne/Hiver',0, 18, 'Louis Vuitton');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(4,'Reve Astral', 'Inspirations Mystiques et Feeriques', 'Printemps/Ete',0, 17, 'Gucci' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(5,'Esprit Vintage', 'Voyage dans le Temps', 'Automne/Hiver', 0, 16, 'Prada');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(6,'Palette Vivante', ' Art et Creation Visuelle', 'Printemps/Ete', 0, 15,'Versace' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(7,'Opulence eclatante', ' Luxe et Extravagance', 'Automne/Hiver', 0, 14, 'Fendi');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(8,'Printemps eternel', ' Saison et Temperament', 'Printemps/Ete', 0, 13, 'Balenciaga');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur, nomMaisonMode)
-VALUES(9,'Sous le Ciel Nu', 'Evasion et Nature', 'Printemps/Ete', 0,12, 'Givenchy');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(10,'eclats debene', 'Elegance et Intemporalite', 'Automne/Hiver',0, 11, 'Hermes' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(11,'Ombres de la Ville', 'Moderne et Urbain', 'Automne/Hiver',0, 10, 'Saint Laurent' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(12,'Murmures de Lune', 'Inspirations Mystiques et Feeriques', 'Printemps/Ete',0, 9, 'Dolce Gabbana' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(13,'Souvenirs depoque', 'Voyage dans le Temps', 'Automne/Hiver', 0, 8, 'Miu Miu' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(14,'Coup de Pinceau', ' Art et Creation Visuelle', 'Printemps/Ete', 0, 7, 'Lacoste');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(15,'Or et Soie', ' Luxe et Extravagance', 'Automne/Hiver', 0, 6, 'Kenzo');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(16,'Automne Dore', ' Saison et Temperament', 'Printemps/Ete', 0, 5,'Marc Jacobs' );
-
-INSERT INTO Collection(nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES(17, 'Vagues demeraude', 'Elegance et Intemporalite', 'Automne/Hiver', 0, 4, 'Moschino');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(18,'Nuit Celeste', 'Moderne et Urbain', 'Automne/Hiver',0, 3, 'Isabel Marant');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(19,'Magie de Minuit', 'Inspirations Mystiques et Feeriques', 'Printemps/Ete',0, 2, 'Ralph Lauren' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(20,'Renaissance Moderne', 'Voyage dans le Temps', 'Automne/Hiver', 0, 1, 'Burberry');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(21,'Vibrations Chromatiques', ' Art et Creation Visuelle', 'Printemps/Ete', 0, 30,'Armani' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(22,'Legendes de Satin', ' Luxe et Extravagance', 'Automne/Hiver', 0, 29, 'Bottega Veneta');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(23,'Brise dete', ' Saison et Temperament', 'Printemps/Ete', 0, 28, 'Salvatore Ferragamo');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur, nomMaisonMode)
-VALUES(24,'Foret de Lumiere', 'Evasion et Nature', 'Printemps/Ete', 0,27, 'Tommy Hilfiger');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(25,'Vestiges de Velours', 'Elegance et Intemporalite', 'Automne/Hiver',0, 26, 'Oscar de la Renta' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(26,'Futur Metallique', 'Moderne et Urbain', 'Automne/Hiver',0, 25, 'Vera Wang' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(27,'Veillee aux etoiles', 'Inspirations Mystiques et Feeriques', 'Printemps/Ete',0, 24, 'Alberta Ferretti' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(28,'Patrimoine Revisitee', 'Voyage dans le Temps', 'Automne/Hiver', 0, 23, 'Haider Ackermann' );
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(29,'Sculptures de Soie', ' Art et Creation Visuelle', 'Printemps/Ete', 0, 22, 'Ann Demeulemeester');
-
-INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
-VALUES(30,'Reve de Rubis', ' Luxe et Extravagance', 'Automne/Hiver', 0, 21, 'Ermenegildo Zegna');
 
 
 
