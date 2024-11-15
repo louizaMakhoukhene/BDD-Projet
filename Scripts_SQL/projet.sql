@@ -12,8 +12,12 @@ END;
 BEGIN
     drop_table_if_exists('Participer');
     drop_table_if_exists('Sponsoriser');
-    drop_table_if_exists('Interview');
-    drop_table_if_exists('Assister');
+    drop_table_if_exists('InterviewI');
+    drop_table_if_exists('InterviewC');
+    drop_table_if_exists('InterviewM');
+    drop_table_if_exists('AssisterJ');
+    drop_table_if_exists('AssisterC');
+    drop_table_if_exists('AssisterI');
     drop_table_if_exists('Tenue');
     drop_table_if_exists('Collection');
     drop_table_if_exists('Defile');
@@ -127,31 +131,59 @@ CREATE TABLE Tenue (
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
 
-CREATE TABLE Assister (
+CREATE TABLE AssisterI (
+    heureDepart TIMESTAMP,
+    heureArrivee TIMESTAMP,
+    nDefile INT, 
+    nInvite INT,
+    FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
+    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL
+);
+
+CREATE TABLE AssisterJ (
     heureDepart TIMESTAMP,
     heureArrivee TIMESTAMP,
     nJournaliste INT, 
     nDefile INT, 
-    nCreateur INT, 
-    nInvite INT,
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE SET NULL,
+    FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE
+);
+CREATE TABLE AssisterC (
+    heureDepart TIMESTAMP,
+    heureArrivee TIMESTAMP,
+    nDefile INT, 
+    nCreateur INT, 
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
-    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
 
-CREATE TABLE Interview (
+CREATE TABLE InterviewM (
+    nInterview INT PRIMARY KEY,
+    heureDebut TIMESTAMP,
+    heureFin TIMESTAMP,
+    nJournaliste INT, 
+    nMannequin INT, 
+    FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
+    FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE SET NULL
+);
+CREATE TABLE InterviewC (
+    nInterview INT PRIMARY KEY,
+    heureDebut TIMESTAMP,
+    heureFin TIMESTAMP,
+    nJournaliste INT, 
+    nCreateur INT, 
+    FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
+    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
+);
+
+CREATE TABLE InterviewI (
     nInterview INT PRIMARY KEY,
     heureDebut TIMESTAMP,
     heureFin TIMESTAMP,
     nJournaliste INT, 
     nInvite INT, 
-    nMannequin INT, 
-    nCreateur INT, 
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
-    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL,
-    FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE SET NULL,
-    FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
+    FOREIGN KEY (nInvite) REFERENCES Invite(nInvite) ON DELETE SET NULL
 );
 
 CREATE TABLE Sponsoriser (
