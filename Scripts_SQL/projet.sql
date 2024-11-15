@@ -981,7 +981,7 @@ INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeE
 VALUES (10, 'Julien', 'Benoit', TO_DATE('1984-12-20', 'YYYY-MM-DD'), 'Francais', 11, 'Hermes');
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
-VALUES (11, 'Karine', 'Dufresne', TO_DATE('1986-10-05', 'YYYY-MM-DD'), 'Francaise', 8, 'Celine');
+VALUES (11, 'Karine', 'Dufresne', TO_DATE('1986-10-05', 'YYYY-MM-DD'), 'Francaise', 8, 'Marc Jacobs');
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode) 
 VALUES (12, 'Louis', 'Chevalier', TO_DATE('1993-02-17', 'YYYY-MM-DD'), 'Argentin', 4, 'Saint Laurent');
