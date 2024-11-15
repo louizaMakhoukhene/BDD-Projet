@@ -1,15 +1,6 @@
+CREATE OR REPLACE PROCEDURE drop_table_if_exists (table_name VARCHAR2) IS
 BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Participer CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN 
-            RAISE; 
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Sponsoriser CASCADE CONSTRAINTS';
+    EXECUTE IMMEDIATE 'DROP TABLE ' || table_name || ' CASCADE CONSTRAINTS';
 EXCEPTION
     WHEN OTHERS THEN
         IF SQLCODE != -942 THEN
@@ -19,112 +10,19 @@ END;
 /
 
 BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Interview CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Assister CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Tenue CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Collection CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Defile CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Createur CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Mannequin CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Sponsor CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Invite CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE Journaliste CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
-END;
-/
-
-BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE MaisonMode CASCADE CONSTRAINTS';
-EXCEPTION
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-            RAISE;
-        END IF;
+    drop_table_if_exists('Participer');
+    drop_table_if_exists('Sponsoriser');
+    drop_table_if_exists('Interview');
+    drop_table_if_exists('Assister');
+    drop_table_if_exists('Tenue');
+    drop_table_if_exists('Collection');
+    drop_table_if_exists('Defile');
+    drop_table_if_exists('Createur');
+    drop_table_if_exists('Mannequin');
+    drop_table_if_exists('Sponsor');
+    drop_table_if_exists('Invite');
+    drop_table_if_exists('Journaliste');
+    drop_table_if_exists('MaisonMode');
 END;
 /
 
@@ -200,31 +98,31 @@ CREATE TABLE Defile (
     theme VARCHAR(50),
     descriptionDefile VARCHAR(255),
     nbrPlaceMax INT,
-    nomMaisonMode VARCHAR(50), 
+    nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
 );
 
 CREATE TABLE Collection (
     nCollection INT PRIMARY KEY,
-    nomCollection VARCHAR(100),
-    themeCollection VARCHAR(50),
-    saison VARCHAR(20),
-    nbrTenues INT,
-    nCreateur INT, 
-    nomMaisonMode VARCHAR(50), 
+    nomCollection VARCHAR(100) NOT NULL,
+    themeCollection VARCHAR(50) NOT NULL,
+    saison VARCHAR(20) NOT NULL,
+    nbrTenues INT DEFAULT 0,
+    nCreateur INT NOT NULL,  
+    nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL,
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
 );
 
 CREATE TABLE Tenue (
     nTenue INT PRIMARY KEY,
-    taille VARCHAR(10),
+    taille NUMBER(5, 2),
     prix NUMBER(10, 2),
     nomTenue VARCHAR(100),
     description VARCHAR(255),
     categorieTenue VARCHAR(50),
-    nCollection INT, 
-    nCreateur INT, 
+    nCollection INT NOT NULL, 
+    nCreateur INT NOT NULL,  
     FOREIGN KEY (nCollection) REFERENCES Collection(nCollection) ON DELETE SET NULL,
     FOREIGN KEY (nCreateur) REFERENCES Createur(nCreateur) ON DELETE SET NULL
 );
@@ -284,7 +182,7 @@ CREATE TABLE Participer (
 
 -----------Createurs---------
 
---(Un createur doit avoir au moins une collection pour participer a un defile)
+--Un createur doit avoir au moins une collection pour participer a un defile
 
 CREATE OR REPLACE TRIGGER Verifier_Collection_Createur
 BEFORE INSERT ON Assister 
@@ -304,7 +202,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins une collection pour participer à un défilé.');
     END IF;
 END;
-
+/
 
 --Un Ceateur doit avoir au minimun 18 ans 
 CREATE OR REPLACE TRIGGER Verif_Age_Createur
@@ -320,7 +218,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins 18 ans.');
     END IF;
 END;
-
+/
 
 
 -----------Sponsor---------
@@ -340,7 +238,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20002, 'Un sponsor ne peut pas sponsoriser plus de 3 défilés.');
     END IF;
 END;
-
+/
 
 
 -----------Mannequin---------
@@ -362,9 +260,9 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20003, 'Un mannequin ne peut pas défiler plus de 3 fois par jour.');
     END IF;
 END;
+/
 
-
-
+--
 CREATE OR REPLACE TRIGGER Verif_Nb_Tenues_Mannequin
 BEFORE INSERT ON Participer
 FOR EACH ROW
@@ -381,13 +279,87 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20005, 'Un mannequin ne peut pas être affecté à plus de 5 tenues au cours d''un même défilé.');
     END IF;
 END;
+/
+
+-----------Tenu---------
 
 
+CREATE OR REPLACE TRIGGER tenue_unique_par_saison
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    saison_collection VARCHAR(20);
+    tenue_count NUMBER;
+BEGIN
+    -- Récupérer la saison de la collection associée à la tenue
+    SELECT c.saison INTO saison_collection
+    FROM Tenue t
+    JOIN Collection c ON t.nCollection = c.nCollection
+    WHERE t.nTenue = :NEW.nTenue;
+
+    -- Compter le nombre de défilés pour cette tenue dans la même saison
+    SELECT COUNT(*)
+    INTO tenue_count
+    FROM Participer p
+    JOIN Defile d ON p.nDefile = d.nDefile
+    JOIN Tenue t ON p.nTenue = t.nTenue
+    JOIN Collection c ON t.nCollection = c.nCollection
+    WHERE p.nTenue = :NEW.nTenue
+    AND c.saison = saison_collection
+    AND p.nDefile != :NEW.nDefile;
+
+    -- Si la tenue est déjà présente dans un autre défilé pour la même saison, lever une erreur
+    IF tenue_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La tenue ne peut pas être présentée dans plus d’un défilé pour la même saison.');
+    END IF;
+END;
+/
+
+--chaque mannequin porte une tenue de sa taille.
+CREATE OR REPLACE TRIGGER Check_Mannequin_Tenue_Taille
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    mannequin_taille NUMBER(5, 2);
+    tenue_taille NUMBER(5, 2);
+BEGIN
+    -- Récupérer la taille du mannequin
+    SELECT taille INTO mannequin_taille 
+    FROM Mannequin
+    WHERE nMannequin = :NEW.nMannequin;
+
+    -- Récupérer la taille de la tenue
+    SELECT taille INTO tenue_taille 
+    FROM Tenue
+    WHERE nTenue = :NEW.nTenue;
+
+    -- Vérifier la correspondance des tailles
+    IF mannequin_taille != tenue_taille THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La taille de la tenue doit correspondre à la taille du mannequin.');
+    END IF;
+END;
+/
 
 
-
-
-
+-------------------Collection-----------
+--update nbrcollection when inserting or deletting collection 
+CREATE OR REPLACE TRIGGER T 
+AFTER INSERT OR DELETE ON Tenue 
+for each row 
+begin 
+    if inserting then 
+        update Collection set 
+        nbrTenues = nbrTenues + 1 
+        where nCollection = :new.nCollection;
+    end if;
+    
+    if deleting then 
+        update Collection set 
+        nbrTenues = nbrTenues - 1 
+        where nCollection = :old.nCollection;
+    end if;
+end;
+/
 
 
 ---------------------------------
