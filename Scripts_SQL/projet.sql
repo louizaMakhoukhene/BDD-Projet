@@ -1142,3 +1142,140 @@ VALUES(29,'Sculptures de Soie', ' Art et Creation Visuelle', 'Printemps/Ete', 0,
 INSERT INTO Collection(nCollection, nomCollection,themeCollection,saison,nbrTenues,nCreateur,nomMaisonMode)
 VALUES(30,'Reve de Rubis', ' Luxe et Extravagance', 'Automne/Hiver', 0, 21, 'Ermenegildo Zegna');
 
+
+
+
+
+---------------------------------
+
+-- INSERTION A LA TABLE Defile
+
+
+---------------------------------
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    6,
+    'Villa Borghese, Rome',
+    TO_TIMESTAMP('2025-06-15 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-06-15 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-06-15', 'YYYY-MM-DD'),
+    'Fleurs et Romance',
+    'Exploration de motifs floraux dans la haute couture.',
+    100,
+    'Valentino'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    7,
+    'Palazzo Versace, Milan',
+    TO_TIMESTAMP('2025-07-20 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-07-20 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-07-20', 'YYYY-MM-DD'),
+    'Medusa Glam',
+    'Collection inspirée de la mythologie grecque.',
+    150,
+    'Versace'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    8,
+    'Central Park, New York',
+    TO_TIMESTAMP('2025-09-10 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-09-10 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-09-10', 'YYYY-MM-DD'),
+    'American Dream',
+    'Défilé mettant en avant le style classique américain.',
+    200,
+    'Ralph Lauren'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    9,
+    'Tower Bridge, London',
+    TO_TIMESTAMP('2025-10-05 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-10-05 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-10-05', 'YYYY-MM-DD'),
+    'Classique Britannique',
+    'Hommage au trench-coat et au style britannique.',
+     120,
+    'Burberry'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    10,
+    'Colisée, Rome',
+    TO_TIMESTAMP('2025-11-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-11-20 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-11-20', 'YYYY-MM-DD'),
+    'Imperium Romanum',
+    'Collection inspirée de l’élégance antique romaine.',
+    300,
+    'Fendi'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    11,
+    'Pyramide du Louvre, Paris',
+    TO_TIMESTAMP('2025-11-25 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-11-25 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-11-25', 'YYYY-MM-DD'),
+    'Lumière et Transparence',
+    'Exploration du thème de la lumière à travers des tissus.',
+    220,
+    'Balenciaga'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    12,
+    'Milan Expo Center, Milan',
+    TO_TIMESTAMP('2025-12-12 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-12-12 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-12-12', 'YYYY-MM-DD'),
+    'Futurisme et Fantaisie',
+    'Collection extravagante inspirée du futur et de l’imaginaire.',
+    209,
+    'Moschino'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    13,
+    'Cannes, French Riviera',
+    TO_TIMESTAMP('2025-12-20 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-12-20 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-12-20', 'YYYY-MM-DD'),
+    'Sport et Élégance',
+    'Fusion entre sport et élégance avec une touche de sophistication.',
+    145,
+    'Lacoste'
+);
