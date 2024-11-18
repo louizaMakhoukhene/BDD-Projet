@@ -1153,129 +1153,469 @@ VALUES(30,'Reve de Rubis', ' Luxe et Extravagance', 'Automne/Hiver', 0, 21, 'Erm
 
 ---------------------------------
 
-
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    6,
-    'Villa Borghese, Rome',
-    TO_TIMESTAMP('2025-06-15 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-06-15 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-06-15', 'YYYY-MM-DD'),
-    'Fleurs et Romance',
-    'Exploration de motifs floraux dans la haute couture.',
-    100,
-    'Valentino'
-);
-
-
-INSERT INTO Defile (
-    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
-)
-VALUES (
-    7,
-    'Palazzo Versace, Milan',
-    TO_TIMESTAMP('2025-07-20 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-07-20 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-07-20', 'YYYY-MM-DD'),
-    'Medusa Glam',
-    'Collection inspirée de la mythologie grecque.',
-    150,
-    'Versace'
+    14,
+    'Palace of Versailles, France',
+    TO_TIMESTAMP('2025-01-15 14:45:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-01-15 18:15:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-01-15', 'YYYY-MM-DD'),
+    'Rêve Baroque',
+    'Collection inspirée du baroque français.',
+    250,
+    'Alberta Ferretti'
 );
 
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    8,
-    'Central Park, New York',
-    TO_TIMESTAMP('2025-09-10 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-09-10 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-09-10', 'YYYY-MM-DD'),
-    'American Dream',
-    'Défilé mettant en avant le style classique américain.',
-    200,
-    'Ralph Lauren'
+    15,
+    'Golden Gate Park, San Francisco',
+    TO_TIMESTAMP('2025-02-10 12:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-02-10 15:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-02-10', 'YYYY-MM-DD'),
+    'Vents de Liberté',
+    'Exploration des styles audacieux et modernes.',
+    180,
+    'Alexander McQueen'
 );
-
 
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    9,
-    'Tower Bridge, London',
-    TO_TIMESTAMP('2025-10-05 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-10-05 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-10-05', 'YYYY-MM-DD'),
-    'Classique Britannique',
-    'Hommage au trench-coat et au style britannique.',
-     120,
+    16,
+    'Sydney Opera House, Sydney',
+    TO_TIMESTAMP('2025-03-05 21:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-03-05 23:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-03-05', 'YYYY-MM-DD'),
+    'Océans Infinis',
+    'Collection inspirée des fonds marins et des vagues.',
+    300,
+    'Ann Demeulemeester'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    17,
+    'Taj Mahal Gardens, India',
+    TO_TIMESTAMP('2025-03-20 18:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-03-20 20:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-03-20', 'YYYY-MM-DD'),
+    'Éclat et Tradition',
+    'Mariage entre culture indienne et design moderne.',
+    400,
+    'Armani'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    18,
+    'Great Wall of China, Beijing',
+    TO_TIMESTAMP('2025-04-08 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-04-08 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-04-08', 'YYYY-MM-DD'),
+    'Dynastie Moderne',
+    'Collection inspirée par l’art ancien chinois.',
+    500,
+    'Balenciaga'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    19,
+    'Eiffel Tower Base, Paris',
+    TO_TIMESTAMP('2025-05-01 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-05-01 22:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-05-01', 'YYYY-MM-DD'),
+    'Parisienne Éternelle',
+    'Hommage au style intemporel parisien.',
+    250,
+    'Bottega Veneta'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    20,
+    'Mount Fuji, Japan',
+    TO_TIMESTAMP('2025-05-25 09:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-05-25 12:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-05-25', 'YYYY-MM-DD'),
+    'Nature Sublime',
+    'Collection célébrant la beauté de la nature japonaise.',
+    350,
     'Burberry'
 );
 
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    21,
+    'Dubai Marina, UAE',
+    TO_TIMESTAMP('2025-06-10 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-06-10 22:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-06-10', 'YYYY-MM-DD'),
+    'Or et Déserts',
+    'Collection inspirée par les paysages désertiques.',
+    500,
+    'Chanel'
+);
 
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    10,
-    'Colisée, Rome',
-    TO_TIMESTAMP('2025-11-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-11-20 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-11-20', 'YYYY-MM-DD'),
-    'Imperium Romanum',
-    'Collection inspirée de l’élégance antique romaine.',
+    22,
+    'Cape Town, South Africa',
+    TO_TIMESTAMP('2025-07-05 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-07-05 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-07-05', 'YYYY-MM-DD'),
+    'Afrique Moderne',
+    'Éclats de couleurs et d’art africain revisités.',
+    280,
+    'Dior'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    23,
+    'Red Square, Moscow',
+    TO_TIMESTAMP('2025-08-01 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-08-01 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2025-08-01', 'YYYY-MM-DD'),
+    'Tsars Modernes',
+    'Collection inspirée des tsars russes.',
+    400,
+    'Dolce Gabbana'
+);
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    24,
+    'Sydney Opera House, Sydney',
+    TO_TIMESTAMP('2026-01-15 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-01-15 18:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-01-15', 'YYYY-MM-DD'),
+    'Océan et Transparence',
+    'Inspiré par les vagues et la lumière sur l’eau.',
+    250,
+    'Ermenegildo Zegna'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    25,
+    'Taj Mahal Gardens, Agra',
+    TO_TIMESTAMP('2026-02-10 17:45:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-02-10 20:15:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-02-10', 'YYYY-MM-DD'),
+    'Éclat de l’Orient',
+    'Mélange de traditions indiennes et de haute couture.',
     300,
     'Fendi'
 );
 
-
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    11,
-    'Pyramide du Louvre, Paris',
-    TO_TIMESTAMP('2025-11-25 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-11-25 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-11-25', 'YYYY-MM-DD'),
-    'Lumière et Transparence',
-    'Exploration du thème de la lumière à travers des tissus.',
-    220,
-    'Balenciaga'
+    26,
+    'Golden Gate Park, San Francisco',
+    TO_TIMESTAMP('2026-03-05 15:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-03-05 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-03-05', 'YYYY-MM-DD'),
+    'Modernité et Minimalisme',
+    'Focus sur des lignes épurées et des tons neutres.',
+    180,
+    'Givenchy'
 );
 
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    27,
+    'Forbidden City, Beijing',
+    TO_TIMESTAMP('2026-04-10 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-04-10 21:45:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-04-10', 'YYYY-MM-DD'),
+    'Dynasties et Modernité',
+    'Inspiration des vêtements traditionnels chinois revisités.',
+    220,
+    'Gucci'
+);
 
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    12,
-    'Milan Expo Center, Milan',
-    TO_TIMESTAMP('2025-12-12 14:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-12-12 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-12-12', 'YYYY-MM-DD'),
-    'Futurisme et Fantaisie',
-    'Collection extravagante inspirée du futur et de l’imaginaire.',
-    209,
+    28,
+    'Table Mountain, Cape Town',
+    TO_TIMESTAMP('2026-05-20 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-05-20 20:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-05-20', 'YYYY-MM-DD'),
+    'Couleurs de l’Afrique',
+    'Un hommage à la diversité culturelle et artistique africaine.',
+    200,
+    'Hermes'
+);
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    29,
+    'Santorini Cliffs, Greece',
+    TO_TIMESTAMP('2026-06-25 19:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-06-25 22:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-06-25', 'YYYY-MM-DD'),
+    'Blanc et Pureté',
+    'Une exploration du blanc et de la simplicité élégante.',
+    250,
+    'Haider Ackermann'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    30,
+    'Eiffel Tower Lawn, Paris',
+    TO_TIMESTAMP('2026-07-14 21:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-07-14 23:59:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-07-14', 'YYYY-MM-DD'),
+    'Révolution et Haute Couture',
+    'Célébration de la mode et de l’histoire française.',
+    300,
+    'Isabel Marant'
+);
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    31,
+    'Red Square, Moscow',
+    TO_TIMESTAMP('2026-08-01 18:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-08-01 21:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-08-01', 'YYYY-MM-DD'),
+    'Étoiles du Nord',
+    'Élégance hivernale inspirée par les cultures slaves.',
+    220,
+    'Kenzo'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    32,
+    'Grand Canyon, Arizona',
+    TO_TIMESTAMP('2026-09-10 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-09-10 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-09-10', 'YYYY-MM-DD'),
+    'Nature et Grandiose',
+    'Des silhouettes imposantes dans un décor spectaculaire.',
+    150,
+    'Lacoste'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    33,
+    'Christ the Redeemer, Rio de Janeiro',
+    TO_TIMESTAMP('2026-10-05 17:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-10-05 19:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-10-05', 'YYYY-MM-DD'),
+    'Carnaval et Exubérance',
+    'Une célébration haute en couleur de la mode brésilienne.',
+    280,
+    'Louis Vuitton'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    34,
+    'Antelope Canyon, Arizona',
+    TO_TIMESTAMP('2026-11-15 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-11-15 17:45:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-11-15', 'YYYY-MM-DD'),
+    'Textures et Lumière',
+    'Une collection inspirée par la géométrie naturelle et la lumière.',
+    120,
+    'Marc Jacobs'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    35,
+    'Colosseum, Rome',
+    TO_TIMESTAMP('2026-12-05 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2026-12-05 22:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2026-12-05', 'YYYY-MM-DD'),
+    'Gladiateurs et Grâces',
+    'Fusion entre le style antique romain et le moderne.',
+    250,
+    'Miu Miu'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    36,
+    'Great Wall of China, Beijing',
+    TO_TIMESTAMP('2027-01-20 14:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-01-20 16:45:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-01-20', 'YYYY-MM-DD'),
+    'Harmonie et Éternité',
+    'Une exploration des motifs anciens et du design futuriste.',
+    300,
     'Moschino'
 );
 
+select nomMaisonMode
+from MaisonMode;
+
 
 INSERT INTO Defile (
     nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
 )
 VALUES (
-    13,
-    'Cannes, French Riviera',
-    TO_TIMESTAMP('2025-12-20 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-12-20 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_DATE('2025-12-20', 'YYYY-MM-DD'),
-    'Sport et Élégance',
-    'Fusion entre sport et élégance avec une touche de sophistication.',
-    145,
-    'Lacoste'
+    37,
+    'Neuschwanstein Castle, Germany',
+    TO_TIMESTAMP('2027-02-14 17:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-02-14 19:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-02-14', 'YYYY-MM-DD'),
+    'Rêves et Romance',
+    'Des robes de conte de fées dans un décor enchanteur.',
+    200,
+    'Oscar de la Renta'
+);
+
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    38,
+    'Sydney Opera House, Australia',
+    TO_TIMESTAMP('2027-03-10 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-03-10 21:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-03-10', 'YYYY-MM-DD'),
+    'Ondes et Architecture',
+    'Des designs fluides inspirés par larchitecture moderne.',
+    220,
+    'Prada'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    39,
+    'Taj Mahal, India',
+    TO_TIMESTAMP('2027-04-15 17:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-04-15 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-04-15', 'YYYY-MM-DD'),
+    'Richesses et Ornements',
+    'Une ode à lartisanat et aux détails somptueux.',
+    300,
+    'Ralph Lauren'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    40,
+    'Santorini, Greece',
+    TO_TIMESTAMP('2027-05-25 18:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-05-25 21:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-05-25', 'YYYY-MM-DD'),
+    'Éclat Méditerranéen',
+    'Des créations légères et lumineuses, parfaites pour lété.',
+    180,
+    'Saint Laurent'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    41,
+    'Central Park, New York',
+    TO_TIMESTAMP('2027-06-20 16:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-06-20 18:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-06-20', 'YYYY-MM-DD'),
+    'Nature et Métropole',
+    'Une collection mêlant nature et modernité urbaine.',
+    250,
+    'Salvatore Ferragamo'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    42,
+    'Marrakech Gardens, Morocco',
+    TO_TIMESTAMP('2027-07-10 19:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-07-10 21:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-07-10', 'YYYY-MM-DD'),
+    'Mystique et Évasion',
+    'Une collection inspirée des couleurs et motifs marocains.',
+    200,
+    'Thom Browne'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    43,
+    'Golden Gate Bridge, San Francisco',
+    TO_TIMESTAMP('2027-08-05 17:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-08-05 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-08-05', 'YYYY-MM-DD'),
+    'Modernité et Énergie',
+    'Des looks audacieux pour un style urbain et dynamique.',
+    240,
+    'Tommy Hilfiger'
+);
+
+INSERT INTO Defile (
+    nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode
+)
+VALUES (
+    44,
+    'Mont-Saint-Michel, France',
+    TO_TIMESTAMP('2027-09-15 20:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2027-09-15 22:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_DATE('2027-09-15', 'YYYY-MM-DD'),
+    'Mystère et Romance',
+    'Des créations poétiques pour une ambiance médiévale.',
+    190,
+    'Valentino'
 );
