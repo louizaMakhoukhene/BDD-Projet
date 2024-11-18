@@ -1174,7 +1174,7 @@ INSERT INTO Defile (
 VALUES (
     15,
     'Golden Gate Park, San Francisco',
-    TO_TIMESTAMP('2025-02-10 12:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-02-10 16:20:00', 'YYYY-MM-DD HH24:MI:SS'),
     TO_TIMESTAMP('2025-02-10 15:30:00', 'YYYY-MM-DD HH24:MI:SS'),
     TO_DATE('2025-02-10', 'YYYY-MM-DD'),
     'Vents de Liberté',
@@ -1249,8 +1249,8 @@ INSERT INTO Defile (
 VALUES (
     20,
     'Mount Fuji, Japan',
-    TO_TIMESTAMP('2025-05-25 09:00:00', 'YYYY-MM-DD HH24:MI:SS'),
-    TO_TIMESTAMP('2025-05-25 12:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-05-25 18:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+    TO_TIMESTAMP('2025-05-25 20:45:00', 'YYYY-MM-DD HH24:MI:SS'),
     TO_DATE('2025-05-25', 'YYYY-MM-DD'),
     'Nature Sublime',
     'Collection célébrant la beauté de la nature japonaise.',
@@ -1494,9 +1494,6 @@ VALUES (
     300,
     'Moschino'
 );
-
-select nomMaisonMode
-from MaisonMode;
 
 
 INSERT INTO Defile (
