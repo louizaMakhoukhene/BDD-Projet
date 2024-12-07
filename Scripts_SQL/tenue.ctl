@@ -365,6 +365,42 @@ BEGINDATA
 300, 47.00, 4700.00, "Robe de soirée", "Robe de soirée en tulle noir, avec des étoiles brodées et une silhouette élégante", "Soirée", 27, 24
 
 
+301, 38.00, 4000.00, "Robe en velours vintage", "Robe en velours noir revisité, avec des coutures modernes et une coupe audacieuse", "Soirée", 28, 23
+302, 39.50, 4100.00, "Veste en tweed", "Veste en tweed réinventée avec des détails en cuir, coupe parfaite pour l'automne", "Formelle", 28, 23
+303, 40.00, 4200.00, "Pantalon en laine", "Pantalon classique en laine avec des éléments de design contemporain", "Casual", 28, 23
+304, 41.00, 4300.00, "Blouse à carreaux", "Blouse en coton à carreaux revisités, avec des manches volumineuses", "Casual", 28, 23
+305, 42.00, 4400.00, "Jupe en tweed", "Jupe midi en tweed avec des détails de laine tissée pour une touche d’élégance", "Casual", 28, 23
+306, 43.00, 4500.00, "Manteau en laine", "Manteau en laine réimaginé avec une coupe asymétrique et une finition élégante", "Hiver", 28, 23
+307, 44.00, 4600.00, "Top à franges", "Top noir à franges métalliques, fusion de l’élégance classique et du style avant-gardiste", "Casual", 28, 23
+308, 45.00, 4700.00, "Robe de cocktail", "Robe de cocktail en satin avec des éléments en cuir, pour un look sophistiqué et moderne", "Soirée", 28, 23
+309, 46.00, 4800.00, "Pantalon noir", "Pantalon noir en laine fine, avec une coupe élégante et des détails de design modernisés", "Casual", 28, 23
+310, 47.00, 4900.00, "Robe d’hiver", "Robe d’hiver en laine avec des finitions en cuir, parfaite pour les occasions formelles", "Hiver", 28, 23
+
+
+311, 38.00, 4200.00, "Robe en soie noire", "Robe fluide en soie noire avec des découpes sculpturales, pour une allure sophistiquée", "Soirée", 29, 22
+312, 39.50, 4300.00, "Veste en cuir sculptée", "Veste en cuir noir sculptée avec des coutures asymétriques et une coupe structurée", "Formelle", 29, 22
+313, 40.00, 4400.00, "Pantalon en soie", "Pantalon fluide en soie noire, conçu pour un confort ultime avec une coupe moderne", "Casual", 29, 22
+314, 41.00, 4500.00, "Top sculptural", "Top en soie ivoire avec des éléments sculptés, apportant une touche artistique au look", "Casual", 29, 22
+315, 42.00, 4600.00, "Jupe en soie", "Jupe midi en soie bleue, avec des volants sculptés sur le bas pour un effet fluide", "Casual", 29, 22
+316, 43.00, 4700.00, "Manteau d’hiver", "Manteau d’hiver en laine avec des éléments en cuir sculptés, créant un look audacieux et artistique", "Hiver", 29, 22
+317, 44.00, 4800.00, "Robe asymétrique", "Robe asymétrique en soie, avec un drapé sculpté et une silhouette fluide", "Soirée", 29, 22
+318, 45.00, 4900.00, "Pantalon asymétrique", "Pantalon asymétrique en soie, avec des plis et des découpes sculptées", "Casual", 29, 22
+319, 46.00, 5000.00, "Top en soie blanche", "Top en soie blanche sculpté avec des broderies fines, un vrai chef-d’œuvre artistique", "Casual", 29, 22
+320, 47.00, 5100.00, "Robe de soirée", "Robe de soirée en soie noire avec des éléments sculptés sur les côtés pour un look unique", "Soirée", 29, 22
+
+
+321, 38.00, 4500.00, "Robe en rubis", "Robe en satin rouge rubis, coupe élégante et dos nu pour un effet glamour", "Soirée", 30, 21
+322, 39.50, 4600.00, "Veste en laine", "Veste en laine rouge foncé avec des détails en soie pour un look sophistiqué", "Formelle", 30, 21
+323, 40.00, 4700.00, "Pantalon en laine", "Pantalon en laine rouge avec des pinces et une coupe moderne", "Casual", 30, 21
+324, 41.00, 4800.00, "Blouse en soie", "Blouse en soie rouge avec des plis au niveau des manches et un col haut", "Casual", 30, 21
+325, 42.00, 4900.00, "Jupe midi", "Jupe midi en soie rouge rubis avec une coupe fluide et élégante", "Casual", 30, 21
+326, 43.00, 5000.00, "Manteau long", "Manteau long en laine rouge, à la coupe épurée et au style minimaliste", "Hiver", 30, 21
+327, 44.00, 5100.00, "Robe de soirée", "Robe de soirée en soie rouge rubis avec un dos nu et des finitions en dentelle", "Soirée", 30, 21
+328, 45.00, 5200.00, "Pantalon droit", "Pantalon droit en laine rouge avec une coupe parfaite et des détails subtils", "Casual", 30, 21
+329, 46.00, 5300.00, "Top en satin", "Top en satin rouge, avec un décolleté plongeant et des détails raffinés", "Casual", 30, 21
+330, 47.00, 5400.00, "Robe d’hiver", "Robe d’hiver en laine rouge avec des manches longues et une coupe élégante", "Hiver", 30, 21
+
+
 
 
 
