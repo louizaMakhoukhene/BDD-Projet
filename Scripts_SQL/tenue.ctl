@@ -280,3 +280,94 @@ BEGINDATA
 228, 45.00, 3900.00, "Pull en cachemire", "Pull en cachemire doux de couleur crème, avec un col roulé", "Casual", 20, 1
 229, 46.00, 4000.00, "Robe à plis", "Robe midi à plis en laine, avec un col montant et des détails subtils en or", "Soirée", 20, 1
 230, 47.00, 4100.00, "Pantalon fluide", "Pantalon fluide à taille haute en tissu mélangé, confortable et élégant", "Casual", 20, 1
+
+
+231, 38.00, 3300.00, "Blouse multicolore", "Blouse en soie avec des motifs géométriques en couleurs vives et éclatantes", "Casual", 21, 30
+232, 39.50, 3400.00, "Robe à dégradé", "Robe légère à dégradé de couleurs vives, idéale pour l'été", "Soirée", 21, 30
+233, 40.00, 3500.00, "Pantalon à imprimé", "Pantalon ample à imprimé abstrait, mélange de tons vibrants", "Casual", 21, 30
+234, 41.00, 3600.00, "Top colorblock", "Top asymétrique à motifs colorblock, parfait pour une tenue moderne", "Casual", 21, 30
+235, 42.00, 3700.00, "Jupe longue", "Jupe longue en satin avec des tons pastels et un motif de fleurs abstraites", "Soirée", 21, 30
+236, 43.00, 3800.00, "Veste en laine", "Veste en laine mélangée avec des détails en couleur fluo, très avant-gardiste", "Hiver", 21, 30
+237, 44.00, 3900.00, "Robe de cocktail", "Robe de cocktail en tissu fluide avec des touches de couleurs primaires", "Soirée", 21, 30
+238, 45.00, 4000.00, "Chemise oversize", "Chemise oversize en lin avec des imprimés audacieux et des couleurs éclatantes", "Casual", 21, 30
+239, 46.00, 4100.00, "Manteau trench", "Manteau trench en tissu technologique avec des éléments de couleur contrastée", "Hiver", 21, 30
+240, 47.00, 4200.00, "Pantalon à rayures", "Pantalon en laine à rayures colorées, avec une coupe élégante", "Casual", 21, 30
+
+
+241, 38.00, 3400.00, "Robe en satin", "Robe en satin noir avec une coupe fluide et un dos nu élégant", "Soirée", 22, 29
+242, 39.50, 3500.00, "Veste en velours", "Veste en velours bordeaux avec des détails en cuir sur les manches", "Formelle", 22, 29
+243, 40.00, 3600.00, "Jupe plissée", "Jupe plissée en satin avec une coupe midi et des finitions dorées", "Soirée", 22, 29
+244, 41.00, 3700.00, "Blouse à manches bouffantes", "Blouse en satin ivoire avec des manches bouffantes et un col en V", "Casual", 22, 29
+245, 42.00, 3800.00, "Pantalon à pinces", "Pantalon à pinces en satin léger, parfait pour une silhouette élégante", "Formelle", 22, 29
+246, 43.00, 3900.00, "Robe sirène", "Robe sirène en satin avec des accents métalliques et une silhouette sculptée", "Soirée", 22, 29
+247, 44.00, 4000.00, "Manteau en cachemire", "Manteau en cachemire gris clair, long, avec une coupe épurée et chic", "Hiver", 22, 29
+248, 45.00, 4100.00, "Top en soie", "Top en soie luxueuse avec des détails dorés, de coupe élégante", "Casual", 22, 29
+249, 46.00, 4200.00, "Robe en velours", "Robe en velours prune avec une coupe asymétrique et des détails en dentelle", "Soirée", 22, 29
+250, 47.00, 4300.00, "Pantalon en satin", "Pantalon en satin noir avec une taille haute et une coupe large", "Casual", 22, 29
+
+
+251, 38.00, 3500.00, "Robe d'été en lin", "Robe légère en lin bleu ciel, idéale pour les journées chaudes", "Casual", 23, 28
+252, 39.50, 3600.00, "Veste légère", "Veste en coton léger avec une coupe fluide et des boutons en bois", "Casual", 23, 28
+253, 40.00, 3700.00, "Short en lin", "Short en lin beige avec une taille élastique, parfait pour l'été", "Casual", 23, 28
+254, 41.00, 3800.00, "Top en coton", "Top simple en coton, coupe droite avec des détails minimalistes", "Casual", 23, 28
+255, 42.00, 3900.00, "Robe fluide", "Robe fluide à motifs floraux, idéale pour un look décontracté en été", "Casual", 23, 28
+256, 43.00, 4000.00, "Chemise légère", "Chemise en coton légère avec un imprimé à carreaux subtil", "Casual", 23, 28
+257, 44.00, 4100.00, "Jupe plissée", "Jupe plissée en soie, couleur pastel, parfaite pour une sortie estivale", "Casual", 23, 28
+258, 45.00, 4200.00, "Manteau d'été", "Manteau en coton léger, parfait pour une brise fraîche du soir", "Casual", 23, 28
+259, 46.00, 4300.00, "Robe d'été", "Robe maxi à imprimé floral, parfaite pour un événement estival en plein air", "Soirée", 23, 28
+260, 47.00, 4400.00, "Pantalon fluide", "Pantalon fluide à taille haute, de couleur crème et de coupe décontractée", "Casual", 23, 28
+
+
+261, 38.00, 3500.00, "Robe en coton vert", "Robe midi en coton vert mousse, légère et fluide", "Casual", 24, 27
+262, 39.50, 3600.00, "Veste légère en denim", "Veste en denim léger avec des finitions en cuir, parfaite pour l'été", "Casual", 24, 27
+263, 40.00, 3700.00, "Pantalon évasé", "Pantalon évasé en lin, couleur sable, confortable et chic", "Casual", 24, 27
+264, 41.00, 3800.00, "Blouse en soie", "Blouse fluide en soie beige avec des imprimés floraux subtils", "Casual", 24, 27
+265, 42.00, 3900.00, "Jupe midi", "Jupe midi en satin vert, avec une coupe fluide et élégante", "Casual", 24, 27
+266, 43.00, 4000.00, "Robe d'été", "Robe légère en lin à manches longues, avec un imprimé de feuillage", "Casual", 24, 27
+267, 44.00, 4100.00, "Chemise ample", "Chemise ample en coton avec un imprimé forêt, idéale pour une journée décontractée", "Casual", 24, 27
+268, 45.00, 4200.00, "Manteau léger", "Manteau léger en laine avec des éléments en cuir, parfait pour les soirées fraîches", "Hiver", 24, 27
+269, 46.00, 4300.00, "Pantalon large", "Pantalon large en lin beige, très confortable et aérien", "Casual", 24, 27
+270, 47.00, 4400.00, "Top en coton", "Top simple en coton avec des broderies florales sur les épaules", "Casual", 24, 27
+
+271, 38.00, 3600.00, "Robe en velours rouge", "Robe en velours rouge à coupe sirène, idéale pour une soirée élégante", "Soirée", 25, 26
+272, 39.50, 3700.00, "Veste en satin", "Veste en satin noir avec des broderies florales dorées, chic et sophistiquée", "Formelle", 25, 26
+273, 40.00, 3800.00, "Jupe en velours", "Jupe midi en velours bleu nuit, coupe élégante avec des détails en or", "Casual", 25, 26
+274, 41.00, 3900.00, "Blouse en satin", "Blouse en satin noir avec un col à volants et des manches bouffantes", "Casual", 25, 26
+275, 42.00, 4000.00, "Pantalon de soirée", "Pantalon de soirée en velours bleu avec des poches latérales discrètes", "Soirée", 25, 26
+276, 43.00, 4100.00, "Robe de soirée", "Robe de soirée en velours rouge avec un décolleté plongeant et une taille haute", "Soirée", 25, 26
+277, 44.00, 4200.00, "Manteau en laine", "Manteau en laine camel avec des détails en velours, idéal pour les occasions formelles", "Hiver", 25, 26
+278, 45.00, 4300.00, "Top en soie", "Top en soie ivoire avec des bretelles fines et des détails brodés", "Casual", 25, 26
+279, 46.00, 4400.00, "Pantalon en satin", "Pantalon en satin noir avec une coupe droite, très élégant et confortable", "Casual", 25, 26
+280, 47.00, 4500.00, "Robe en satin", "Robe longue en satin noir avec des détails en dentelle sur le bas", "Soirée", 25, 26
+
+
+281, 38.00, 3700.00, "Robe métallique", "Robe métallique argentée avec des détails géométriques et une silhouette futuriste", "Soirée", 26, 25
+282, 39.50, 3800.00, "Veste métallique", "Veste argentée brillante avec une coupe asymétrique et des épaules renforcées", "Formelle", 26, 25
+283, 40.00, 3900.00, "Pantalon en métal", "Pantalon en tissu métallisé avec une coupe slim, ultra tendance", "Casual", 26, 25
+284, 41.00, 4000.00, "Robe courte", "Robe courte en toile métallique, à couper le souffle, idéale pour une soirée high-tech", "Soirée", 26, 25
+285, 42.00, 4100.00, "Blouse futuriste", "Blouse argentée à manches longues et col montant, avec des détails métalliques", "Casual", 26, 25
+286, 43.00, 4200.00, "Jupe métallique", "Jupe midi argentée avec des plis métalliques pour une allure futuriste", "Soirée", 26, 25
+287, 44.00, 4300.00, "Manteau argenté", "Manteau en toile métallique argentée avec des finitions noires et argentées", "Hiver", 26, 25
+288, 45.00, 4400.00, "Top holographique", "Top holographique avec une coupe courte et un effet lumineux", "Casual", 26, 25
+289, 46.00, 4500.00, "Pantalon argenté", "Pantalon en tissu argenté avec une coupe slim et des détails noirs", "Casual", 26, 25
+290, 47.00, 4600.00, "Robe de soirée", "Robe de soirée ultra-moderne, en tissu argenté avec un effet de lumière", "Soirée", 26, 25
+
+
+291, 38.00, 3800.00, "Robe étoilée", "Robe en tulle avec des étoiles brodées en fil argenté, élégante et magique", "Soirée", 27, 24
+292, 39.50, 3900.00, "Veste en velours", "Veste en velours bleu nuit avec des détails métalliques en forme d'étoiles", "Hiver", 27, 24
+293, 40.00, 4000.00, "Jupe brillante", "Jupe midi en satin bleu foncé, avec des paillettes en forme d'étoiles", "Soirée", 27, 24
+294, 41.00, 4100.00, "Blouse à étoiles", "Blouse en soie noire avec des broderies étoilées en argent", "Casual", 27, 24
+295, 42.00, 4200.00, "Pantalon scintillant", "Pantalon scintillant bleu nuit, avec des détails en paillettes sur les côtés", "Casual", 27, 24
+296, 43.00, 4300.00, "Robe d'été étoilée", "Robe légère en tulle avec des étoiles argentées brodées, parfaite pour l'été", "Casual", 27, 24
+297, 44.00, 4400.00, "Manteau de nuit", "Manteau en laine noire avec des broderies d'étoiles lumineuses", "Hiver", 27, 24
+298, 45.00, 4500.00, "Top brillant", "Top scintillant en velours, décoré de petites étoiles en cristaux", "Casual", 27, 24
+299, 46.00, 4600.00, "Pantalon à paillettes", "Pantalon à paillettes argentées, à coupe droite et élégante", "Soirée", 27, 24
+300, 47.00, 4700.00, "Robe de soirée", "Robe de soirée en tulle noir, avec des étoiles brodées et une silhouette élégante", "Soirée", 27, 24
+
+
+
+
+
+
+
+
