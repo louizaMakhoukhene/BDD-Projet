@@ -268,3 +268,15 @@ BEGINDATA
 218, 45.00, 4000.00, "Robe longue", "Robe longue en tissu léger avec un décolleté en V et des motifs floraux frais", "Soirée", 8, 13
 219, 46.00, 4100.00, "Manteau léger", "Manteau léger en laine mélangée, parfait pour les soirées fraîches du printemps", "Hiver", 8, 13
 220, 47.00, 4200.00, "Robe à volants", "Robe à volants dans des tons pastel, évoquant le renouveau du printemps", "Casual", 8, 13
+
+
+221, 38.00, 3200.00, "Trench-coat en laine", "Trench-coat en laine beige avec des détails en cuir et des boutons en métal", "Automne", 20, 1
+222, 39.50, 3300.00, "Robe droite en tweed", "Robe droite en tweed avec un col montant, idéale pour l'automne", "Formelle", 20, 1
+223, 40.00, 3400.00, "Pantalon en laine", "Pantalon en laine coupe droite, gris, parfait pour une silhouette élégante", "Casual", 20, 1
+224, 41.00, 3500.00, "Veste militaire", "Veste militaire en tweed avec des détails dorés, une touche moderne de la mode classique", "Formelle", 20, 1
+225, 42.00, 3600.00, "Blouse en soie", "Blouse en soie à imprimé géométrique, avec des manches évasées", "Casual", 20, 1
+226, 43.00, 3700.00, "Jupe en cuir", "Jupe en cuir noir avec une coupe asymétrique et des détails zippés", "Casual", 20, 1
+227, 44.00, 3800.00, "Manteau double-breasted", "Manteau double-breasted en laine et cashmere, de coupe cintrée", "Hiver", 20, 1
+228, 45.00, 3900.00, "Pull en cachemire", "Pull en cachemire doux de couleur crème, avec un col roulé", "Casual", 20, 1
+229, 46.00, 4000.00, "Robe à plis", "Robe midi à plis en laine, avec un col montant et des détails subtils en or", "Soirée", 20, 1
+230, 47.00, 4100.00, "Pantalon fluide", "Pantalon fluide à taille haute en tissu mélangé, confortable et élégant", "Casual", 20, 1
