@@ -510,7 +510,7 @@ VALUES (33, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');
 
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode)
-VALUES (33, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Valentino');
+VALUES (33, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Off-White');
 
 
 
@@ -526,7 +526,7 @@ VALUES (33, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnol
 
 
 INSERT INTO Collection (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES (34, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 15, 'Versace');
+VALUES (34, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 33, 'Off-White');
 
 
 
@@ -539,3 +539,36 @@ VALUES (34, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 15, 'Versace')
 
 
 ---------------------------------
+
+INSERT INTO Defile (nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode)  
+VALUES (
+    13, 
+    'Paris Fashion Center', 
+    TO_TIMESTAMP('2024-12-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+    TO_TIMESTAMP('2024-12-10 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
+    TO_DATE('2024-12-10', 'YYYY-MM-DD'), 
+    'Automne Chic', 
+    'Défilé de mode présentant la collection automne 2024.', 
+    500, 
+    'Off-White'
+);
+
+
+---------------------------------
+
+-- INSERTION A LA TABLE Tenue
+
+
+---------------------------------
+
+INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur)  
+VALUES (
+    331, 
+    36.5, 
+    299.99, 
+    'Robe Éternelle', 
+    'Robe de soirée élégante en soie avec des détails brodés.', 
+    'Soirée', 
+    34, 
+    33
+);

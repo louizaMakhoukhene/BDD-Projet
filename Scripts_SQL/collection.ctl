@@ -1,3 +1,4 @@
+--Collection ctl
 LOAD DATA
 INFILE *
 APPEND
