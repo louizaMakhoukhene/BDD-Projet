@@ -431,7 +431,7 @@ VALUES ('Off-White', 'Virgil Abloh', TO_DATE('2012-01-01', 'YYYY-MM-DD'), 'Milan
 
 
 INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie)
-VALUES (33, 'Khan', 'Aaliyah', 27, 174.00, 56.00, 'Indienne', 'Feminin', 'Sablier');
+VALUES (100, 'Khan', 'Aaliyah', 27, 174.00, 56.00, 'Indienne', 'Feminin', 'Sablier');
 
 
 
@@ -449,7 +449,7 @@ VALUES (33, 'Khan', 'Aaliyah', 27, 174.00, 56.00, 'Indienne', 'Feminin', 'Sablie
 
 
 INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession)
-VALUES (33, 'Durand', 'Elise', TO_DATE('1992-03-15', 'YYYY-MM-DD'), 'Francaise', 'Peintre');
+VALUES (100, 'Durand', 'Elise', TO_DATE('1992-03-15', 'YYYY-MM-DD'), 'Francaise', 'Peintre');
 
 
 
@@ -468,7 +468,7 @@ VALUES (33, 'Durand', 'Elise', TO_DATE('1992-03-15', 'YYYY-MM-DD'), 'Francaise',
 
 
 INSERT INTO Journaliste (nJournaliste, nom, prenom, media, specialite, telephone, mail)
-VALUES (32, 'Klein', 'Marie', 'France Info', 'Sante', '0987654321', 'marie.klein@example.com');
+VALUES (100, 'Klein', 'Marie', 'France Info', 'Sante', '0987654321', 'marie.klein@example.com');
 
 
 
@@ -489,7 +489,7 @@ VALUES (32, 'Klein', 'Marie', 'France Info', 'Sante', '0987654321', 'marie.klein
 
 
 INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone)
-VALUES (33, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');
+VALUES (100, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');
 
 
 
@@ -510,7 +510,7 @@ VALUES (33, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');
 
 
 INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode)
-VALUES (33, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Off-White');
+VALUES (100, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Off-White');
 
 
 
@@ -526,7 +526,7 @@ VALUES (33, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnol
 
 
 INSERT INTO Collection (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES (34, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 33, 'Off-White');
+VALUES (100, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 10, 100, 'Off-White');
 
 
 
@@ -542,7 +542,7 @@ VALUES (34, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 33, 'Off-White
 
 INSERT INTO Defile (nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode)  
 VALUES (
-    13, 
+    100, 
     'Paris Fashion Center', 
     TO_TIMESTAMP('2024-12-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
     TO_TIMESTAMP('2024-12-10 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 
@@ -569,6 +569,6 @@ VALUES (
     'Robe Éternelle', 
     'Robe de soirée élégante en soie avec des détails brodés.', 
     'Soirée', 
-    34, 
-    33
+    100, 
+    100
 );
