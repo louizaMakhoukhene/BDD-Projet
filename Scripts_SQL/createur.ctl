@@ -6,8 +6,7 @@ INTO TABLE Createur
 FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
 (nCreateur, prenom, nom, dateNaissance "TO_DATE(:dateNaissance, 'YYYY-MM-DD')", nationalite, anneeExperienceCreateur, nomMaisonMode)
 BEGINDATA
-31, "Jamal", "Maouchan", "1982-11-30", "Française", 12, "Chanel"
-32, "Elyes", "Auchan", "1987-07-10", "Belge", 6, "Chanel"
+
 1, "Alice", "Dupont", "1985-06-15", "Italienne", 10, "Chanel"
 2, "Benjamin", "Martin", "1990-03-22", "Francais", 8, "Dior"
 3, "Clara", "Leroy", "1988-11-05", "Anglaise", 12, "Louis Vuitton"
@@ -38,3 +37,5 @@ BEGINDATA
 28, "Boris", "Vasseur", "1992-05-09", "Indien", 5, "Givenchy"
 29, "Cecile", "Marin", "1985-01-15", "Belge", 10, "Burberry"
 30, "Dorian", "Renaud", "1984-06-20", "Albanaise", 12, "Armani"
+31, "Jamal", "Maouchan", "1982-11-30", "Française", 12, "Chanel"
+32, "Elyes", "Auchan", "1987-07-10", "Belge", 6, "Chanel"
