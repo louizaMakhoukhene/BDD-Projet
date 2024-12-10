@@ -233,8 +233,68 @@ VALUES (TO_TIMESTAMP('1995-12-01 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTA
 
 
 -- INSERTION A LA TABLE AssisterJ
-INSERT INTO AssisterJ (heureDepart, heureArrivee, nDefile, nJournaliste) 
-VALUES (TO_TIMESTAMP('2024-12-10 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('2024-12-10 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), 100, 100);
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nDefile, nJournaliste) VALUES (TO_TIMESTAMP('2024-12-10 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('2024-12-10 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), 100, 100);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1985-06-15 16:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1985-06-15 18:45:00', 'YYYY-MM-DD HH24:MI:SS'), 1, 1);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1987-07-15 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1987-07-15 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2, 2);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1990-09-10 17:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1990-09-10 19:20:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 3);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1990-03-22 15:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1990-03-22 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 4, 4);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1993-01-10 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1993-01-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 5, 5);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1992-01-30 16:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1992-01-30 19:00:00', 'YYYY-MM-DD HH24:MI:SS'), 6, 6);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1994-03-05 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1994-03-05 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 7, 7);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1996-11-20 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1996-11-20 18:40:00', 'YYYY-MM-DD HH24:MI:SS'), 8, 8);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1999-06-10 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1999-06-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 9, 9);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1995-02-05 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1995-02-05 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 10, 10);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1992-08-01 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1992-08-01 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 11, 11);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1996-03-15 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1996-03-15 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 12, 12);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1999-04-12 16:20:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1999-04-12 18:40:00', 'YYYY-MM-DD HH24:MI:SS'), 13, 13);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1991-02-15 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1991-02-15 18:10:00', 'YYYY-MM-DD HH24:MI:SS'), 14, 14);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1993-06-10 15:20:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1993-06-10 17:40:00', 'YYYY-MM-DD HH24:MI:SS'), 15, 15);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1994-11-12 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1994-11-12 18:40:00', 'YYYY-MM-DD HH24:MI:SS'), 16, 16);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1997-05-23 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1997-05-23 18:10:00', 'YYYY-MM-DD HH24:MI:SS'), 17, 17);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1994-12-01 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1994-12-01 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 18, 18);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1995-06-20 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1995-06-20 18:20:00', 'YYYY-MM-DD HH24:MI:SS'), 19, 19);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1994-08-22 15:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1994-08-22 17:50:00', 'YYYY-MM-DD HH24:MI:SS'), 20, 20);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1996-03-10 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1996-03-10 18:10:00', 'YYYY-MM-DD HH24:MI:SS'), 21, 21);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1994-12-02 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1994-12-02 18:20:00', 'YYYY-MM-DD HH24:MI:SS'), 22, 22);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1995-09-25 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1995-09-25 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 23, 23);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1996-03-15 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1996-03-15 18:30:00', 'YYYY-MM-DD HH24:MI:SS'), 24, 24);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1999-05-06 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1999-05-06 18:30:00', 'YYYY-MM-DD HH24:MI:SS'), 25, 25);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1995-04-12 16:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1995-04-12 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), 26, 26);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1997-09-01 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1997-09-01 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 27, 27);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1997-02-10 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1997-02-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 28, 28);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1997-01-30 15:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1997-01-30 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 29, 29);
+
+INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1995-12-01 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1995-12-01 18:20:00', 'YYYY-MM-DD HH24:MI:SS'), 30, 30);
+
 
 -- INSERTION A LA TABLE Sponsoriser
 
