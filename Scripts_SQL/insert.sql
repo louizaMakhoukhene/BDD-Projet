@@ -297,6 +297,64 @@ INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES 
 
 
 -- INSERTION A LA TABLE Sponsoriser
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile)  VALUES (TO_DATE('1987-07-15', 'YYYY-MM-DD'), 'Beaute', 32, 2);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1990-09-10', 'YYYY-MM-DD'), 'Mode', 1, 3);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1990-03-22', 'YYYY-MM-DD'), 'Beaute', 2, 4);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1993-01-10', 'YYYY-MM-DD'), 'Accessoires', 3, 5);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1992-01-30', 'YYYY-MM-DD'), 'Vetements', 4, 6);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1994-03-05', 'YYYY-MM-DD'), 'Cosmetiques', 5, 7);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1996-11-20', 'YYYY-MM-DD'), 'Accessoires', 6, 8);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1999-06-10', 'YYYY-MM-DD'), 'Mode', 7, 9);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-02-05', 'YYYY-MM-DD'), 'Beaute', 8, 10);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1992-08-01', 'YYYY-MM-DD'), 'Cosmetiques', 9, 11);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1996-03-15', 'YYYY-MM-DD'), 'Mode', 10, 12);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1999-04-12', 'YYYY-MM-DD'), 'Accessoires', 11, 13);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1991-02-15', 'YYYY-MM-DD'), 'Mode', 12, 14);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1993-06-10', 'YYYY-MM-DD'), 'Beaute', 13, 15);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1994-11-12', 'YYYY-MM-DD'), 'Vetements', 14, 16);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1997-05-23', 'YYYY-MM-DD'), 'Cosmetiques', 15, 17);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1994-12-01', 'YYYY-MM-DD'), 'Accessoires', 16, 18);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-06-20', 'YYYY-MM-DD'), 'Mode', 17, 19);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1994-08-22', 'YYYY-MM-DD'), 'Beaute', 18, 20);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1996-03-10', 'YYYY-MM-DD'), 'Accessoires', 19, 21);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1994-12-02', 'YYYY-MM-DD'), 'Mode', 20, 22);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-09-25', 'YYYY-MM-DD'), 'Beaute', 21, 23);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1996-03-15', 'YYYY-MM-DD'), 'Mode', 22, 24);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1999-05-06', 'YYYY-MM-DD'), 'Accessoires', 23, 25);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-04-12', 'YYYY-MM-DD'), 'Cosmetiques', 24, 26);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1997-09-01', 'YYYY-MM-DD'), 'Mode', 25, 27);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1997-02-10', 'YYYY-MM-DD'), 'Beaute', 26, 28);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1997-01-30', 'YYYY-MM-DD'), 'Accessoires', 27, 29);
+
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-12-01', 'YYYY-MM-DD'), 'Mode', 28, 30);
+
 
 -- INSERTION A LA TABLE InvterviewC
 
