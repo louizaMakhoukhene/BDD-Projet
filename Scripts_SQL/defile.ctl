@@ -35,5 +35,5 @@ BEGINDATA
 27, "Paris", "1997-09-01 15:45:00", "1997-09-01 18:10:00", "1997-09-01", "Forêt de Lumière", "Une lumière douce traversant une forêt magique", 100, "Tommy Hilfiger"
 28, "Paris", "1995-12-01 16:10:00", "1995-12-01 18:25:00", "1995-12-01", "Sable et Soie", "Collection inspirée des textures de sable et soie", 100, "Vuitton"
 29, "Paris", "1997-02-10 15:45:00", "1997-02-10 18:00:00", "1997-02-10", "Rêverie Baroque", "Une rêverie inspirée des époques baroques et de leur luxe", 90, "Dior"
-30, "Paris", "1997-01-30 15:50:00", "1997-01-30 18:05:00", "1997-01-30", "Mille Reflets", "Reflets et jeux de lumière dans une collection féerique", 100, "Loewe"
+30, "Paris", "1997-01-30 15:50:00", "1997-01-30 18:05:00", "1997-01-30", "Mille Reflets", "Reflets et jeux de lumière dans une collection féerique", 100, "Prada"
 ENDDATA
