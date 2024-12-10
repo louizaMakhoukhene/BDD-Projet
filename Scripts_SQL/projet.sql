@@ -394,7 +394,6 @@ end;
 /
 
 -------------------Defile-----------
-------------------------------------
 
 ------------verifie que chaque defiles commence bien a partir de 14H----------------------------------
 CREATE OR REPLACE TRIGGER chk_heure_debut

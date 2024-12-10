@@ -1,8 +1,14 @@
---Interview createur ctl
 LOAD DATA
 INFILE *
 APPEND
 INTO TABLE InterviewC
 FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
-( nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
+(
+    nInterview,
+    heureDebut TIMESTAMP "YYYY-MM-DD HH24:MI:SS",
+    heureFin TIMESTAMP "YYYY-MM-DD HH24:MI:SS",
+    nJournaliste,
+    nCreateur  
+)
 BEGINDATA
+1, "2024-12-10 09:00:00", "2024-12-10 09:30:00", 3, 12

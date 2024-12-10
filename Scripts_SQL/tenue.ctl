@@ -5,8 +5,8 @@ INTO TABLE Tenue
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur)
 BEGINDATA
-1, 38.00, 2200.00, "Robe en soie", "Robe fluide en soie pour l'été", " Soirée",31,30
-2,39.00,2400.00,"Veste en tweed","Veste en tweed à col en fourrure","Formelle",31,30
+1, 38.00, 2200.00, "Robe en soie", "Robe fluide en soie pour l'été", "Soirée", 31, 30
+2, 39.00, 2400.00, "Veste en tweed", "Veste en tweed à col en fourrure", "Formelle", 31, 30
 3, 40.00, 2500.00, "Robe longue", "Robe longue en satin rouge pour une soirée", "Soirée", 31, 30
 4, 37.50, 1800.00, "Blouse en dentelle", "Blouse en dentelle noire pour une soirée chic", "Soirée", 31, 30
 5, 38.50, 2000.00, "Jupe en cuir", "Jupe en cuir noir pour un look audacieux", "Casual", 31, 30
@@ -15,8 +15,6 @@ BEGINDATA
 8, 39.50, 2400.00, "Top en soie", "Top en soie blanche pour l'été", "Casual", 31, 30
 9, 41.50, 2600.00, "Manteau en laine", "Manteau en laine pour l'hiver", "Hiver", 31, 30
 10, 42.50, 2500.00, "Robe de cocktail", "Robe de cocktail en crêpe de soie", "Soirée", 31, 30
-
-
 11, 38.00, 1900.00, "Veste en lin", "Veste en lin élégante pour l'été", "Casual", 32, 29
 12, 39.50, 2000.00, "Robe midi", "Robe midi avec un motif floral, idéale pour un déjeuner", "Casual", 32, 29
 13, 40.00, 2100.00, "Chemise à manches longues", "Chemise élégante à manches longues en coton", "Formelle", 32, 29
@@ -27,8 +25,6 @@ BEGINDATA
 18, 39.00, 2000.00, "Blouse en crêpe", "Blouse en crêpe légère pour l'été", "Casual", 32, 29
 19, 41.00, 2400.00, "Manteau en laine", "Manteau long en laine, parfait pour les journées froides", "Hiver", 32, 29
 20, 43.00, 2500.00, "Robe fluide", "Robe fluide en satin pour un look estival", "Soirée", 32, 29
-
-
 21, 38.50, 1800.00, "Robe d'été", "Robe légère d'été en coton", "Casual", 33, 28
 22, 40.00, 2100.00, "Veste en tweed", "Veste en tweed pour un look chic et intemporel", "Formelle", 33, 28
 23, 39.00, 1900.00, "Robe cocktail", "Robe cocktail en soie rouge, élégante et chic", "Soirée", 33, 28
@@ -39,8 +35,6 @@ BEGINDATA
 28, 39.50, 2000.00, "Blouse en chiffon", "Blouse en chiffon fluide pour une sortie", "Casual", 33, 28
 29, 40.50, 2200.00, "Robe en cuir", "Robe ajustée en cuir pour un look audacieux", "Formelle", 33, 28
 30, 41.00, 2300.00, "Manteau d'hiver", "Manteau d'hiver en laine, chaud et élégant", "Hiver", 33, 28
-
-
 31, 40.00, 2200.00, "Robe en crêpe", "Robe en crêpe fluide pour une soirée chic", "Soirée", 1, 20
 32, 39.00, 2100.00, "Veste en laine", "Veste en laine avec col en fourrure pour l'hiver", "Hiver", 1, 20
 33, 42.50, 2300.00, "Robe bustier", "Robe bustier élégante pour un événement de gala", "Soirée", 1, 20
@@ -51,8 +45,6 @@ BEGINDATA
 38, 40.50, 2400.00, "Blazer cintré", "Blazer cintré pour un look professionnel", "Formelle", 1, 20
 39, 42.00, 2300.00, "Robe en velours", "Robe en velours pour un look chic et confortable", "Soirée", 1, 20
 40, 41.00, 2100.00, "Top en soie", "Top en soie pour un look élégant et sophistiqué", "Formelle", 1, 20
-
-
 41, 38.00, 2000.00, "Robe en soie", "Robe fluide en soie pour l'été", "Soirée", 2, 19
 42, 39.50, 2100.00, "Veste en tweed", "Veste en tweed à col en fourrure", "Formelle", 2, 19
 43, 41.00, 2300.00, "Robe en satin", "Robe en satin rouge pour un dîner élégant", "Soirée", 2, 19
@@ -63,8 +55,6 @@ BEGINDATA
 48, 40.00, 2200.00, "Blouse en soie", "Blouse en soie légère pour l'été", "Casual", 2, 19
 49, 42.00, 2400.00, "Manteau en laine", "Manteau en laine élégant pour l'hiver", "Hiver", 2, 19
 50, 43.00, 2500.00, "Robe en crêpe", "Robe élégante en crêpe pour un gala", "Soirée", 2, 19
-
-
 51, 38.00, 2200.00, "Robe en velours", "Robe en velours rouge profond, parfaite pour une soirée", "Soirée", 3, 18
 52, 39.00, 2300.00, "Veste en laine", "Veste en laine noire pour un look sophistiqué", "Formelle", 3, 18
 53, 40.00, 2400.00, "Robe droite", "Robe droite avec des détails métalliques", "Soirée", 3, 18
@@ -75,8 +65,6 @@ BEGINDATA
 58, 41.50, 2300.00, "Jupe en soie", "Jupe en soie grise pour un look sophistiqué", "Casual", 3, 18
 59, 44.00, 2500.00, "Manteau en laine", "Manteau long en laine pour les mois froids", "Hiver", 3, 18
 60, 45.00, 2600.00, "Robe de cocktail", "Robe de cocktail en satin rouge pour un événement chic", "Soirée", 3, 18
-
-
 61, 38.00, 2200.00, "Robe en soie", "Robe fluide en soie pour un look printanier", "Soirée", 4, 17
 62, 39.50, 2300.00, "Veste en velours", "Veste en velours bordeaux pour un look élégant", "Formelle", 4, 17
 63, 40.00, 2400.00, "Top en dentelle", "Top en dentelle noire avec détails dorés", "Casual", 4, 17
@@ -87,8 +75,6 @@ BEGINDATA
 68, 45.00, 2900.00, "Robe de cocktail", "Robe de cocktail avec strass pour briller en soirée", "Soirée", 4, 17
 69, 46.00, 3000.00, "Manteau en fourrure", "Manteau en fourrure pour les soirées d'hiver", "Hiver", 4, 17
 70, 47.00, 3100.00, "Robe midi", "Robe midi avec décolleté plongeant pour une soirée chic", "Soirée", 4, 17
-
-
 71, 38.00, 2300.00, "Robe vintage", "Robe vintage à pois pour une sortie décontractée", "Casual", 5, 16
 72, 39.50, 2400.00, "Veste en cuir", "Veste en cuir vintage avec fermetures dorées", "Formelle", 5, 16
 73, 40.00, 2500.00, "Robe midi", "Robe midi en crêpe pour une soirée formelle", "Soirée", 5, 16
@@ -99,8 +85,6 @@ BEGINDATA
 78, 45.00, 3000.00, "Robe de cocktail", "Robe de cocktail en satin doré", "Soirée", 5, 16
 79, 46.00, 3100.00, "Manteau en laine", "Manteau long en laine avec boutons dorés", "Hiver", 5, 16
 80, 47.00, 3200.00, "Pantalon en velours", "Pantalon en velours côtelé pour l'hiver", "Casual", 5, 16
-
-
 81, 36.00, 2200.00, "Robe en lin", "Robe en lin beige légère et fluide, idéale pour l'été", "Casual", 9, 12
 82, 37.50, 2300.00, "Veste en denim", "Veste en denim oversize avec broderies florales", "Casual", 9, 12
 83, 38.00, 2400.00, "Blouse en coton", "Blouse blanche en coton avec manches bouffantes", "Casual", 9, 12
@@ -111,8 +95,6 @@ BEGINDATA
 88, 43.00, 2900.00, "Robe portefeuille", "Robe portefeuille en soie pour une soirée élégante", "Soirée", 9, 12
 89, 44.00, 3000.00, "Manteau léger", "Manteau en laine léger à double boutonnage pour les soirées fraîches", "Hiver", 9, 12
 90, 45.00, 3100.00, "Robe de soirée", "Robe de soirée en velours bleu pour une occasion spéciale", "Soirée", 9, 12
-
-
 91, 38.00, 2500.00, "Robe en soie", "Robe en soie noire avec des éclats d'ébène pour un look glamour", "Soirée", 10, 11
 92, 39.50, 2600.00, "Veste en laine", "Veste en laine noir avec des broderies dorées et des boutons en ébène", "Formelle", 10, 11
 93, 40.00, 2700.00, "Pantalon en cuir", "Pantalon en cuir noir pour un look chic et intemporel", "Casual", 10, 11
@@ -123,8 +105,6 @@ BEGINDATA
 98, 45.00, 3200.00, "Jupe en velours", "Jupe en velours noir pour une allure luxueuse", "Casual", 10, 11
 99, 46.00, 3300.00, "Robe de cocktail", "Robe de cocktail en satin et ébène, pour un look éclatant", "Soirée", 10, 11
 100, 47.00, 3400.00, "Gilet en cachemire", "Gilet en cachemire noir avec boutons en métal pour une touche élégante", "Casual", 10, 11
-
-
 101, 38.00, 2300.00, "Robe noire", "Robe noire en satin pour une soirée chic", "Soirée", 11, 10
 102, 39.50, 2400.00, "Veste en cuir", "Veste en cuir noire pour un look urbain et moderne", "Casual", 11, 10
 103, 40.00, 2500.00, "Pantalon en velours", "Pantalon en velours côtelé pour un look d'hiver élégant", "Casual", 11, 10
@@ -135,8 +115,6 @@ BEGINDATA
 108, 45.00, 3000.00, "Robe de soirée", "Robe de soirée en satin rouge pour un événement spécial", "Soirée", 11, 10
 109, 46.00, 3100.00, "Manteau en laine", "Manteau en laine noir pour les mois froids", "Hiver", 11, 10
 110, 47.00, 3200.00, "Pantalon taille haute", "Pantalon taille haute noir pour une silhouette allongée", "Casual", 11, 10
-
-
 111, 38.00, 2200.00, "Robe en dentelle", "Robe en dentelle blanche pour un look délicat", "Soirée", 12, 9
 112, 39.50, 2300.00, "Veste en brocart", "Veste en brocart doré pour une allure royale", "Formelle", 12, 9
 113, 40.00, 2400.00, "Blouse en soie", "Blouse en soie blanche avec broderies dorées", "Casual", 12, 9
@@ -147,8 +125,6 @@ BEGINDATA
 118, 45.00, 2900.00, "Manteau en velours", "Manteau en velours bleu pour l'hiver", "Hiver", 12, 9
 119, 46.00, 3000.00, "Pantalon en cuir", "Pantalon en cuir noir pour un look moderne", "Casual", 12, 9
 120, 47.00, 3100.00, "Robe longue", "Robe longue en satin blanc avec un décolleté profond", "Soirée", 12, 9
-
-
 121, 38.00, 2100.00, "Robe en velours", "Robe en velours vintage couleur bordeaux, idéale pour l'automne", "Soirée", 13, 8
 122, 39.50, 2200.00, "Blouse en satin", "Blouse en satin crème avec détails en dentelle", "Casual", 13, 8
 123, 40.00, 2300.00, "Pantalon taille haute", "Pantalon taille haute noir à la coupe rétro", "Casual", 13, 8
@@ -159,8 +135,6 @@ BEGINDATA
 128, 45.00, 2800.00, "Top en crochet", "Top en crochet blanc avec détails bohèmes", "Casual", 13, 8
 129, 46.00, 2900.00, "Manteau en laine", "Manteau en laine beige pour l'hiver avec une ceinture en cuir", "Hiver", 13, 8
 130, 47.00, 3000.00, "Blazer en velours", "Blazer en velours bleu marine pour un look intemporel", "Formelle", 13, 8
-
-
 131, 38.00, 2200.00, "Robe colorée", "Robe en coton colorée inspirée des œuvres d'art abstrait", "Casual", 14, 7
 132, 39.50, 2300.00, "T-shirt graphique", "T-shirt avec un imprimé de pinceau inspiré des peintures modernes", "Casual", 14, 7
 133, 40.00, 2400.00, "Pantalon fluide", "Pantalon fluide avec des éclats de couleurs vives", "Casual", 14, 7
@@ -171,8 +145,6 @@ BEGINDATA
 138, 45.00, 2900.00, "Top en soie", "Top en soie avec imprimé artistique inspiré de peintures impressionnistes", "Casual", 14, 7
 139, 46.00, 3000.00, "Robe longue", "Robe longue fluide avec des couleurs éclatantes et des détails abstraits", "Soirée", 14, 7
 140, 47.00, 3100.00, "Veste en cuir", "Veste en cuir de couleur vive avec des détails artistiques", "Casual", 14, 7
-
-
 141, 38.00, 2300.00, "Robe en soie", "Robe en soie dorée avec un décolleté profond pour une soirée d'exception", "Soirée", 15, 6
 142, 39.50, 2400.00, "Veste en satin", "Veste en satin noir et or, idéale pour un look sophistiqué", "Formelle", 15, 6
 143, 40.00, 2500.00, "Top en soie", "Top en soie beige avec broderies dorées pour une allure chic", "Casual", 15, 6
@@ -183,8 +155,6 @@ BEGINDATA
 148, 45.00, 3000.00, "Robe de cocktail", "Robe de cocktail or et soie pour une allure éblouissante", "Soirée", 15, 6
 149, 46.00, 3100.00, "Blouse en satin", "Blouse en satin dorée avec de délicats motifs floraux", "Casual", 15, 6
 150, 47.00, 3200.00, "Pantalon palazzo", "Pantalon palazzo doré pour une silhouette fluide et élégante", "Casual", 15, 6
-
-
 151, 38.00, 2200.00, "Robe en laine", "Robe en laine orange automne pour une chaleur douce", "Casual", 16, 5
 152, 39.50, 2300.00, "Jupe en tweed", "Jupe en tweed camel, parfaite pour la saison automnale", "Casual", 16, 5
 153, 40.00, 2400.00, "Blouse en velours", "Blouse en velours bordeaux pour une allure chic", "Casual", 16, 5
@@ -195,8 +165,6 @@ BEGINDATA
 158, 45.00, 2900.00, "Manteau en laine", "Manteau en laine gris pour affronter les premières fraîches", "Hiver", 16, 5
 159, 46.00, 3000.00, "Robe en laine", "Robe en laine écarlate pour les soirées fraîches d'automne", "Soirée", 16, 5
 160, 47.00, 3100.00, "Cardigan en cachemire", "Cardigan en cachemire beige pour un confort absolu", "Casual", 16, 5
-
-
 161, 38.00, 2200.00, "Robe fluide", "Robe fluide couleur émeraude avec une coupe élégante et décontractée", "Casual", 17, 4
 162, 39.50, 2300.00, "Blouse en satin", "Blouse en satin vert émeraude avec des détails en dentelle", "Casual", 17, 4
 163, 40.00, 2400.00, "Jupe midi", "Jupe midi vert émeraude avec des imprimés floraux dorés", "Casual", 17, 4
@@ -207,8 +175,6 @@ BEGINDATA
 168, 45.00, 2900.00, "Manteau en laine", "Manteau en laine vert émeraude pour les journées fraîches", "Hiver", 17, 4
 169, 46.00, 3000.00, "Robe de soirée", "Robe de soirée en velours vert émeraude avec des accents dorés", "Soirée", 17, 4
 170, 47.00, 3100.00, "Cardigan en cachemire", "Cardigan en cachemire vert émeraude pour un look cosy", "Casual", 17, 4
-
-
 171, 38.00, 2400.00, "Robe en soie noire", "Robe en soie noire avec un motif céleste pour une allure mystérieuse", "Soirée", 18, 3
 172, 39.50, 2500.00, "Blouse à volants", "Blouse noire à volants avec des motifs inspirés de la nuit étoilée", "Casual", 18, 3
 173, 40.00, 2600.00, "Pantalon en cuir", "Pantalon en cuir noir pour un look audacieux et moderne", "Casual", 18, 3
@@ -219,8 +185,6 @@ BEGINDATA
 178, 45.00, 3100.00, "Manteau en laine", "Manteau en laine noire avec un col en fourrure pour une allure élégante", "Hiver", 18, 3
 179, 46.00, 3200.00, "Robe moulante", "Robe moulante noire avec des détails métalliques pour une silhouette sensuelle", "Soirée", 18, 3
 180, 47.00, 3300.00, "Top en satin", "Top en satin noir avec une coupe asymétrique et des manches larges", "Casual", 18, 3
-
-
 181, 38.00, 2100.00, "Robe en velours", "Robe en velours noire avec des détails en fil d'or pour un effet lumineux", "Soirée", 19, 2
 182, 39.50, 2200.00, "Veste en cuir", "Veste en cuir noir avec des détails argentés pour un look nocturne", "Casual", 19, 2
 183, 40.00, 2300.00, "Blouse en satin", "Blouse en satin bleu nuit avec un léger décolleté", "Casual", 19, 2
@@ -231,8 +195,6 @@ BEGINDATA
 188, 45.00, 2800.00, "Manteau en laine", "Manteau en laine noire avec une coupe classique et une doublure en satin", "Hiver", 19, 2
 189, 46.00, 2900.00, "Robe moulante", "Robe moulante noire avec des détails en dentelle pour un look sexy", "Soirée", 19, 2
 190, 47.00, 3000.00, "Cardigan en cachemire", "Cardigan en cachemire noir pour un confort chaleureux et stylé", "Casual", 19, 2
-
-
 191, 38.00, 3200.00, "Robe en soie multicolore", "Robe en soie multicolore inspirée des mouvements artistiques, avec des touches de peinture vive", "Soirée", 6, 15
 192, 39.50, 3300.00, "Blouse avec imprimé", "Blouse légère avec un imprimé abstrait inspiré des œuvres visuelles de la modernité", "Casual", 6, 15
 193, 40.00, 3400.00, "Pantalon large en satin", "Pantalon large en satin avec des couleurs vives et un motif graphique", "Casual", 6, 15
@@ -243,8 +205,6 @@ BEGINDATA
 198, 45.00, 3900.00, "Pantalon en cuir", "Pantalon en cuir avec une finition brillante et des accents métalliques", "Casual", 6, 15
 199, 46.00, 4000.00, "Blouse en satin", "Blouse en satin aux couleurs vives avec une coupe moderne et artistique", "Casual", 6, 15
 200, 47.00, 4100.00, "Manteau long", "Manteau long avec un motif pictural qui joue avec des tons de bleu, jaune et rouge", "Hiver", 6, 15
-
-
 201, 38.00, 4200.00, "Robe de soirée en satin", "Robe de soirée en satin doré avec des détails en pierres précieuses", "Soirée", 7, 14
 202, 39.50, 4300.00, "Veste en fourrure", "Veste en fourrure artificielle dans des tons riches de bronze et or", "Hiver", 7, 14
 203, 40.00, 4400.00, "Jupe en cuir", "Jupe en cuir noir avec des broderies dorées complexes", "Casual", 7, 14
@@ -255,8 +215,6 @@ BEGINDATA
 208, 45.00, 4900.00, "Manteau en laine", "Manteau en laine doublé de fourrure avec des détails luxueux", "Hiver", 7, 14
 209, 46.00, 5000.00, "Robe à paillettes", "Robe à paillettes dorées pour un look éclatant lors d'un événement de nuit", "Soirée", 7, 14
 210, 47.00, 5100.00, "Robe longue", "Robe longue avec une coupe fluide, ornée de motifs floraux en or", "Soirée", 7, 14
-
-
 211, 38.00, 3300.00, "Robe fluide", "Robe fluide en lin avec des motifs floraux délicats, parfaite pour le printemps", "Casual", 8, 13
 212, 39.50, 3400.00, "Blouse en soie", "Blouse en soie rose pâle avec une coupe moderne et des détails de broderie", "Casual", 8, 13
 213, 40.00, 3500.00, "Jupe midi", "Jupe midi en coton avec des imprimés floraux et une taille élastique", "Casual", 8, 13
@@ -267,8 +225,6 @@ BEGINDATA
 218, 45.00, 4000.00, "Robe longue", "Robe longue en tissu léger avec un décolleté en V et des motifs floraux frais", "Soirée", 8, 13
 219, 46.00, 4100.00, "Manteau léger", "Manteau léger en laine mélangée, parfait pour les soirées fraîches du printemps", "Hiver", 8, 13
 220, 47.00, 4200.00, "Robe à volants", "Robe à volants dans des tons pastel, évoquant le renouveau du printemps", "Casual", 8, 13
-
-
 221, 38.00, 3200.00, "Trench-coat en laine", "Trench-coat en laine beige avec des détails en cuir et des boutons en métal", "Automne", 20, 1
 222, 39.50, 3300.00, "Robe droite en tweed", "Robe droite en tweed avec un col montant, idéale pour l'automne", "Formelle", 20, 1
 223, 40.00, 3400.00, "Pantalon en laine", "Pantalon en laine coupe droite, gris, parfait pour une silhouette élégante", "Casual", 20, 1
@@ -279,8 +235,6 @@ BEGINDATA
 228, 45.00, 3900.00, "Pull en cachemire", "Pull en cachemire doux de couleur crème, avec un col roulé", "Casual", 20, 1
 229, 46.00, 4000.00, "Robe à plis", "Robe midi à plis en laine, avec un col montant et des détails subtils en or", "Soirée", 20, 1
 230, 47.00, 4100.00, "Pantalon fluide", "Pantalon fluide à taille haute en tissu mélangé, confortable et élégant", "Casual", 20, 1
-
-
 231, 38.00, 3300.00, "Blouse multicolore", "Blouse en soie avec des motifs géométriques en couleurs vives et éclatantes", "Casual", 21, 30
 232, 39.50, 3400.00, "Robe à dégradé", "Robe légère à dégradé de couleurs vives, idéale pour l'été", "Soirée", 21, 30
 233, 40.00, 3500.00, "Pantalon à imprimé", "Pantalon ample à imprimé abstrait, mélange de tons vibrants", "Casual", 21, 30
@@ -291,8 +245,6 @@ BEGINDATA
 238, 45.00, 4000.00, "Chemise oversize", "Chemise oversize en lin avec des imprimés audacieux et des couleurs éclatantes", "Casual", 21, 30
 239, 46.00, 4100.00, "Manteau trench", "Manteau trench en tissu technologique avec des éléments de couleur contrastée", "Hiver", 21, 30
 240, 47.00, 4200.00, "Pantalon à rayures", "Pantalon en laine à rayures colorées, avec une coupe élégante", "Casual", 21, 30
-
-
 241, 38.00, 3400.00, "Robe en satin", "Robe en satin noir avec une coupe fluide et un dos nu élégant", "Soirée", 22, 29
 242, 39.50, 3500.00, "Veste en velours", "Veste en velours bordeaux avec des détails en cuir sur les manches", "Formelle", 22, 29
 243, 40.00, 3600.00, "Jupe plissée", "Jupe plissée en satin avec une coupe midi et des finitions dorées", "Soirée", 22, 29
@@ -303,8 +255,6 @@ BEGINDATA
 248, 45.00, 4100.00, "Top en soie", "Top en soie luxueuse avec des détails dorés, de coupe élégante", "Casual", 22, 29
 249, 46.00, 4200.00, "Robe en velours", "Robe en velours prune avec une coupe asymétrique et des détails en dentelle", "Soirée", 22, 29
 250, 47.00, 4300.00, "Pantalon en satin", "Pantalon en satin noir avec une taille haute et une coupe large", "Casual", 22, 29
-
-
 251, 38.00, 3500.00, "Robe d'été en lin", "Robe légère en lin bleu ciel, idéale pour les journées chaudes", "Casual", 23, 28
 252, 39.50, 3600.00, "Veste légère", "Veste en coton léger avec une coupe fluide et des boutons en bois", "Casual", 23, 28
 253, 40.00, 3700.00, "Short en lin", "Short en lin beige avec une taille élastique, parfait pour l'été", "Casual", 23, 28
@@ -315,8 +265,6 @@ BEGINDATA
 258, 45.00, 4200.00, "Manteau d'été", "Manteau en coton léger, parfait pour une brise fraîche du soir", "Casual", 23, 28
 259, 46.00, 4300.00, "Robe d'été", "Robe maxi à imprimé floral, parfaite pour un événement estival en plein air", "Soirée", 23, 28
 260, 47.00, 4400.00, "Pantalon fluide", "Pantalon fluide à taille haute, de couleur crème et de coupe décontractée", "Casual", 23, 28
-
-
 261, 38.00, 3500.00, "Robe en coton vert", "Robe midi en coton vert mousse, légère et fluide", "Casual", 24, 27
 262, 39.50, 3600.00, "Veste légère en denim", "Veste en denim léger avec des finitions en cuir, parfaite pour l'été", "Casual", 24, 27
 263, 40.00, 3700.00, "Pantalon évasé", "Pantalon évasé en lin, couleur sable, confortable et chic", "Casual", 24, 27
@@ -327,7 +275,6 @@ BEGINDATA
 268, 45.00, 4200.00, "Manteau léger", "Manteau léger en laine avec des éléments en cuir, parfait pour les soirées fraîches", "Hiver", 24, 27
 269, 46.00, 4300.00, "Pantalon large", "Pantalon large en lin beige, très confortable et aérien", "Casual", 24, 27
 270, 47.00, 4400.00, "Top en coton", "Top simple en coton avec des broderies florales sur les épaules", "Casual", 24, 27
-
 271, 38.00, 3600.00, "Robe en velours rouge", "Robe en velours rouge à coupe sirène, idéale pour une soirée élégante", "Soirée", 25, 26
 272, 39.50, 3700.00, "Veste en satin", "Veste en satin noir avec des broderies florales dorées, chic et sophistiquée", "Formelle", 25, 26
 273, 40.00, 3800.00, "Jupe en velours", "Jupe midi en velours bleu nuit, coupe élégante avec des détails en or", "Casual", 25, 26
@@ -338,8 +285,6 @@ BEGINDATA
 278, 45.00, 4300.00, "Top en soie", "Top en soie ivoire avec des bretelles fines et des détails brodés", "Casual", 25, 26
 279, 46.00, 4400.00, "Pantalon en satin", "Pantalon en satin noir avec une coupe droite, très élégant et confortable", "Casual", 25, 26
 280, 47.00, 4500.00, "Robe en satin", "Robe longue en satin noir avec des détails en dentelle sur le bas", "Soirée", 25, 26
-
-
 281, 38.00, 3700.00, "Robe métallique", "Robe métallique argentée avec des détails géométriques et une silhouette futuriste", "Soirée", 26, 25
 282, 39.50, 3800.00, "Veste métallique", "Veste argentée brillante avec une coupe asymétrique et des épaules renforcées", "Formelle", 26, 25
 283, 40.00, 3900.00, "Pantalon en métal", "Pantalon en tissu métallisé avec une coupe slim, ultra tendance", "Casual", 26, 25
@@ -350,8 +295,6 @@ BEGINDATA
 288, 45.00, 4400.00, "Top holographique", "Top holographique avec une coupe courte et un effet lumineux", "Casual", 26, 25
 289, 46.00, 4500.00, "Pantalon argenté", "Pantalon en tissu argenté avec une coupe slim et des détails noirs", "Casual", 26, 25
 290, 47.00, 4600.00, "Robe de soirée", "Robe de soirée ultra-moderne, en tissu argenté avec un effet de lumière", "Soirée", 26, 25
-
-
 291, 38.00, 3800.00, "Robe étoilée", "Robe en tulle avec des étoiles brodées en fil argenté, élégante et magique", "Soirée", 27, 24
 292, 39.50, 3900.00, "Veste en velours", "Veste en velours bleu nuit avec des détails métalliques en forme d'étoiles", "Hiver", 27, 24
 293, 40.00, 4000.00, "Jupe brillante", "Jupe midi en satin bleu foncé, avec des paillettes en forme d'étoiles", "Soirée", 27, 24
@@ -362,8 +305,6 @@ BEGINDATA
 298, 45.00, 4500.00, "Top brillant", "Top scintillant en velours, décoré de petites étoiles en cristaux", "Casual", 27, 24
 299, 46.00, 4600.00, "Pantalon à paillettes", "Pantalon à paillettes argentées, à coupe droite et élégante", "Soirée", 27, 24
 300, 47.00, 4700.00, "Robe de soirée", "Robe de soirée en tulle noir, avec des étoiles brodées et une silhouette élégante", "Soirée", 27, 24
-
-
 301, 38.00, 4000.00, "Robe en velours vintage", "Robe en velours noir revisité, avec des coutures modernes et une coupe audacieuse", "Soirée", 28, 23
 302, 39.50, 4100.00, "Veste en tweed", "Veste en tweed réinventée avec des détails en cuir, coupe parfaite pour l'automne", "Formelle", 28, 23
 303, 40.00, 4200.00, "Pantalon en laine", "Pantalon classique en laine avec des éléments de design contemporain", "Casual", 28, 23
@@ -374,8 +315,6 @@ BEGINDATA
 308, 45.00, 4700.00, "Robe de cocktail", "Robe de cocktail en satin avec des éléments en cuir, pour un look sophistiqué et moderne", "Soirée", 28, 23
 309, 46.00, 4800.00, "Pantalon noir", "Pantalon noir en laine fine, avec une coupe élégante et des détails de design modernisés", "Casual", 28, 23
 310, 47.00, 4900.00, "Robe d’hiver", "Robe d’hiver en laine avec des finitions en cuir, parfaite pour les occasions formelles", "Hiver", 28, 23
-
-
 311, 38.00, 4200.00, "Robe en soie noire", "Robe fluide en soie noire avec des découpes sculpturales, pour une allure sophistiquée", "Soirée", 29, 22
 312, 39.50, 4300.00, "Veste en cuir sculptée", "Veste en cuir noir sculptée avec des coutures asymétriques et une coupe structurée", "Formelle", 29, 22
 313, 40.00, 4400.00, "Pantalon en soie", "Pantalon fluide en soie noire, conçu pour un confort ultime avec une coupe moderne", "Casual", 29, 22
@@ -386,8 +325,6 @@ BEGINDATA
 318, 45.00, 4900.00, "Pantalon asymétrique", "Pantalon asymétrique en soie, avec des plis et des découpes sculptées", "Casual", 29, 22
 319, 46.00, 5000.00, "Top en soie blanche", "Top en soie blanche sculpté avec des broderies fines, un vrai chef-d’œuvre artistique", "Casual", 29, 22
 320, 47.00, 5100.00, "Robe de soirée", "Robe de soirée en soie noire avec des éléments sculptés sur les côtés pour un look unique", "Soirée", 29, 22
-
-
 321, 38.00, 4500.00, "Robe en rubis", "Robe en satin rouge rubis, coupe élégante et dos nu pour un effet glamour", "Soirée", 30, 21
 322, 39.50, 4600.00, "Veste en laine", "Veste en laine rouge foncé avec des détails en soie pour un look sophistiqué", "Formelle", 30, 21
 323, 40.00, 4700.00, "Pantalon en laine", "Pantalon en laine rouge avec des pinces et une coupe moderne", "Casual", 30, 21
