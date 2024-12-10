@@ -1,4 +1,3 @@
---Tenue ctl
 LOAD DATA
 INFILE *
 APPEND
@@ -6,9 +5,8 @@ INTO TABLE Tenue
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur)
 BEGINDATA
-
-1, 38.00, 2200.00, "Robe en soie", "Robe fluide en soie pour l'été", "Soirée", 31, 30
-2, 39.00, 2400.00, "Veste en tweed", "Veste en tweed à col en fourrure", "Formelle", 31, 30
+1, 38.00, 2200.00, "Robe en soie", "Robe fluide en soie pour l'été", " Soirée",31,30
+2,39.00,2400.00,"Veste en tweed","Veste en tweed à col en fourrure","Formelle",31,30
 3, 40.00, 2500.00, "Robe longue", "Robe longue en satin rouge pour une soirée", "Soirée", 31, 30
 4, 37.50, 1800.00, "Blouse en dentelle", "Blouse en dentelle noire pour une soirée chic", "Soirée", 31, 30
 5, 38.50, 2000.00, "Jupe en cuir", "Jupe en cuir noir pour un look audacieux", "Casual", 31, 30
