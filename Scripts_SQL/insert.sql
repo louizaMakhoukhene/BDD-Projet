@@ -387,7 +387,7 @@ VALUES (9, TO_TIMESTAMP('1999-06-10 18:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIME
 INSERT INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
 VALUES (10, TO_TIMESTAMP('1995-02-05 18:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-02-05 19:00:00', 'YYYY-MM-DD HH24:MI:SS'), 7, 10);
 
-INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
+INSERT INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
 VALUES (11, TO_TIMESTAMP('1992-08-01 18:05:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1992-08-01 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), 8, 11);
 
 INSERT INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
