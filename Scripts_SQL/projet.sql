@@ -196,8 +196,8 @@ CREATE TABLE Sponsoriser (
 );
 
 CREATE TABLE Participer (
-    nMannequin INT, 
-    nDefile INT, 
+    nMannequin INT not null, 
+    nDefile INT not null, 
     nTenue INT NOT NULL, 
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
@@ -298,37 +298,6 @@ END;
 
 
 -----------Tenue---------
-
-CREATE OR REPLACE TRIGGER tenue_unique_par_saison
-BEFORE INSERT OR UPDATE ON Participer
-FOR EACH ROW
-DECLARE
-    saison_collection VARCHAR(20);
-    tenue_count NUMBER;
-BEGIN
-    -- Récupérer la saison de la collection associée à la tenue
-    SELECT c.saison INTO saison_collection
-    FROM Tenue t
-    JOIN Collection c ON t.nCollection = c.nCollection
-    WHERE t.nTenue = :NEW.nTenue;
-
-    -- Compter le nombre de défilés pour cette tenue dans la même saison
-    SELECT COUNT(*)
-    INTO tenue_count
-    FROM Participer p
-    JOIN Defile d ON p.nDefile = d.nDefile
-    JOIN Tenue t ON p.nTenue = t.nTenue
-    JOIN Collection c ON t.nCollection = c.nCollection
-    WHERE p.nTenue = :NEW.nTenue
-    AND c.saison = saison_collection
-    AND p.nDefile != :NEW.nDefile;
-
-    -- Si la tenue est déjà présente dans un autre défilé pour la même saison, lever une erreur
-    IF tenue_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'La tenue ne peut pas être présentée dans plus d’un défilé pour la même saison.');
-    END IF;
-END;
-/
 
 --chaque mannequin porte une tenue de sa taille.
 CREATE OR REPLACE TRIGGER Check_Mannequin_Tenue_Taille
