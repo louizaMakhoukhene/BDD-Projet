@@ -6,9 +6,6 @@ INTO TABLE Collection
 FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
 (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
 BEGINDATA
-31, "Ombres Mystiques", "Mystère et Enchantement", "Printemps/Ete", 0, 30, "Chanel"
-32, "Voyage Celeste", "Inspiration Astrale", "Automne/Hiver", 0, 29, "Chanel"
-33, "Lueurs d'Aurore", "Reflets de l'Aube", "Printemps/Ete", 0, 28, "Dior"
 1, "Echos Sauvages", "Evasion et Nature", "Printemps/Ete", 0, 20, "Chanel"
 2, "Heritage Intemporel", "Elegance et Intemporalite", "Automne/Hiver", 0, 19, "Dior"
 3, "Metropole Brulante", "Moderne et Urbain", "Automne/Hiver", 0, 18, "Louis Vuitton"
@@ -39,3 +36,6 @@ BEGINDATA
 28, "Patrimoine Revisitee", "Voyage dans le Temps", "Automne/Hiver", 0, 23, "Haider Ackermann"
 29, "Sculptures de Soie", "Art et Creation Visuelle", "Printemps/Ete", 0, 22, "Ann Demeulemeester"
 30, "Reve de Rubis", "Luxe et Extravagance", "Automne/Hiver", 0, 21, "Ermenegildo Zegna"
+31, "Ombres Mystiques", "Mystère et Enchantement", "Printemps/Ete", 0, 30, "Chanel"
+32, "Voyage Celeste", "Inspiration Astrale", "Automne/Hiver", 0, 29, "Chanel"
+33, "Lueurs d'Aurore", "Reflets de l'Aube", "Printemps/Ete", 0, 28, "Dior"

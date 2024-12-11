@@ -44,12 +44,12 @@ CREATE TABLE Createur (
     nCreateur INT PRIMARY KEY,
     prenom VARCHAR(50),
     nom VARCHAR(50),
-    --dateNaissance DATE CHECK (dateNaissance <= TO_DATE('2006-10-30', 'YYYY-MM-DD'))
     dateNaissance DATE,
     nationalite VARCHAR(50),
     anneeExperienceCreateur INT,
     nomMaisonMode VARCHAR(50) NOT NULL,
-    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
+    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE,
+    CONSTRAINT ch_c CHECK (dateNaissance <= TO_DATE('2006-10-30', 'YYYY-MM-DD'))
 );
 
 
@@ -196,8 +196,8 @@ CREATE TABLE Sponsoriser (
 );
 
 CREATE TABLE Participer (
-    nMannequin INT, 
-    nDefile INT, 
+    nMannequin INT not null, 
+    nDefile INT not null, 
     nTenue INT NOT NULL, 
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE CASCADE,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE,
@@ -235,23 +235,6 @@ BEGIN
     END IF;
 END;
 /
-
---Un Ceateur doit avoir au minimun 18 ans 
-CREATE OR REPLACE TRIGGER Verif_Age_Createur
-BEFORE INSERT OR UPDATE ON Createur
-FOR EACH ROW
-DECLARE
-    v_age INT;
-BEGIN
-    v_age := TRUNC(MONTHS_BETWEEN(SYSDATE, :NEW.dateNaissance) / 12);
-    
-    -- Verification de l'age
-    IF v_age < 18 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Le créateur doit avoir au moins 18 ans.');
-    END IF;
-END;
-/
-
 
 -----------Sponsor---------
 
@@ -313,39 +296,8 @@ BEGIN
 END;
 /
 
+
 -----------Tenue---------
-
-
-CREATE OR REPLACE TRIGGER tenue_unique_par_saison
-BEFORE INSERT OR UPDATE ON Participer
-FOR EACH ROW
-DECLARE
-    saison_collection VARCHAR(20);
-    tenue_count NUMBER;
-BEGIN
-    -- Récupérer la saison de la collection associée à la tenue
-    SELECT c.saison INTO saison_collection
-    FROM Tenue t
-    JOIN Collection c ON t.nCollection = c.nCollection
-    WHERE t.nTenue = :NEW.nTenue;
-
-    -- Compter le nombre de défilés pour cette tenue dans la même saison
-    SELECT COUNT(*)
-    INTO tenue_count
-    FROM Participer p
-    JOIN Defile d ON p.nDefile = d.nDefile
-    JOIN Tenue t ON p.nTenue = t.nTenue
-    JOIN Collection c ON t.nCollection = c.nCollection
-    WHERE p.nTenue = :NEW.nTenue
-    AND c.saison = saison_collection
-    AND p.nDefile != :NEW.nDefile;
-
-    -- Si la tenue est déjà présente dans un autre défilé pour la même saison, lever une erreur
-    IF tenue_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'La tenue ne peut pas être présentée dans plus d’un défilé pour la même saison.');
-    END IF;
-END;
-/
 
 --chaque mannequin porte une tenue de sa taille.
 CREATE OR REPLACE TRIGGER Check_Mannequin_Tenue_Taille
@@ -392,6 +344,29 @@ begin
     end if;
 end;
 /
+
+--	Une collection doit contenir au moins 10 tenues pour être considérée comme complète et être présentée lors d’un défilé.
+REATE OR REPLACE TRIGGER check_collection_tenues
+BEFORE INSERT ON Participer
+FOR EACH ROW
+DECLARE
+    nbr_tenues INT;
+BEGIN
+    -- Récupérer le nombre de tenues dans la collection associée à la tenue
+    SELECT nbrTenues
+    INTO nbr_tenues
+    FROM Collection
+    WHERE nCollection = (SELECT nCollection 
+                        FROM Tenue
+                        WHERE nTenue = :NEW.nTenue);
+
+    -- Vérifier si le nombre de tenues est inférieur à 10
+    IF nbr_tenues < 10 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'La collection associée à cette tenue doit contenir au moins 10 tenues.');
+    END IF;
+END;
+/
+
 
 -------------------Defile-----------
 
