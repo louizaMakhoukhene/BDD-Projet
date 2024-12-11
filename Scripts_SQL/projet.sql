@@ -104,6 +104,7 @@ CREATE TABLE Defile (
     nbrPlaceMax INT,
     nomMaisonMode VARCHAR(50) NOT NULL, 
     FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
+    CONSTRAINT ch_d CHECK (EXTRACT(HOUR FROM heureDebut) >= 14)
 );
 
 CREATE TABLE Collection (
@@ -346,7 +347,7 @@ end;
 /
 
 --	Une collection doit contenir au moins 10 tenues pour être considérée comme complète et être présentée lors d’un défilé.
-REATE OR REPLACE TRIGGER check_collection_tenues
+CREATE OR REPLACE TRIGGER check_collection_tenues
 BEFORE INSERT ON Participer
 FOR EACH ROW
 DECLARE
@@ -363,21 +364,6 @@ BEGIN
     -- Vérifier si le nombre de tenues est inférieur à 10
     IF nbr_tenues < 10 THEN
         RAISE_APPLICATION_ERROR(-20001, 'La collection associée à cette tenue doit contenir au moins 10 tenues.');
-    END IF;
-END;
-/
-
-
--------------------Defile-----------
-
-------------verifie que chaque defiles commence bien a partir de 14H----------------------------------
-CREATE OR REPLACE TRIGGER chk_heure_debut
-BEFORE INSERT OR UPDATE ON Defile
-FOR EACH ROW
-BEGIN
-    -- Vérifie que l'heure de début est après 14h
-    IF TO_CHAR(:NEW.heureDebut, 'HH24') < '14' THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Un défilé ne peut commencer qu''à partir de 14h.');
     END IF;
 END;
 /
