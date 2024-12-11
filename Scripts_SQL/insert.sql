@@ -358,6 +358,7 @@ INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO
 
 -- INSERTION A LA TABLE InvterviewC
 
+
 -- INSERTION A LA TABLE InvterviewI
 
 -- INSERTION A LA TABLE InvterviewM
