@@ -149,6 +149,7 @@ CREATE TABLE AssisterJ (
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE SET NULL,
     FOREIGN KEY (nDefile) REFERENCES Defile(nDefile) ON DELETE CASCADE
 );
+
 CREATE TABLE AssisterC (
     heureDepart TIMESTAMP,
     heureArrivee TIMESTAMP,
@@ -167,6 +168,7 @@ CREATE TABLE InterviewM (
     FOREIGN KEY (nJournaliste) REFERENCES Journaliste(nJournaliste) ON DELETE CASCADE,
     FOREIGN KEY (nMannequin) REFERENCES Mannequin(nMannequin) ON DELETE SET NULL
 );
+
 CREATE TABLE InterviewC (
     nInterview INT PRIMARY KEY,
     heureDebut TIMESTAMP,
@@ -364,6 +366,36 @@ BEGIN
     -- Vérifier si le nombre de tenues est inférieur à 10
     IF nbr_tenues < 10 THEN
         RAISE_APPLICATION_ERROR(-20001, 'La collection associée à cette tenue doit contenir au moins 10 tenues.');
+    END IF;
+END;
+/
+
+
+--•	Les tenues doivent être créées par le créateur qui travaille pour la maison de mode qui organise le défilé.
+CREATE OR REPLACE TRIGGER chk_createur_maisonmode
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    v_nomMaisonModeDefile VARCHAR(50);
+    v_nomMaisonModeCreateur VARCHAR(50);
+BEGIN
+    -- Récupérer la maison de mode du défilé
+    SELECT nomMaisonMode
+    INTO v_nomMaisonModeDefile
+    FROM Defile
+    WHERE nDefile = :NEW.nDefile;
+
+    -- Récupérer la maison de mode du créateur
+    SELECT nomMaisonMode
+    INTO v_nomMaisonModeCreateur
+    FROM Createur
+    WHERE nCreateur = (SELECT nCreateur
+                    FROM Tenue
+                    WHERE nTenue = :NEW.nTenue);
+
+    -- Vérifier que les deux maisons de mode correspondent
+    IF v_nomMaisonModeDefile != v_nomMaisonModeCreateur THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le créateur de la tenue doit appartenir à la maison de mode organisant le défilé.');
     END IF;
 END;
 /

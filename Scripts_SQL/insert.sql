@@ -235,8 +235,6 @@ VALUES (TO_TIMESTAMP('1995-12-01 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTA
 -- INSERTION A LA TABLE AssisterJ
 INSERT INTO AssisterJ (heureDepart, heureArrivee, nDefile, nJournaliste) VALUES (TO_TIMESTAMP('2024-12-10 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('2024-12-10 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), 100, 100);
 
-INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1985-06-15 16:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1985-06-15 18:45:00', 'YYYY-MM-DD HH24:MI:SS'), 1, 1);
-
 INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1987-07-15 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1987-07-15 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2, 2);
 
 INSERT INTO AssisterJ (heureDepart, heureArrivee, nJournaliste, nDefile) VALUES (TO_DATE('1990-09-10 17:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('1990-09-10 19:20:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 3);
@@ -358,9 +356,6 @@ INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO
 
 -- INSERTION A LA TABLE InvterviewC
 insert into InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
-VALUES (1, TO_TIMESTAMP('1985-06-15 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1985-06-15 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), 1, 1);
-
-insert into InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
 VALUES (2, TO_TIMESTAMP('1987-07-15 18:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1987-07-15 19:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1, 2);
 
 INSERT INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
@@ -404,6 +399,7 @@ VALUES (15, TO_TIMESTAMP('1993-06-10 17:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIM
 
 INSERT INTO InterviewC (nInterview, heureDebut, heureFin, nJournaliste, nCreateur)
 VALUES (16, TO_TIMESTAMP('1994-11-12 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-11-12 19:35:00', 'YYYY-MM-DD HH24:MI:SS'), 13, 16);
+
 
 -- INSERTION A LA TABLE InvterviewI
 
