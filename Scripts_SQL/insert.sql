@@ -445,7 +445,114 @@ VALUES (33, TO_TIMESTAMP('1994-12-01 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIM
 
 -- INSERTION A LA TABLE InvterviewI
 
+-- Interview 1 dans InterviewI
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (1, TO_TIMESTAMP('1985-06-15 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1985-06-15 20:30:00', 'YYYY-MM-DD HH24:MI:SS'), 1, 2);
 
+-- Interview 2
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (2, TO_TIMESTAMP('1987-07-15 19:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1987-07-15 19:45:00', 'YYYY-MM-DD HH24:MI:SS'), 2, 3);
+
+-- Interview 3
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (3, TO_TIMESTAMP('1990-09-10 21:35:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1990-09-10 22:15:00', 'YYYY-MM-DD HH24:MI:SS'), 3, 4);
+
+-- Interview 4
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (4, TO_TIMESTAMP('1990-03-22 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1990-03-22 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 4, 4);
+
+-- Interview 5
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (5, TO_TIMESTAMP('1993-01-10 19:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1993-01-10 19:50:00', 'YYYY-MM-DD HH24:MI:SS'), 5, 5);
+
+-- Interview 6
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (6, TO_TIMESTAMP('1992-01-30 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1992-01-30 20:40:00', 'YYYY-MM-DD HH24:MI:SS'), 6, 6);
+
+-- Interview 7
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (7, TO_TIMESTAMP('1994-03-05 19:35:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-03-05 20:10:00', 'YYYY-MM-DD HH24:MI:SS'), 7, 7);
+
+-- Interview 8
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (8, TO_TIMESTAMP('1996-11-20 19:35:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1996-11-20 19:55:00', 'YYYY-MM-DD HH24:MI:SS'), 8, 8);
+
+-- Interview 9
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (9, TO_TIMESTAMP('1999-06-10 19:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1999-06-10 19:45:00', 'YYYY-MM-DD HH24:MI:SS'), 9, 9);
+
+-- Interview 10
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (10, TO_TIMESTAMP('1995-02-05 19:05:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-02-05 19:45:00', 'YYYY-MM-DD HH24:MI:SS'), 10, 10);
+
+-- Interview 11
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (11, TO_TIMESTAMP('1992-08-01 18:57:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1992-08-01 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), 11, 11);
+
+-- Interview 12
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (12, TO_TIMESTAMP('1996-03-15 19:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1996-03-15 19:50:00', 'YYYY-MM-DD HH24:MI:SS'), 12, 12);
+
+-- Interview 13
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (13, TO_TIMESTAMP('1999-04-12 19:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1999-04-12 20:25:00', 'YYYY-MM-DD HH24:MI:SS'), 13, 13);
+
+-- Interview 14
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (14, TO_TIMESTAMP('1991-02-15 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1991-02-15 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 14, 14);
+
+-- Interview 15
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (15, TO_TIMESTAMP('1993-06-10 18:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1993-06-10 19:25:00', 'YYYY-MM-DD HH24:MI:SS'), 15, 15);
+
+-- Interview 16
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (16, TO_TIMESTAMP('1994-11-12 19:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-11-12 20:15:00', 'YYYY-MM-DD HH24:MI:SS'), 16, 16);
+
+-- Interview 17
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (17, TO_TIMESTAMP('1997-05-23 19:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-05-23 19:50:00', 'YYYY-MM-DD HH24:MI:SS'), 17, 17);
+
+-- Interview 18
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (18, TO_TIMESTAMP('1995-06-20 19:20:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-06-20 19:55:00', 'YYYY-MM-DD HH24:MI:SS'), 18, 19);
+
+-- Interview 19
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (19, TO_TIMESTAMP('1994-08-22 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-08-22 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), 19, 20);
+
+
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (20, TO_TIMESTAMP('1996-03-10 19:27:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1996-03-10 19:55:00', 'YYYY-MM-DD HH24:MI:SS'), 20, 21);
+
+-- Interview 21
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (21, TO_TIMESTAMP('1994-12-02 19:29:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-12-02 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 21, 22);
+
+-- Interview 23
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (23, TO_TIMESTAMP('1999-05-06 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1999-05-06 20:15:00', 'YYYY-MM-DD HH24:MI:SS'), 24, 24);
+
+-- Interview 24
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (24, TO_TIMESTAMP('1995-04-12 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-04-12 20:39:00', 'YYYY-MM-DD HH24:MI:SS'), 25, 25);
+
+-- Interview 27
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (27, TO_TIMESTAMP('1996-03-15 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1996-03-15 20:30:00', 'YYYY-MM-DD HH24:MI:SS'), 23, 28);
+
+
+-- Interview 28
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (28, TO_TIMESTAMP('1997-09-01 19:25:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-09-01 20:05:00', 'YYYY-MM-DD HH24:MI:SS'), 26, 29);
+
+-- Interview 29
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (29, TO_TIMESTAMP('1997-01-30 19:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-01-30 19:55:00', 'YYYY-MM-DD HH24:MI:SS'), 28, 29);
+
+-- Interview 33
+INSERT INTO InterviewI (nInterview, heureDebut, heureFin, nJournaliste, nInvite)
+VALUES (33, TO_TIMESTAMP('1994-12-01 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-12-01 17:45:00', 'YYYY-MM-DD HH24:MI:SS'), 29, 18);
 
 
 -- INSERTION A LA TABLE InvterviewM
