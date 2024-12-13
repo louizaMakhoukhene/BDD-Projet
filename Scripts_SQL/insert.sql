@@ -30,7 +30,7 @@ VALUES (100, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagno
 
 -- INSERTION A LA TABLE Collection
 INSERT INTO Collection (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES (100, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 10, 100, 'Off-White');
+VALUES (100, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 100, 'Off-White');
 
 
 -- INSERTION A LA TABLE Defile

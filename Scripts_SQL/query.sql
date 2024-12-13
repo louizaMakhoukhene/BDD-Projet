@@ -28,14 +28,14 @@ group by  c.nom, c.prenom;
 
 
 --4.	Le créateur avec le plus de tenues crées.
-select c.nom, c.prenom, sum(co.nbrTenues) as total_tenues
-from collection co, createur c
-where co.ncreateur = c.ncreateur
-group by c.nom, c.prenom
-order by total_tenues desc 
-FETCH FIRST 1 ROWS ONLY;
-
-
-
+SELECT *
+FROM (
+    SELECT c.nom, c.prenom, SUM(co.nbrTenues) AS total_tenues
+    FROM collection co, createur c
+    where co.ncreateur = c.nCreateur
+    GROUP BY c.nom, c.prenom
+    ORDER BY total_tenues DESC
+)
+where rownum = 1;
 
 
