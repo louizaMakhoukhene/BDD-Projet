@@ -640,8 +640,8 @@ INSERT INTO InterviewM (nInterview, heureDebut, heureFin, nJournaliste, nMannequ
 VALUES (21, TO_TIMESTAMP('1994-12-02 19:29:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1994-12-02 20:00:00', 'YYYY-MM-DD HH24:MI:SS'), 21, 22);
 
 -- Interview 22
-/*INSERT INTO InterviewM (nInterview, heureDebut, heureFin, nJournaliste, nMannequin)
-VALUES (22, TO_TIMESTAMP('1998-01-19 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1998-01-19 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), 21, 23);*/
+INSERT INTO InterviewM (nInterview, heureDebut, heureFin, nJournaliste, nMannequin)
+VALUES (22, TO_TIMESTAMP('1998-01-19 18:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1998-01-19 19:30:00', 'YYYY-MM-DD HH24:MI:SS'), 21, 23);
 
 -- Interview 23
 INSERT INTO InterviewM (nInterview, heureDebut, heureFin, nJournaliste, nMannequin)
