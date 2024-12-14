@@ -51,3 +51,11 @@ and co.saison = 'Automne/Hiver'
 and TO_CHAR(d.dateDefile, 'YYYY') = '1985';
 
 
+--2.les collections créées par le créateur par exemple "Renaud Dorian" pour la maison de mode "Chanel" 
+select co.ncollection, co.nomCollection 
+from collection co, createur c, MaisonMode mm
+where co.ncreateur = c.ncreateur
+and c.nomMaisonMode = mm.nomMaisonMode
+and c.nom = 'Renaud'
+and c.prenom = 'Dorian'
+and mm.nomMaisonMode = 'Chanel';
