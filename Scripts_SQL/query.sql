@@ -39,7 +39,7 @@ FROM (
 where rownum = 1;
 
 --Requêtes sur les  collections
---1. les collections présentées lors de la saison ‘automne-hiver 1982’
+--1. les collections présentées lors de la saison ‘automne-hiver 1985’
 select co.nomCollection
 from participant p, collection co, tenue t, defile d
 where p.nTenue = t.nTenue
@@ -63,3 +63,9 @@ and mm.nomMaisonMode = 'Chanel';
 select a.nDefile, count(nInvite) as nombre_invites
 from AssisterI a 
 group by a.nDefile;
+
+--2.	Quel est le nombre total de défilés organisés par la maison de mode "X" cette année ?
+select count(d.nDefile) as nombre_total_defiles
+from defile d
+where TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+and d.nomMaisonMode = 'Chanel';
