@@ -38,8 +38,6 @@ FROM (
 )
 where rownum = 1;
 
-
-
 --Requêtes sur les  collections
 --1. les collections présentées lors de la saison ‘automne-hiver 2024’
 select co.nomCollection

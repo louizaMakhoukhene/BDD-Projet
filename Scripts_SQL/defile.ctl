@@ -29,6 +29,7 @@ BEGINDATA
 11, "Paris", "1992-08-01 15:45:00", "1992-08-01 18:00:00", "1992-08-01", "Printemps eternel", "Une ode au printemps éternel et à la légèreté", 80, "Balenciaga"
 12, "Paris", "1996-03-15 15:50:00", "1996-03-15 18:10:00", "1996-03-15", "Sous le Ciel Nu", "Retour à la nature avec une collection inspirée des cieux", 95, "Givenchy"
 13, "Paris", "1999-04-12 16:30:00", "1999-04-12 18:45:00", "1999-04-12", "Eclats de Bene", "Une interprétation élégante des tendances modernes", 100, "Hermes"
+
 14, "Paris", "1991-02-15 16:00:00", "1991-02-15 18:20:00", "1991-02-15", "Ombres de la Ville", "Les mystères des grandes villes dans une collection moderne", 110, "Saint Laurent"
 15, "Milan", "1993-06-10 15:30:00", "1993-06-10 17:45:00", "1993-06-10", "Murmures de Lune", "Rêves et mysticisme inspirés de la lune et de ses mystères", 90, "Dolce Gabbana"
 16, "Paris", "1994-11-12 16:25:00", "1994-11-12 18:45:00", "1994-11-12", "Souvenirs d'époque", "Retour à la mode vintage et aux souvenirs du passé", 100, "Miu Miu"
