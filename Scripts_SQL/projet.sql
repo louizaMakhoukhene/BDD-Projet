@@ -103,7 +103,7 @@ CREATE TABLE Defile (
     descriptionDefile VARCHAR(255),
     nbrPlaceMax INT,
     nomMaisonMode VARCHAR(50) NOT NULL, 
-    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE
+    FOREIGN KEY (nomMaisonMode) REFERENCES MaisonMode(nomMaisonMode) ON DELETE CASCADE,
     CONSTRAINT ch_d CHECK (EXTRACT(HOUR FROM heureDebut) >= 14)
 );
 

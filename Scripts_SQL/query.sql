@@ -39,7 +39,7 @@ FROM (
 where rownum = 1;
 
 --Requêtes sur les  collections
---1. les collections présentées lors de la saison ‘automne-hiver 2024’
+--1. les collections présentées lors de la saison ‘automne-hiver 1982’
 select co.nomCollection
 from participant p, collection co, tenue t, defile d
 where p.nTenue = t.nTenue
@@ -57,3 +57,9 @@ and c.nomMaisonMode = mm.nomMaisonMode
 and c.nom = 'Renaud'
 and c.prenom = 'Dorian'
 and mm.nomMaisonMode = 'Chanel';
+
+--Requêtes sur les defiles
+--1.	Pour chaque défilé, combien d’invités ont été présents
+select a.nDefile, count(nInvite) as nombre_invites
+from AssisterI a 
+group by a.nDefile;
