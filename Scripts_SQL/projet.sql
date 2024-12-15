@@ -327,6 +327,25 @@ BEGIN
 END;
 /
 
+--il faut le nCreateur associé à la tenue correspond bien au nCreateur de la collection dans laquelle la tenue est insérée (nCollection).
+CREATE OR REPLACE TRIGGER trg_verif_createur_tenue
+BEFORE INSERT ON Tenue
+FOR EACH ROW
+DECLARE
+    ncreat_coll INT;
+BEGIN
+    -- Récupérer le nCreateur associé à la collection spécifiée dans l'insertion
+    SELECT nCreateur INTO ncreat_coll
+    FROM Collection
+    WHERE nCollection = :NEW.nCollection;
+
+    -- Comparer si le nCreateur de la table Tenue correspond à celui de Collection
+    IF :NEW.nCreateur != ncreat_coll THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le nCreateur ne correspond pas à celui de la collection.');
+    END IF;
+END;
+/
+
 
 -------------------Collection-----------
 --update nbrcollection when inserting or deletting collection 
