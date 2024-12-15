@@ -13,7 +13,7 @@ BEGINDATA
 3, "Hadid", "Bella", 28, 175.00, 55.00, "Americaine", "Feminin", "Sablier"
 4, "Lima", "Adriana", 42, 178.00, 60.00, "Bresilienne", "Feminin", "Sablier"
 5, "Banks", "Tyra", 50, 180.00, 61.00, "Americaine", "Feminin", "Sablier"
-6, "Delevingne", "Cara", 31, 173.00, 52.00, "Britannique", "Feminin", "Sablier"
+6, "Delevingne", "Cara", 31, 177.00, 52.00, "Britannique", "Feminin", "Sablier"
 7, "Kroes", "Doutzen", 38, 178.00, 55.00, "Neerlandaise", "Feminin", "Sablier"
 8, "Shayk", "Irina", 37, 178.00, 57.00, "Russe", "Feminin", "Sablier"
 9, "Campbell", "Naomi", 54, 175.00, 56.00, "Britannique", "Feminin", "Sablier"
