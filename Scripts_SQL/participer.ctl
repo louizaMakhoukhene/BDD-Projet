@@ -1,8 +1,0 @@
---Participer ctl
-LOAD DATA
-INFILE *
-APPEND
-INTO TABLE Participer
-FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY '"'
-( nMannequin, nDefile, nTenue)
-BEGINDATA
