@@ -1,40 +1,40 @@
 -- INSERTION A LA TABLE MaisonMode
-/*INSERT INTO MaisonMode (nomMaisonMode, nomFondateur, dateFondation, localisation, logo, siteWEB)
-VALUES ('Off-White', 'Virgil Abloh', TO_DATE('2012-01-01', 'YYYY-MM-DD'), 'Milan, Italy', 'offwhite_logo.png', 'https://www.off---white.com');*/
+INSERT INTO MaisonMode (nomMaisonMode, nomFondateur, dateFondation, localisation, logo, siteWEB)
+VALUES ('Off-White', 'Virgil Abloh', TO_DATE('2012-01-01', 'YYYY-MM-DD'), 'Milan, Italy', 'offwhite_logo.png', 'https://www.off---white.com');
 
 
 -- INSERTION A LA TABLE Mannequin
-/*INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie)
-VALUES (100, 'Khan', 'Aaliyah', 27, 174.00, 56.00, 'Indienne', 'Feminin', 'Sablier');*/
+INSERT INTO Mannequin (nMannequin, nom, prenom, age, taille, poids, nationalite, genre, morphologie)
+VALUES (100, 'Khan', 'Aaliyah', 27, 174.00, 56.00, 'Indienne', 'Feminin', 'Sablier');
 
 
 -- INSERTION A LA TABLE Invite
-/*INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession)
-VALUES (100, 'Durand', 'Elise', TO_DATE('1992-03-15', 'YYYY-MM-DD'), 'Francaise', 'Peintre');*/
+INSERT INTO Invite (nInvite, nom, prenom, dateNaissance, nationaliteInvite, profession)
+VALUES (100, 'Durand', 'Elise', TO_DATE('1992-03-15', 'YYYY-MM-DD'), 'Francaise', 'Peintre');
 
 
 -- INSERTION A LA TABLE Journaliste
-/*INSERT INTO Journaliste (nJournaliste, nom, prenom, media, specialite, telephone, mail)
-VALUES (100, 'Klein', 'Marie', 'France Info', 'Sante', '0987654321', 'marie.klein@example.com');*/
+INSERT INTO Journaliste (nJournaliste, nom, prenom, media, specialite, telephone, mail)
+VALUES (100, 'Klein', 'Marie', 'France Info', 'Sante', '0987654321', 'marie.klein@example.com');
 
 
 -- INSERTION A LA TABLE Sponsor
-/*INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone)
-VALUES (100, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');*/
+INSERT INTO Sponsor (nSponsor, nomSponsor, typeSponsor, email, telephone)
+VALUES (100, 'ModeVision', 'Mode', 'contact@modevision.com', '0987654321');
 
 
 -- INSERTION A LA TABLE Createur
-/*INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode)
-VALUES (100, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Off-White');*/
+INSERT INTO Createur (nCreateur, prenom, nom, dateNaissance, nationalite, anneeExperienceCreateur, nomMaisonMode)
+VALUES (100, 'Elena', 'Rodriguez', TO_DATE('1990-09-12', 'YYYY-MM-DD'), 'Espagnole', 5, 'Off-White');
 
 
 -- INSERTION A LA TABLE Collection
-/*INSERT INTO Collection (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
-VALUES (100, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 100, 'Off-White');*/
+INSERT INTO Collection (nCollection, nomCollection, themeCollection, saison, nbrTenues, nCreateur, nomMaisonMode)
+VALUES (100, 'Reflets Cristallins', 'Elegance Givree', 'Hiver', 0, 100, 'Off-White');
 
 
 -- INSERTION A LA TABLE Defile
-/*INSERT INTO Defile (nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode)  
+INSERT INTO Defile (nDefile, lieu, heureDebut, heureFin, dateDefile, theme, descriptionDefile, nbrPlaceMax, nomMaisonMode)  
 VALUES (
     100, 
     'Paris Fashion Center', 
@@ -45,10 +45,10 @@ VALUES (
     'Défilé de mode présentant la collection automne 2024.', 
     500, 
     'Off-White'
-);*/
+);
 
 -- INSERTION A LA TABLE Tenue
-/*INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur)  
+INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur)  
 VALUES (
     331, 
     36.5, 
@@ -58,7 +58,7 @@ VALUES (
     'Soirée', 
     100, 
     100
-);*/
+);
 
 -- INSERTION A LA TABLE AssisterI
 INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
@@ -671,34 +671,34 @@ VALUES (33, TO_TIMESTAMP('1994-12-01 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIM
 -- INSERTION A LA TABLE tenue
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (1, 36.5, 250.00, 'Robe Printanière', 'Une robe légère pour les journées ensoleillées.', 'Robe', 1, 20);
+VALUES (1, 178.00, 250.00, 'Robe Printanière', 'Une robe légère pour les journées ensoleillées.', 'Robe', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (2, 40.0, 300.00, 'Costume Intemporel', 'Costume élégant pour toutes les occasions.', 'Costume', 2, 19);
+VALUES (2, 40.0, 300.00, 'Costume Intemporel', 'Costume élégant pour toutes les occasions.', 'Costume', 1, 19);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (3, 38.0, 150.00, 'T-shirt Urbain', 'T-shirt moderne et confortable.', 'T-shirt', 3, 18);
+VALUES (3, 38.0, 150.00, 'T-shirt Urbain', 'T-shirt moderne et confortable.', 'T-shirt', 1, 18);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (4, 37.5, 450.00, 'Robe Astrale', 'Inspirée des constellations.', 'Robe', 4, 17);
+VALUES (4, 37.5, 450.00, 'Robe Astrale', 'Inspirée des constellations.', 'Robe', 1, 17);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (5, 39.0, 500.00, 'Manteau Vintage', 'Manteau classique avec une touche moderne.', 'Manteau', 5, 16);
+VALUES (5, 39.0, 500.00, 'Manteau Vintage', 'Manteau classique avec une touche moderne.', 'Manteau', 1, 16);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (6, 38.5, 200.00, 'Chemise Vivante', 'Chemise avec motifs artistiques.', 'Chemise', 6, 15);
+VALUES (6, 38.5, 200.00, 'Chemise Vivante', 'Chemise avec motifs artistiques.', 'Chemise', 1, 15);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (7, 36.0, 600.00, 'Veste Luxe', 'Veste scintillante pour soirées glamour.', 'Veste', 7, 14);
+VALUES (7, 36.0, 600.00, 'Veste Luxe', 'Veste scintillante pour soirées glamour.', 'Veste', 1, 14);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (8, 34.0, 120.00, 'Short Éternel', 'Short pratique et esthétique.', 'Short', 8, 13);
+VALUES (8, 34.0, 120.00, 'Short Éternel', 'Short pratique et esthétique.', 'Short', 1, 13);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (9, 39.5, 350.00, 'Robe de Ciel', 'Robe fluide avec des tons naturels.', 'Robe', 9, 12);
+VALUES (9, 39.5, 350.00, 'Robe de Ciel', 'Robe fluide avec des tons naturels.', 'Robe', 1, 12);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (10, 41.0, 800.00, 'Robe Ébène', 'Robe en soie avec détails sophistiqués.', 'Robe', 10, 11);
+VALUES (10, 41.0, 800.00, 'Robe Ébène', 'Robe en soie avec détails sophistiqués.', 'Robe', 1, 11);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
 VALUES (11, 37.0, 700.00, 'Blouson Urbain', 'Blouson pratique pour la vie citadine.', 'Blouson', 11, 10);
@@ -764,32 +764,4 @@ VALUES (30, 40.0, 950.00, 'Robe Rubis', 'Robe luxueuse aux tons rouges profonds.
 
 -- INSERTION A LA TABLE participer 
 INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (1, 1, 1);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (2, 2, 2);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (3, 3, 3);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (4, 4, 4);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (5, 5, 5);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (6, 6, 6);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (7, 7, 7);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (8, 8, 8);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (9, 9, 9);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (10, 10, 10);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (11, 11, 11);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (12, 12, 12);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (13, 13, 13);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (14, 14, 14);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (15, 15, 15);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (16, 16, 16);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (17, 17, 17);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (18, 18, 18);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (19, 19, 19);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (20, 20, 20);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (21, 21, 21);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (22, 22, 22);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (23, 23, 23);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (24, 24, 24);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (25, 25, 25);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (26, 26, 26);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (27, 27, 27);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (28, 28, 28);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (29, 29, 29);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (30, 30, 30);
+
