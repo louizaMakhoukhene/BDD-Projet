@@ -674,91 +674,91 @@ INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, 
 VALUES (1, 178.00, 250.00, 'Robe Printanière', 'Une robe légère pour les journées ensoleillées.', 'Robe', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (2, 179.00, 300.00, 'Costume Intemporel', 'Costume élégant pour toutes les occasions.', 'Costume', 1, 31);
+VALUES (2, 179.00, 300.00, 'Costume Intemporel', 'Costume élégant pour toutes les occasions.', 'Costume', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
 VALUES (3, 175.00, 150.00, 'T-shirt Urbain', 'T-shirt moderne et confortable.', 'T-shirt', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (4, 178.00, 450.00, 'Robe Astrale', 'Inspirée des constellations.', 'Robe', 1, 17);
+VALUES (4, 178.00, 450.00, 'Robe Astrale', 'Inspirée des constellations.', 'Robe', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (5, 180.00, 500.00, 'Manteau Vintage', 'Manteau classique avec une touche moderne.', 'Manteau', 1, 16);
+VALUES (5, 180.00, 500.00, 'Manteau Vintage', 'Manteau classique avec une touche moderne.', 'Manteau', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (6, 177.00, 200.00, 'Chemise Vivante', 'Chemise avec motifs artistiques.', 'Chemise', 1, 15);
+VALUES (6, 177.00, 200.00, 'Chemise Vivante', 'Chemise avec motifs artistiques.', 'Chemise', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (7, 178.00, 600.00, 'Veste Luxe', 'Veste scintillante pour soirées glamour.', 'Veste', 1, 14);
+VALUES (7, 178.00, 600.00, 'Veste Luxe', 'Veste scintillante pour soirées glamour.', 'Veste', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (8, 178.00, 120.00, 'Short Éternel', 'Short pratique et esthétique.', 'Short', 1, 13);
+VALUES (8, 178.00, 120.00, 'Short Éternel', 'Short pratique et esthétique.', 'Short', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (9, 175.00, 350.00, 'Robe de Ciel', 'Robe fluide avec des tons naturels.', 'Robe', 1, 12);
+VALUES (9, 175.00, 350.00, 'Robe de Ciel', 'Robe fluide avec des tons naturels.', 'Robe', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (10, 175.00, 800.00, 'Robe Ébène', 'Robe en soie avec détails sophistiqués.', 'Robe', 1, 11);
+VALUES (10, 175.00, 800.00, 'Robe Ébène', 'Robe en soie avec détails sophistiqués.', 'Robe', 1, 1);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (11, 180.00, 700.00, 'Blouson Urbain', 'Blouson pratique pour la vie citadine.', 'Blouson', 11, 10);
+VALUES (11, 180.00, 700.00, 'Blouson Urbain', 'Blouson pratique pour la vie citadine.', 'Blouson', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (12, 179.00, 450.00, 'Robe Lunaire', 'Robe mystique pour soirées spéciales.', 'Robe', 12, 9);
+VALUES (12, 179.00, 450.00, 'Robe Lunaire', 'Robe mystique pour soirées spéciales.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (13, 200.00, 550.00, 'Tenue d’Époque', 'Ensemble inspiré des années 80.', 'Ensemble', 13, 8);
+VALUES (13, 200.00, 550.00, 'Tenue d’Époque', 'Ensemble inspiré des années 80.', 'Ensemble', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (14, 199.00, 300.00, 'Jupe Pinceau', 'Jupe artistique et moderne.', 'Jupe', 14, 7);
+VALUES (14, 199.00, 300.00, 'Jupe Pinceau', 'Jupe artistique et moderne.', 'Jupe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (15, 199.00, 900.00, 'Costume Doré', 'Costume luxueux avec broderies dorées.', 'Costume', 15, 6);
+VALUES (15, 199.00, 900.00, 'Costume Doré', 'Costume luxueux avec broderies dorées.', 'Costume', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (16, 199.00, 400.00, 'Robe Automnale', 'Robe élégante dans des tons chauds.', 'Robe', 16, 5);
+VALUES (16, 199.00, 400.00, 'Robe Automnale', 'Robe élégante dans des tons chauds.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (17, 199.00, 650.00, 'Manteau Émeraude', 'Manteau chic avec des détails verts.', 'Manteau', 17, 4);
+VALUES (17, 199.00, 650.00, 'Manteau Émeraude', 'Manteau chic avec des détails verts.', 'Manteau', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (18, 195.00, 500.00, 'Veste Nocturne', 'Veste pour soirées formelles.', 'Veste', 18, 3);
+VALUES (18, 195.00, 500.00, 'Veste Nocturne', 'Veste pour soirées formelles.', 'Veste', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (19, 195.00, 850.00, 'Cape Magique', 'Cape inspirée des contes de fées.', 'Cape', 19, 2);
+VALUES (19, 195.00, 850.00, 'Cape Magique', 'Cape inspirée des contes de fées.', 'Cape', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (20, 195.00, 300.00, 'Robe Renaissance', 'Robe élégante avec des touches modernes.', 'Robe', 20, 1);
+VALUES (20, 195.00, 300.00, 'Robe Renaissance', 'Robe élégante avec des touches modernes.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (21, 195.00, 320.00, 'Robe Chromatique', 'Robe vive avec des couleurs audacieuses.', 'Robe', 21, 30);
+VALUES (21, 195.00, 320.00, 'Robe Chromatique', 'Robe vive avec des couleurs audacieuses.', 'Robe', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (22, 178.00, 700.00, 'Veste Satinée', 'Veste élégante en satin.', 'Veste', 22, 29);
+VALUES (22, 178.00, 700.00, 'Veste Satinée', 'Veste élégante en satin.', 'Veste', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (23, 178.00, 220.00, 'Jupe Été', 'Jupe légère et confortable.', 'Jupe', 23, 28);
+VALUES (23, 178.00, 220.00, 'Jupe Été', 'Jupe légère et confortable.', 'Jupe', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (24, 178.00, 180.00, 'Pantalon Lumière', 'Pantalon clair et fluide.', 'Pantalon', 24, 27);
+VALUES (24, 178.00, 180.00, 'Pantalon Lumière', 'Pantalon clair et fluide.', 'Pantalon', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (25, 178.00, 350.00, 'Manteau Velours', 'Manteau en velours raffiné.', 'Manteau', 25, 26);
+VALUES (25, 178.00, 350.00, 'Manteau Velours', 'Manteau en velours raffiné.', 'Manteau', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (26, 180.00, 300.00, 'Robe Futuriste', 'Robe métallique pour un look moderne.', 'Robe', 26, 25);
+VALUES (26, 180.00, 300.00, 'Robe Futuriste', 'Robe métallique pour un look moderne.', 'Robe', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (27, 180.00, 280.00, 'Robe Étoilée', 'Robe élégante avec des motifs d’étoiles.', 'Robe', 27, 24);
+VALUES (27, 180.00, 280.00, 'Robe Étoilée', 'Robe élégante avec des motifs d’étoiles.', 'Robe', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (28, 180.00, 400.00, 'Pantalon Patrimoine', 'Pantalon revisité avec style.', 'Pantalon', 28, 23);
+VALUES (28, 180.00, 400.00, 'Pantalon Patrimoine', 'Pantalon revisité avec style.', 'Pantalon', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (29, 180.00, 200.00, 'Robe Sculpturale', 'Robe audacieuse inspirée de l’art.', 'Robe', 29, 22);
+VALUES (29, 180.00, 200.00, 'Robe Sculpturale', 'Robe audacieuse inspirée de l’art.', 'Robe', 3, 3);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (30, 180.00, 950.00, 'Robe Rubis', 'Robe luxueuse aux tons rouges profonds.', 'Robe', 30, 21);
+VALUES (30, 180.00, 950.00, 'Robe Rubis', 'Robe luxueuse aux tons rouges profonds.', 'Robe', 3, 3);
 
 
 
