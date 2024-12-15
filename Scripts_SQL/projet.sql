@@ -327,6 +327,25 @@ BEGIN
 END;
 /
 
+--il faut que le nCreateur associé à la tenue correspond bien au nCreateur de la collection dans laquelle la tenue est insérée (nCollection).
+CREATE OR REPLACE TRIGGER trg_verif_createur_tenue
+BEFORE INSERT ON Tenue
+FOR EACH ROW
+DECLARE
+    ncreat_coll INT;
+BEGIN
+    -- Récupérer le nCreateur associé à la collection spécifiée dans l'insertion
+    SELECT nCreateur INTO ncreat_coll
+    FROM Collection
+    WHERE nCollection = :NEW.nCollection;
+
+    -- Comparer si le nCreateur de la table Tenue correspond à celui de Collection
+    IF :NEW.nCreateur != ncreat_coll THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le nCreateur ne correspond pas à celui de la collection.');
+    END IF;
+END;
+/
+
 
 -------------------Collection-----------
 --update nbrcollection when inserting or deletting collection 
@@ -396,6 +415,25 @@ BEGIN
     -- Vérifier que les deux maisons de mode correspondent
     IF v_nomMaisonModeDefile != v_nomMaisonModeCreateur THEN
         RAISE_APPLICATION_ERROR(-20001, 'Le créateur de la tenue doit appartenir à la maison de mode organisant le défilé.');
+    END IF;
+END;
+/
+
+-- le nomMaisonMode dans la table Collection doit etre le même que dans la table Createur
+CREATE OR REPLACE TRIGGER trg_verif_createur_maisonmode
+BEFORE INSERT ON Collection
+FOR EACH ROW
+DECLARE
+    nommais_creat VARCHAR(50);
+BEGIN
+    -- Récupérer le nomMaisonMode correspondant au nCreateur donné
+    SELECT nomMaisonMode INTO nommais_creat
+    FROM Createur
+    WHERE nCreateur = :NEW.nCreateur;
+
+    -- Vérifier si nomMaisonMode dans Collection correspond à celui de Createur
+    IF :NEW.nomMaisonMode != nommais_creat THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le nCreateur ne correspond pas à celui de la collection.');
     END IF;
 END;
 /
