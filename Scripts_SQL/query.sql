@@ -71,7 +71,7 @@ where TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
 and d.nomMaisonMode = 'Chanel';
 
 
---Requêtes sur les defiles
+--Requêtes sur les tenues
 --1.	Quelle est la moyenne des prix des tenues de collection ‘Echos Sauvages’ qui ont été présentées par la maison de mode "Lacoste" cette année ?
 select avg(t.prix) as moyenne_prix
 from collection co, participer p, tenue t, defile d
@@ -81,3 +81,18 @@ and co.ncollection = t.ncollection
 and co.nomCollection = 'Echos Sauvages'
 and co.nomMaisonMode = 'Lacoste'
 and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY');
+
+
+--Requêtes sur les mannequins
+--1.	Quels mannequins ont participé à plus de trois défilés lors de la saison ‘XX’ 2024 ?
+
+
+--2.	Quels mannequins ont porté des tenues de la collection "X" lors du défilé "Y" ?
+select m.nom, m.prenom
+from mannequin m, participer p, tenue t, collection co, defile d
+where p.nMannequin = m.nMannequin
+and p.ntenue = t.nTenue
+and t.ncollection = co.ncollection
+and p.ndefile = d.ndefile
+and co.nomCollection = ''
+and d.dateDefile = TO_DATE('1990-03-22', 'YYYY-MM-DD');
