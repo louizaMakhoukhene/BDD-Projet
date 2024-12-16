@@ -82,6 +82,16 @@ and co.nomCollection = 'Echos Sauvages'
 and co.nomMaisonMode = 'Lacoste'
 and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY');
 
+--2.	tenues qui coûtent plus cher que la moyenne des prix de leur collection 
+SELECT t.nTenue, t.nomTenue, t.prix, c.nomCollection
+FROM Tenue t
+JOIN Collection c ON t.nCollection = c.nCollection
+WHERE t.prix > (
+    SELECT AVG(t2.prix)
+    FROM Tenue t2
+    WHERE t2.nCollection = t.nCollection
+);
+
 
 --Requêtes sur les mannequins
 --1.	Quels mannequins ont participé à plus de trois défilés lors de la saison ‘Printemps/Ete’ 2024 ?
