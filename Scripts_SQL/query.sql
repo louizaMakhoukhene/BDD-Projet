@@ -69,3 +69,15 @@ select count(d.nDefile) as nombre_total_defiles
 from defile d
 where TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
 and d.nomMaisonMode = 'Chanel';
+
+
+--Requêtes sur les defiles
+--1.	Quelle est la moyenne des prix des tenues de collection ‘Echos Sauvages’ qui ont été présentées par la maison de mode "Lacoste" cette année ?
+select avg(t.prix) as moyenne_prix
+from collection co, participer p, tenue t, defile d
+where  t.nTenue = p.nTenue 
+and d.nDefile = p.ndefile
+and co.ncollection = t.ncollection
+and co.nomCollection = 'Echos Sauvages'
+and co.nomMaisonMode = 'Lacoste'
+and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY');
