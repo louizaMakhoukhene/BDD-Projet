@@ -707,28 +707,28 @@ INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, 
 VALUES (12, 179.00, 450.00, 'Robe Lunaire', 'Robe mystique pour soirées spéciales.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (13, 200.00, 550.00, 'Tenue d’Époque', 'Ensemble inspiré des années 80.', 'Ensemble', 2, 2);
+VALUES (13, 175.00, 550.00, 'Tenue d’Époque', 'Ensemble inspiré des années 80.', 'Ensemble', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (14, 199.00, 300.00, 'Jupe Pinceau', 'Jupe artistique et moderne.', 'Jupe', 2, 2);
+VALUES (14, 177.00, 300.00, 'Jupe Pinceau', 'Jupe artistique et moderne.', 'Jupe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (15, 199.00, 900.00, 'Costume Doré', 'Costume luxueux avec broderies dorées.', 'Costume', 2, 2);
+VALUES (15, 176.00, 900.00, 'Costume Doré', 'Costume luxueux avec broderies dorées.', 'Costume', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (16, 199.00, 400.00, 'Robe Automnale', 'Robe élégante dans des tons chauds.', 'Robe', 2, 2);
+VALUES (16, 178.00, 400.00, 'Robe Automnale', 'Robe élégante dans des tons chauds.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (17, 199.00, 650.00, 'Manteau Émeraude', 'Manteau chic avec des détails verts.', 'Manteau', 2, 2);
+VALUES (17, 175.00, 650.00, 'Manteau Émeraude', 'Manteau chic avec des détails verts.', 'Manteau', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (18, 195.00, 500.00, 'Veste Nocturne', 'Veste pour soirées formelles.', 'Veste', 2, 2);
+VALUES (18, 183.00, 500.00, 'Veste Nocturne', 'Veste pour soirées formelles.', 'Veste', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (19, 195.00, 850.00, 'Cape Magique', 'Cape inspirée des contes de fées.', 'Cape', 2, 2);
+VALUES (19, 185.00, 850.00, 'Cape Magique', 'Cape inspirée des contes de fées.', 'Cape', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
-VALUES (20, 195.00, 300.00, 'Robe Renaissance', 'Robe élégante avec des touches modernes.', 'Robe', 2, 2);
+VALUES (20, 180.00, 300.00, 'Robe Renaissance', 'Robe élégante avec des touches modernes.', 'Robe', 2, 2);
 
 INSERT INTO Tenue (nTenue, taille, prix, nomTenue, description, categorieTenue, nCollection, nCreateur) 
 VALUES (21, 195.00, 320.00, 'Robe Chromatique', 'Robe vive avec des couleurs audacieuses.', 'Robe', 3, 3);
@@ -763,16 +763,36 @@ VALUES (30, 180.00, 950.00, 'Robe Rubis', 'Robe luxueuse aux tons rouges profond
 
 
 -- INSERTION A LA TABLE participer 
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (1, 1, 1);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (2, 2, 2);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (3, 3, 3);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (4, 27, 4);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (5, 18, 5);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (1, 17, 1);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (2, 17, 2);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (3, 17, 3);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (4, 17, 4);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (5, 17, 5);
 INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (6, 17, 6);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (7, 16, 7);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (8, 15, 8);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (9, 14, 9);
-INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (10, 19, 10);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (7, 17, 7);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (8, 17, 8);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (9, 17, 9);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (10, 17, 10);
+
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (11, 1, 11);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (12, 1, 12);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (13, 1, 13);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (14, 1, 14);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (15, 1, 15);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (16, 1, 16);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (17, 1, 17);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (18, 1, 18);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (19, 1, 19);
+INSERT INTO Participer (nMannequin, nDefile, nTenue) VALUES (20, 1, 20);
+
+
+
+
+
+
+
+
+
 
 
 
