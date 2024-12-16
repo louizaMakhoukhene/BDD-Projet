@@ -84,15 +84,35 @@ and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY');
 
 
 --Requêtes sur les mannequins
---1.	Quels mannequins ont participé à plus de trois défilés lors de la saison ‘XX’ 2024 ?
+--1.	Quels mannequins ont participé à plus de trois défilés lors de la saison ‘Printemps/Ete’ 2024 ?
+select m.nom, m.prenom, count(p.ndefile) as nombre_defiles
+from participer p, mannequin m, collection co, defile d, tenue t
+where p.nMannequin = m.nMannequin
+and p.ntenue = t.ntenue
+and t.ncollection = co.ncollection
+and p.ndefile = d.ndefile
+and co.saison = 'Printemps/Ete'
+and TO_CHAR(d.dateDefile, 'YYYY') = '2024'
+group by m.nom, m.prenom
+having count(p.ndefile) > 3;
 
 
---2.	Quels mannequins ont porté des tenues de la collection "X" lors du défilé "Y" ?
+--2.	Quels mannequins ont porté des tenues de la collection "X" lors du défilé "yyyy-mm-dd" ?
 select m.nom, m.prenom
 from mannequin m, participer p, tenue t, collection co, defile d
 where p.nMannequin = m.nMannequin
 and p.ntenue = t.nTenue
 and t.ncollection = co.ncollection
 and p.ndefile = d.ndefile
-and co.nomCollection = ''
-and d.dateDefile = TO_DATE('1990-03-22', 'YYYY-MM-DD');
+and co.nomCollection = 'Echos Sauvages'
+and d.dateDefile = TO_DATE('1997-05-23', 'YYYY-MM-DD');
+
+--3.    le nom et le prénom des mannequins ont défilé aux deux Fashion Week de Paris 2021.
+select m.nom, m.prenom
+from participer p, mannequin m, defile d 
+where p.nMannequin = m.nMannequin
+and p.ndefile = d.ndefile
+and d.lieu = 'Paris'
+and TO_CHAR(d.dateDefile, 'YYYY') = '2021'
+group by m.nom, m.prenom
+having count(distinct p.ndefile) = 2;
