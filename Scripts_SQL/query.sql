@@ -41,9 +41,9 @@ where rownum = 1;
 --Requêtes sur les  collections
 --1. les collections présentées lors de la saison ‘automne-hiver 1985’
 select co.nomCollection
-from participant p, collection co, tenue t, defile d
+from participer p, collection co, tenue t, defile d
 where p.nTenue = t.nTenue
-and t.nomCollection = co.nCollection
+and t.nCollection = co.nCollection
 and p.nDefile = d.nDefile
 and co.saison = 'Automne/Hiver'
 and TO_CHAR(d.dateDefile, 'YYYY') = '1985';
