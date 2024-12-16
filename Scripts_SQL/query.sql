@@ -92,6 +92,14 @@ WHERE t.prix > (
     WHERE t2.nCollection = t.nCollection
 );
 
+--3.	Quelle est la tenue la moins chère et la plus chère de chaque maison de mode ?
+SELECT co.nomMaisonMode, 
+    MIN(t.prix) AS tenue_moins_chere, 
+    MAX(t.prix) AS tenue_plus_chere
+FROM Tenue t, collection co
+where t.nCollection = co.nCollection
+GROUP BY co.nomMaisonMode;
+
 
 --Requêtes sur les mannequins
 --1.	Quels mannequins ont participé à plus de trois défilés lors de la saison ‘Printemps/Ete’ 2024 ?
@@ -126,3 +134,33 @@ and d.lieu = 'Paris'
 and TO_CHAR(d.dateDefile, 'YYYY') = '2021'
 group by m.nom, m.prenom
 having count(distinct p.ndefile) = 2;
+
+
+-- 4.	Trouver les mannequins qui n’ont participé à aucun défilé cette année.
+select m.nom, m.prenom
+from mannequin m
+where not exists( select *
+                    from participer p, defile d
+                    where p.ndefile = d.ndefile
+                    and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY'));
+
+
+--Requêtes sur les mannequins
+--1.	les maisons de mode ont organisé un défilé pour chaque saison cette année
+select d.nomMaisonMode
+from Defile d, collection c
+where d.nomMaisonMode = c.nomMaisonMode
+and TO_CHAR(d.dateDefile, 'YYYY') = '2024'
+group by d.nomMaisonMode
+having COUNT(DISTINCT c.saison) = (SELECT COUNT(DISTINCT saison) FROM Collection);
+
+
+--2.	Quelles maisons de mode ont organisé le plus grand nombre de défilés cette année ?
+
+select d.nomMaisonMode, count(d.ndefile) as nombre_defiles
+from defile d
+group by d.nomMaisonMode 
+order by nombre_defiles desc)
+
+
+
