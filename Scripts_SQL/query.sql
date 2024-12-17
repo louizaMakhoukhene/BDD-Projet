@@ -232,13 +232,21 @@ where not exists(
     select * from InterviewM im where j.njournaliste = im.njournaliste and TO_CHAR(im.heureDebut, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
 );
 
+--Requêtes sur les journaliste
+--1.	1. Liste des sponsors et le nombre de défilés sponsorisés.
+select s.nomSponsor, count(se.ndefile) as nombre_defiles_sponsoriser 
+from sponsor s, sponsoriser se
+where s.nSponsor = se.nSponsor
+group by s.nomSponsor
+order by nombre_defiles_sponsoriser desc;
 
-
-
-
-
-
-
+--2.	Sponsors ayant sponsorisé des défilés pour une maison de mode spécifique.
+select s.nomSponsor, count(se.nDefile) as nombre_defiles_sponsorises 
+from sponsor s, sponsoriser se, defile d 
+where s.nSponsor = se.nSponsor
+and se.ndefile = d.ndefile
+and d.nomMaisonMode = 'Chanel';
+group by s.nomSponsor;
 
 
 
