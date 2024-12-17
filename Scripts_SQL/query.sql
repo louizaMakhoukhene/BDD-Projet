@@ -174,6 +174,14 @@ GROUP BY i.nom, i.prenom
 HAVING COUNT(a.nDefile) > 2;
 
 --2.	Les invités qui n'ont assisté à aucun défilé cette année 
+SELECT i.nom, i.prenom
+FROM Invite i
+WHERE NOT EXISTS (
+    SELECT *
+    FROM AssisterI ai
+    WHERE ai.nInvite = i.nInvite
+    AND TO_CHAR(ai.heureDepart, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+);
 
 
 
