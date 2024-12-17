@@ -173,4 +173,61 @@ AND c.saison = 'Automne/Hiver'
 GROUP BY i.nom, i.prenom
 HAVING COUNT(a.nDefile) > 2;
 
+--2.	Les invités qui n'ont assisté à aucun défilé cette année 
+
+
+
+--Requêtes sur les journaliste
+--1.	Quels sont les journalistes qui n'ont couvert aucun défilé cette année ?
+select j.nom, j.prenom
+from journaliste j
+where not exists( 
+                    select *
+                    from AssisterJ a, defile d 
+                    where a.ndefile = d.ndefile
+                    and a.njournaliste = j.njournaliste
+                    and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY'));
+
+--2.	Combien de défilés chaque journaliste a-t-il couvert cette annee ?
+select j.nom, j.prenom, count(a.ndefile) as nombre_defiles
+from journaliste j, AssisterJ a, defile d
+where j.njournaliste = a.njournaliste
+and a.ndefile = d.ndefile
+and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+group by j.nom, j.prenom;
+
+
+--3.	Quels sont les journalistes qui ont couvert tous les défilés d'une maison de mode spécifique ?
+select j.nom, j.prenom, d.nomMaisonMode, 
+from journaliste j, AssisterJ a, defile d
+where a.njournaliste = j.njournaliste
+and a.ndefile = d.ndefile
+and d.nomMaisonMode = 'Armani'
+group by j.nom, j.prenom, d.nomMaisonMode
+having count(distinct d.ndefile) = (
+                                        select count(*)
+                                        from defile
+                                        where nomMaisonMode = 'Armani'); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
