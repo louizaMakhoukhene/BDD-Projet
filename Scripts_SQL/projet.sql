@@ -346,6 +346,36 @@ END;
 /
 
 
+--•	Les tenues doivent être créées par le créateur qui travaille pour la maison de mode qui organise le défilé.
+CREATE OR REPLACE TRIGGER chk_createur_maisonmode
+BEFORE INSERT OR UPDATE ON Participer
+FOR EACH ROW
+DECLARE
+    v_nomMaisonModeDefile VARCHAR(50);
+    v_nomMaisonModeCreateur VARCHAR(50);
+BEGIN
+    -- Récupérer la maison de mode du défilé
+    SELECT nomMaisonMode
+    INTO v_nomMaisonModeDefile
+    FROM Defile
+    WHERE nDefile = :NEW.nDefile;
+
+    -- Récupérer la maison de mode du créateur
+    SELECT nomMaisonMode
+    INTO v_nomMaisonModeCreateur
+    FROM Createur
+    WHERE nCreateur = (SELECT nCreateur
+                    FROM Tenue
+                    WHERE nTenue = :NEW.nTenue);
+
+    -- Vérifier que les deux maisons de mode correspondent
+    IF v_nomMaisonModeDefile != v_nomMaisonModeCreateur THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Le créateur de la tenue doit appartenir à la maison de mode organisant le défilé.');
+    END IF;
+END;
+/
+
+
 -------------------Collection-----------
 --update nbrcollection when inserting or deletting collection 
 CREATE OR REPLACE TRIGGER T 
@@ -388,35 +418,6 @@ BEGIN
 END;
 /
 
-
---•	Les tenues doivent être créées par le créateur qui travaille pour la maison de mode qui organise le défilé.
-CREATE OR REPLACE TRIGGER chk_createur_maisonmode
-BEFORE INSERT OR UPDATE ON Participer
-FOR EACH ROW
-DECLARE
-    v_nomMaisonModeDefile VARCHAR(50);
-    v_nomMaisonModeCreateur VARCHAR(50);
-BEGIN
-    -- Récupérer la maison de mode du défilé
-    SELECT nomMaisonMode
-    INTO v_nomMaisonModeDefile
-    FROM Defile
-    WHERE nDefile = :NEW.nDefile;
-
-    -- Récupérer la maison de mode du créateur
-    SELECT nomMaisonMode
-    INTO v_nomMaisonModeCreateur
-    FROM Createur
-    WHERE nCreateur = (SELECT nCreateur
-                    FROM Tenue
-                    WHERE nTenue = :NEW.nTenue);
-
-    -- Vérifier que les deux maisons de mode correspondent
-    IF v_nomMaisonModeDefile != v_nomMaisonModeCreateur THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Le créateur de la tenue doit appartenir à la maison de mode organisant le défilé.');
-    END IF;
-END;
-/
 
 -- le nomMaisonMode dans la table Collection doit etre le même que dans la table Createur
 CREATE OR REPLACE TRIGGER trg_verif_createur_maisonmode

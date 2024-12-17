@@ -369,6 +369,8 @@ INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO
 
 INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-12-01', 'YYYY-MM-DD'), 'Mode', 28, 30);
 
+INSERT INTO Sponsoriser (dateSponsor, typeSponsor, nSponsor, nDefile) VALUES (TO_DATE('1995-12-01', 'YYYY-MM-DD'), 'Mode', 28, 3);
+
 
 -- INSERTION A LA TABLE InvterviewC
 
