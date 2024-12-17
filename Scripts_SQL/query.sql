@@ -210,9 +210,27 @@ having count(distinct d.ndefile) = (
                                         where nomMaisonMode = 'Armani'); 
 
 
+--4.	Nombre total d'interviews réalisées par chaque journaliste par type d'interview ?
+select j.nom, j.prenom,
+    count(distinct im.nInterview) as interviews_mannequins,
+    count(distinct ii.nInterview) as interviews_invites,
+    count(distinct ic.nInterview) as interviews_createurs
+from journaliste j
+left join InterviewC ic on ic.njournaliste = j.njournaliste
+left join InterviewM im on im.njournaliste = j.njournaliste
+left join InterviewI ii on ii.njournaliste = j.njournaliste
+group by j.nom, j.prenom;
 
-
-
+--5.	Quels journalistes n'ont réalisé aucune interview cette année 
+select j.nom, j.prenom
+from journaliste j
+where not exists(
+    select * from InterviewI ii where j.njournaliste = ii.njournaliste and TO_CHAR(ii.heureDebut, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+    union all 
+    select * from InterviewC ic where j.njournaliste = ic.njournaliste and TO_CHAR(ic.heureDebut, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+    union all    
+    select * from InterviewM im where j.njournaliste = im.njournaliste and TO_CHAR(im.heureDebut, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+);
 
 
 
