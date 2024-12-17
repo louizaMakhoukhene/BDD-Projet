@@ -145,7 +145,7 @@ where not exists( select *
                     and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY'));
 
 
---Requêtes sur les mannequins
+--Requêtes sur les maisons de mode
 --1.	les maisons de mode ont organisé un défilé pour chaque saison cette année
 select d.nomMaisonMode
 from Defile d, collection c
@@ -156,11 +156,21 @@ having COUNT(DISTINCT c.saison) = (SELECT COUNT(DISTINCT saison) FROM Collection
 
 
 --2.	Quelles maisons de mode ont organisé le plus grand nombre de défilés cette année ?
-
 select d.nomMaisonMode, count(d.ndefile) as nombre_defiles
 from defile d
 group by d.nomMaisonMode 
-order by nombre_defiles desc)
+order by nombre_defiles desc;
 
+--Requêtes sur les invites
+--1.	Quels sont les invités ayant assisté à plus de cinq défilés cette saison ?
+SELECT i.nom, i.prenom
+FROM invite i, assisteri a, defile d, collection c
+where i.nInvite = a.nInvite
+and a.nDefile = d.nDefile
+and d.nomMaisonMode = c.nomMaisonMode
+and TO_CHAR(d.dateDefile, 'YYYY') = TO_CHAR(SYSDATE, 'YYYY')
+AND c.saison = 'Automne/Hiver' 
+GROUP BY i.nom, i.prenom
+HAVING COUNT(a.nDefile) > 2;
 
 
