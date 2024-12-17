@@ -139,6 +139,22 @@ VALUES (TO_TIMESTAMP('1997-01-30 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTA
 INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
 VALUES (TO_TIMESTAMP('1995-12-01 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-12-01 18:25:00', 'YYYY-MM-DD HH24:MI:SS'), 30, 28);
 
+INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
+VALUES (TO_TIMESTAMP('1995-12-01 16:10:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-12-01 18:25:00', 'YYYY-MM-DD HH24:MI:SS'), 30, 29);
+
+INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
+VALUES (TO_TIMESTAMP('1997-01-30 15:50:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-01-30 18:05:00', 'YYYY-MM-DD HH24:MI:SS'), 29, 30);
+
+INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
+VALUES (TO_TIMESTAMP('1997-02-10 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-02-10 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 28, 30);
+
+INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
+VALUES (TO_TIMESTAMP('1997-09-01 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1997-09-01 18:10:00', 'YYYY-MM-DD HH24:MI:SS'), 27, 30);
+
+INSERT INTO AssisterI (heureDepart, heureArrivee, nDefile, nInvite) 
+VALUES (TO_TIMESTAMP('1995-04-12 16:40:00', 'YYYY-MM-DD HH24:MI:SS'), TO_TIMESTAMP('1995-04-12 18:55:00', 'YYYY-MM-DD HH24:MI:SS'), 26, 30);
+
+
 
 -- INSERTION A LA TABLE AssisterC    
 INSERT INTO AssisterC (heureDepart, heureArrivee, nDefile, nCreateur) 

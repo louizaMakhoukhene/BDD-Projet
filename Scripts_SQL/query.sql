@@ -11,7 +11,7 @@ from participer p, tenue t, createur c, defile d
 where p.nTenue = t.nTenue 
 and c.nCreateur = t.nCreateur
 and d.nDefile = p.nDefile
-and d.dateDefile =  TO_DATE('1990-03-22', 'YYYY-MM-DD')
+and d.dateDefile =  TO_DATE('2024-12-22', 'YYYY-MM-DD')
 and d.lieu = 'Paris';
 
 --2.	Lister toutes les collections d'un créateur avec le nombre de tenues par collection.
@@ -46,7 +46,7 @@ where p.nTenue = t.nTenue
 and t.nCollection = co.nCollection
 and p.nDefile = d.nDefile
 and co.saison = 'Automne/Hiver'
-and TO_CHAR(d.dateDefile, 'YYYY') = '1985';
+and TO_CHAR(d.dateDefile, 'YYYY') = '2024';
 
 
 --2.les collections créées par le créateur par exemple "Renaud Dorian" pour la maison de mode "Chanel" 
@@ -241,7 +241,7 @@ where not exists(
 );
 
 --Requêtes sur les journaliste
---1.	1. Liste des sponsors et le nombre de défilés sponsorisés.
+--	1. Liste des sponsors et le nombre de défilés sponsorisés.
 select s.nomSponsor, count(se.ndefile) as nombre_defiles_sponsoriser 
 from sponsor s, sponsoriser se
 where s.nSponsor = se.nSponsor

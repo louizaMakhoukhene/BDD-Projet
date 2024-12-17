@@ -92,7 +92,6 @@ CREATE TABLE Sponsor (
     telephone VARCHAR(20)
 );
 
-
 CREATE TABLE Defile (
     nDefile INT PRIMARY KEY,
     lieu VARCHAR(100),
