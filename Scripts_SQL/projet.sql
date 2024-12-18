@@ -30,6 +30,40 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE PROCEDURE Create_Users AS
+    v_invites_count INT;
+    v_mannequins_count INT;
+BEGIN
+    -- Vérifier si l'utilisateur 'Invites' existe
+    SELECT COUNT(*)
+    INTO v_invites_count
+    FROM DBA_USERS
+    WHERE USERNAME = 'Invites';
+
+    IF v_invites_count = 0 THEN
+        -- Si l'utilisateur 'Invites' n'existe pas, le créer
+        EXECUTE IMMEDIATE 'CREATE USER Invites IDENTIFIED BY 2024';
+        DBMS_OUTPUT.PUT_LINE('Utilisateur "Invites" créé avec succès.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('L"utilisateur "Invites" existe déjà.');
+    END IF;
+
+    -- Vérifier si l'utilisateur 'Mannequins' existe
+    SELECT COUNT(*)
+    INTO v_mannequins_count
+    FROM DBA_USERS
+    WHERE USERNAME = 'Mannequins';
+
+    IF v_mannequins_count = 0 THEN
+        -- Si l'utilisateur 'Mannequins' n'existe pas, le créer
+        EXECUTE IMMEDIATE 'CREATE USER Mannequins IDENTIFIED BY 2024';
+        DBMS_OUTPUT.PUT_LINE('Utilisateur "Mannequins" créé avec succès.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('L"utilisateur "Mannequins" existe déjà.');
+    END IF;
+END;
+
+
 
 CREATE TABLE MaisonMode (
     nomMaisonMode VARCHAR(50) PRIMARY KEY,
@@ -437,3 +471,57 @@ BEGIN
     END IF;
 END;
 /
+
+
+
+
+---------------------------------
+
+-- Les vues et droits d'accees 
+
+---------------------------------
+
+-- invites ------------------
+-- vues
+
+--Liste des défilés auxquels un invité peut assister
+CREATE OR REPLACE VIEW Vue_Defiles_Invites AS
+SELECT 
+    i.nInvite,
+    i.nom AS NomInvite,
+    i.prenom AS PrenomInvite,
+    d.nDefile,
+    d.lieu,
+    d.dateDefile,
+    d.heureDebut,
+    d.heureFin,
+    d.theme,
+    d.descriptionDefile
+FROM 
+    AssisterI a, defile d, invite i
+where a.nDefile = d.nDefile
+and i.nInvite = a.nInvite;
+
+--Liste les collections présentées lors des défilés auxquels ils sont invités.
+CREATE OR REPLACE VIEW Vue_Collections_Invite AS
+SELECT 
+    i.nInvite,
+    i.nom AS NomInvite,
+    i.prenom AS PrenomInvite,
+    c.nCollection,
+    c.nomCollection,
+    c.themeCollection,
+    c.saison,
+    c.nomMaisonMode
+FROM 
+    AssisterI a, invite i, defile d, collection c 
+where a.nDefile = d.nDefile
+and a.nInvite = i.nInvite
+and c.nomMaisonMode = d.nomMaisonMode;
+
+--droit
+
+-- Groupes utilisateurs sont les invitees 
+GRANT SELECT ON Vue_Defiles_Invites TO Invites;
+GRANT SELECT ON Vue_Collections_Invite TO Invites;
+

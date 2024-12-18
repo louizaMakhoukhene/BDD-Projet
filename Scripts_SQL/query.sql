@@ -260,6 +260,11 @@ group by s.nomSponsor;
 
 
 
+-- les vues et driots d'acces (for test)
+--invite
+SELECT * FROM Vue_Defiles_Invites WHERE nInvite = 1;
+SELECT * FROM Vue_Collections_Invite WHERE nInvite = 1;
+
 
 
 
