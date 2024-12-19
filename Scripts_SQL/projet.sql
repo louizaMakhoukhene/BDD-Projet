@@ -292,6 +292,32 @@ BEGIN
     END IF;
 END;
 /
+
+
+
+CREATE OR REPLACE TRIGGER Check_lmit_mnq1
+BEFORE INSERT ON Participer
+FOR EACH ROW
+DECLARE
+    v_total_mannequins INT;
+BEGIN
+    
+    SELECT COUNT(*)
+    INTO v_total_mannequins
+    FROM Participer
+    WHERE nDefile = :NEW.nDefile;
+
+    IF v_total_mannequins >= 10 THEN
+       
+        RETURN;
+    ELSE
+     
+        RAISE_APPLICATION_ERROR(-20004, 'Un défilé doit avoir au moins 10 mannequins inscrits.');
+    END IF;
+END;
+/
+
+
 -----------Sponsor---------
 
 CREATE OR REPLACE TRIGGER Verif_Nb_Defiles_Sponsor
