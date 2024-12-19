@@ -30,130 +30,33 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE Create_Users AS
-    v_invites_count INT;
-    v_mannequins_count INT;
-    v_createurs_count INT;
-    v_maisondemodes_count INT;
-    v_mannequin_count INT;
-    v_journalistes_count INT;
-
 BEGIN
-
-
-    -- Vérifier si l'utilisateur 'Invites' existe
-    SELECT COUNT(*)
-    INTO v_invites_count
-    FROM DBA_USERS
-    WHERE USERNAME = 'Invites';
-
-    IF v_invites_count = 0 THEN
-        -- Si l'utilisateur 'Invites' n'existe pas, le créer
-        EXECUTE IMMEDIATE 'CREATE USER Invites IDENTIFIED BY 2024';
-        DBMS_OUTPUT.PUT_LINE('Utilisateur "Invites" créé avec succès.');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('utilisateur "Invites" existe déjà.');
-    END IF;
-
-
-    -- Vérifier si l'utilisateur 'Mannequins' existe
-    SELECT COUNT(*)
-    INTO v_mannequins_count
-    FROM DBA_USERS
-    WHERE USERNAME = 'Mannequins';
-
-    IF v_mannequins_count = 0 THEN
-        -- Si l'utilisateur 'Mannequins' n'existe pas, le créer
-        EXECUTE IMMEDIATE 'CREATE USER Mannequins IDENTIFIED BY 2024';
-        DBMS_OUTPUT.PUT_LINE('Utilisateur "Mannequins" créé avec succès.');
-
-        -- Droits de lecture pour les Mannequins sur les vues
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Mannequin_Defiles TO Mannequins';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins';
-        DBMS_OUTPUT.PUT_LINE('Droits de lecture accordés à utilisateur "Mannequins".');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('utilisateur "Mannequins" existe déjà.');
-    END IF;
-
-
-
-     -- Vérifier si l'utilisateur 'Createurs' existe
-    SELECT COUNT(*)
-    INTO v_createurs_count
-    FROM DBA_USERS
-    WHERE USERNAME = 'Createurs';
-
-    IF v_createurs_count = 0 THEN
-        EXECUTE IMMEDIATE 'CREATE USER Createurs IDENTIFIED BY 2024';
-        DBMS_OUTPUT.PUT_LINE('Utilisateur "Createurs" créé avec succès.');
-
-        --- je donne des droits sur les tables Collection et Tenue mour UTIKLISATEURS CREATEURS
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs';
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Tenue_Collections TO Createurs';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs';
-        
-        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Createurs" ');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
-    END IF;
-
-
-    ----verifier si l'utilisateur 'MaisonsDeModes' existe 
-     SELECT COUNT(*)
-    INTO v_maisondemodes_count
-    FROM DBA_USERS
-    WHERE USERNAME = 'MaisonsDeModes';
-
-    IF v_maisondemodes_count = 0 THEN 
-    EXECUTE IMMEDIATE 'CREATE USER MaisonsDeModes IDENTIFIED BY 2024';
-    DBMS_OUTPUT.PUT_LINE('Utilisateur "MaisonsDeModes" créé avec succès.');
-
-     --- je donne des droits sur les tables Collection, Createur, Defile pour UTILISATEUR MAISONDEMODE
-        
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Collections TO MaisonsDeModes';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Defiles TO MaisonsDeModes';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Defiles_Mannequins TO MaisonsDeModes';
-
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes';
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes';
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes';
-
-        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "MaisonsDeModes" ');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('utilisateur "MaisonsDeModes" existe déjà.');
-    END IF;
-
-
-
-    -- Vérifier si l'utilisateur 'Journalistes' existe
-    SELECT COUNT(*)
-    INTO v_journalistes_count
-    FROM DBA_USERS
-    WHERE USERNAME = 'Journalistes';
-
-    IF v_journalistes_count = 0 THEN
-        -- Créer l'utilisateur 'Journalistes' si nécessaire
-        EXECUTE IMMEDIATE 'CREATE USER Journalistes IDENTIFIED BY 2024';
-        DBMS_OUTPUT.PUT_LINE('Utilisateur "Journalistes" créé avec succès.');
-
-        -- Droits de lecture sur les vues
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Journaliste_Collections_Defiles TO Journalistes';
-        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Journaliste_MaisonsMode TO Journalistes';
-
-        -- Droits d'insertion et modification sur les tables d'interviews
-        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewM TO Journalistes';
-        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewC TO Journalistes';
-        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewI TO Journalistes';
-
-        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Journalistes".');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('Utilisateur "Journalistes" existe déjà.');
-    END IF;
-
-
+    -- Vérification et création des utilisateurs
+    FOR user_info IN (
+        SELECT 'Invites' AS username, '2024' AS password FROM DUAL
+        UNION ALL
+        SELECT 'Mannequins', '2024' FROM DUAL
+        UNION ALL
+        SELECT 'Createurs', '2024' FROM DUAL
+        UNION ALL
+        SELECT 'MaisonsDeModes', '2024' FROM DUAL
+    ) LOOP
+        BEGIN
+            EXECUTE IMMEDIATE 'CREATE USER ' || user_info.username || ' IDENTIFIED BY ' || user_info.password;
+            DBMS_OUTPUT.PUT_LINE('Utilisateur "' || user_info.username || '" créé avec succès.');
+        EXCEPTION
+            WHEN OTHERS THEN
+                IF SQLCODE = -1920 THEN
+                    DBMS_OUTPUT.PUT_LINE('Utilisateur "' || user_info.username || '" existe déjà.');
+                ELSE
+                    RAISE;
+                END IF;
+        END;
+    END LOOP;
 END;
 /
+
+
 
 
 CREATE TABLE MaisonMode (
@@ -576,7 +479,7 @@ END;
 
 -------------cette vue va associer les createurs a leur collections et les tenues associés-------------
 
-CREATE OR REPLACE VIEW Vue_Createur_1 AS 
+CREATE OR REPLACE VIEW V_Creat_Tenue_Col AS 
 SELECT 
     cr.nCreateur,
     cr.nom AS NomCreateur,
@@ -599,7 +502,7 @@ WHERE
 
 ------------------------Affiche les défilés où les collections du créateur sont présentées--------------------
 
-CREATE OR REPLACE VIEW Vue_Createur_2 AS
+CREATE OR REPLACE VIEW V_Creat_Col_Def AS
 SELECT 
     cr.nCreateur,
     cr.nom AS NomCreateur,
@@ -619,14 +522,15 @@ WHERE
     cr.nCreateur = c.nCreateur
     AND c.nomMaisonMode = d.nomMaisonMode;
 
--- Droits pour les créateurs
-
-GRANT SELECT ON Vue_Createur_Tenue_Collections TO Createurs;
-GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs;
----droits de lecture et écriture sur la table Tenue
+-- Droits pour les utilisateurs
+GRANT SELECT ON V_Creat_Tenue_Col TO Createurs;
+GRANT SELECT ON V_Creat_Col_Def TO Createurs;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs;
----droits de lecture et écriture sur la table Collection
 GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
+
+
+
+
 
 
 
@@ -637,9 +541,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 
 ----VUES---
 -----------Liste des collections produites par une maison de mode------------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_1 AS
-SELECT 
-    SELECT 
+CREATE OR REPLACE VIEW V_Maison_Col AS
+SELECT  
     mm.nomMaisonMode,
     c.nCollection,
     c.nomCollection,
@@ -652,7 +555,7 @@ WHERE
     mm.nomMaisonMode = c.nomMaisonMode;
 
 ---------------------Informations des défilés organisés par une maison de mode------------------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_2 AS
+CREATE OR REPLACE VIEW V_Maison_Def AS
 SELECT 
     mm.nomMaisonMode,
     d.nDefile,
@@ -669,7 +572,7 @@ WHERE
     mm.nomMaisonMode = d.nomMaisonMode;
 
 ------------------------------Liste des mannequins participant aux défilés d’une maison de mode-----------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_3 AS
+CREATE OR REPLACE VIEW V_Maison_Def_Mannequins AS
 SELECT 
     mm.nomMaisonMode,
     d.nDefile,
@@ -686,18 +589,12 @@ WHERE
     AND p.nMannequin = m.nMannequin;
 
 
--- Droits pour les maisons de mode
-GRANT SELECT ON Vue_MaisonDeMode_Collections TO MaisonsDeModes;
-GRANT SELECT ON Vue_MaisonDeMode_Defiles TO MaisonsDeModes;
-GRANT SELECT ON Vue_MaisonDeMode_Defiles_Mannequins TO MaisonsDeModes;
-
-
----droits de lecture et écriture sur la table Collection
+GRANT SELECT ON V_Maison_Col TO MaisonsDeModes;
+GRANT SELECT ON V_Maison_Def TO MaisonsDeModes;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes;
----droits de lecture et écriture sur la table Defile
 GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes;
----droits de lecture et écriture sur la table Createur
-GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
+
+
 
 
 
@@ -706,7 +603,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
 --------MANNEQUIN-------------$*
 ---VUES------------
 -----Vue des défilés où le mannequin est programme
-CREATE OR REPLACE VIEW Vue_Mannequin_1 AS
+CREATE OR REPLACE VIEW Vue_Mannequin_Defiles AS
 SELECT 
     m.nMannequin,
     m.nom AS NomMannequin,
@@ -729,7 +626,7 @@ WHERE
 
 
 ----- Vue des tenues attribuées au mannequin pour chaque défilé
-CREATE OR REPLACE VIEW Vue_Mannequin_2 AS
+CREATE OR REPLACE VIEW Vue_Mannequin_Tenues AS
 SELECT 
     m.nMannequin,
     m.nom AS NomMannequin,
@@ -740,80 +637,27 @@ SELECT
     t.categorieTenue,
     t.taille,
     t.prix,
-    d.nDefile,
+    p.nDefile,
     d.dateDefile
 FROM 
     Mannequin m, Tenue t, Defile d, Participer p
 WHERE 
     m.nMannequin = p.nMannequin
-    AND p.nDefile = t.nDefile
-    AND t.nDefile = d.nDefile;
-
-
-------droits------------------
-GRANT SELECT ON Vue_Mannequin_Defiles TO Mannequins;
-GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins;
+    AND p.nTenue = t.nTenue
+    AND p.nDefile = d.nDefile;
 
 
 
 
---------------JOURNALISTE--------------
----VUES---------
 
 
-------Collections des défilés accrédités pour les journalistes---------------
 
-CREATE OR REPLACE VIEW Vue_Journaliste_1 AS
-SELECT 
-    j.nJournaliste,
-    d.nDefile,
-    d.theme AS ThemeDefile,
-    d.dateDefile,
-    c.nCollection,
-    c.nomCollection,
-    c.themeCollection,
-    c.saison
-FROM 
-    Journaliste j, 
-    Accreditations a, 
-    Defile d, 
-    Collection c
-WHERE 
-    j.nJournaliste = a.nJournaliste
-    AND a.nDefile = d.nDefile
-    AND d.nomMaisonMode = c.nomMaisonMode;
-
-
----------------Informations publiques des Maisons de Mode
-CREATE OR REPLACE VIEW Vue_Journaliste_2 AS
-SELECT 
-    mm.nomMaisonMode,
-    mm.nomFondateur,
-    mm.dateFondation,
-    mm.localisation,
-    mm.siteWEB
-FROM 
-    MaisonMode mm
-WHERE 
-    mm.dateFondation >= TO_DATE('2000-01-01', 'YYYY-MM-DD'); -- Maisons fondées après 2000 OU AUTRE CONDITION DE RECHERCHE 
-
-
-------Droits----------------
--- Droits de lecture sur les vues
-GRANT SELECT ON Vue_Journaliste_Collections_Defiles TO Journalistes;
-GRANT SELECT ON Vue_Journaliste_MaisonsMode TO Journalistes;
-
--- Droits d'insertion et de mise à jour sur les tables d'interviews
-GRANT INSERT, UPDATE ON InterviewM TO Journalistes;
-GRANT INSERT, UPDATE ON InterviewC TO Journalistes;
-GRANT INSERT, UPDATE ON InterviewI TO Journalistes;
 
 
 -- invites ------------------
 -- vues
 
---Liste des défilés auxquels un invité peut assister
-CREATE OR REPLACE VIEW Vue_Defiles_Invites AS
+CREATE OR REPLACE VIEW V_Inv_Def AS
 SELECT 
     i.nInvite,
     i.nom AS NomInvite,
@@ -826,12 +670,12 @@ SELECT
     d.theme,
     d.descriptionDefile
 FROM 
-    AssisterI a, defile d, invite i
-where a.nDefile = d.nDefile
-and i.nInvite = a.nInvite;
+    AssisterI ai, Defile d, Invite i
+WHERE 
+    ai.nDefile = d.nDefile
+    AND ai.nInvite = i.nInvite;
 
---Liste les collections présentées lors des défilés auxquels ils sont invités.
-CREATE OR REPLACE VIEW Vue_Collections_Invite AS
+CREATE OR REPLACE VIEW V_Inv_Col AS
 SELECT 
     i.nInvite,
     i.nom AS NomInvite,
@@ -842,14 +686,11 @@ SELECT
     c.saison,
     c.nomMaisonMode
 FROM 
-    AssisterI a, invite i, defile d, collection c 
-where a.nDefile = d.nDefile
-and a.nInvite = i.nInvite
-and c.nomMaisonMode = d.nomMaisonMode;
+    AssisterI ai, Invite i, Defile d, Collection c
+WHERE 
+    ai.nDefile = d.nDefile
+    AND ai.nInvite = i.nInvite
+    AND c.nomMaisonMode = d.nomMaisonMode;
 
---droit
-
--- Groupes utilisateurs sont les invitees 
-GRANT SELECT ON Vue_Defiles_Invites TO Invites;
-GRANT SELECT ON Vue_Collections_Invite TO Invites;
-
+GRANT SELECT ON V_Inv_Def TO Invites;
+GRANT SELECT ON V_Inv_Col TO Invites;
