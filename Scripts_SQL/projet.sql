@@ -33,7 +33,10 @@ END;
 CREATE OR REPLACE PROCEDURE Create_Users AS
     v_invites_count INT;
     v_mannequins_count INT;
+    v_createurs_count INT;
+
 BEGIN
+
     -- Vérifier si l'utilisateur 'Invites' existe
     SELECT COUNT(*)
     INTO v_invites_count
@@ -61,7 +64,30 @@ BEGIN
     ELSE
         DBMS_OUTPUT.PUT_LINE('L"utilisateur "Mannequins" existe déjà.');
     END IF;
+
+
+
+     -- Vérifier si l'utilisateur 'Createurs' existe
+    SELECT COUNT(*)
+    INTO v_createurs_count
+    FROM DBA_USERS
+    WHERE USERNAME = 'Createurs';
+
+    IF v_createurs_count = 0 THEN
+        EXECUTE IMMEDIATE 'CREATE USER Createurs IDENTIFIED BY 2024';
+        DBMS_OUTPUT.PUT_LINE('Utilisateur "Createurs" créé avec succès.');
+
+
+        --- je donne des droits sur les tables
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs';
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs';
+        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Createurs" ');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
+    END IF;
 END;
+/
+
 
 
 
@@ -528,6 +554,15 @@ FROM
 WHERE 
     cr.nCreateur = c.nCreateur
     AND c.nomMaisonMode = d.nomMaisonMode;
+
+-- Droits pour les créateurs
+
+GRANT SELECT ON Vue_Createur_Tenue_Collections TO Createurs;
+GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs;
+---droits de lecture et écriture sur la table Tenue
+GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs;
+---droits de lecture et écriture sur la table Collection
+GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 
 -- invites ------------------
 -- vues
