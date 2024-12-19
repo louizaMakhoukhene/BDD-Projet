@@ -35,6 +35,7 @@ CREATE OR REPLACE PROCEDURE Create_Users AS
     v_mannequins_count INT;
     v_createurs_count INT;
     v_maisondemodes_count INT;
+    v_mannequin_count INT;
 
 BEGIN
 
@@ -62,6 +63,11 @@ BEGIN
         -- Si l'utilisateur 'Mannequins' n'existe pas, le créer
         EXECUTE IMMEDIATE 'CREATE USER Mannequins IDENTIFIED BY 2024';
         DBMS_OUTPUT.PUT_LINE('Utilisateur "Mannequins" créé avec succès.');
+
+        -- Droits de lecture pour les Mannequins sur les vues
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Mannequin_Defiles TO Mannequins';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins';
+        DBMS_OUTPUT.PUT_LINE('Droits de lecture accordés à utilisateur "Mannequins".');
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Mannequins" existe déjà.');
     END IF;
@@ -669,6 +675,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
 
 
 
+
 --------MANNEQUIN-------------$*
 ---VUES------------
 -----Vue des défilés où le mannequin est programme
@@ -716,8 +723,9 @@ WHERE
     AND t.nDefile = d.nDefile;
 
 
-
-
+------droits------------------
+GRANT SELECT ON Vue_Mannequin_Defiles TO Mannequins;
+GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins;
 
 
 
