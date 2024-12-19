@@ -49,7 +49,7 @@ BEGIN
         EXECUTE IMMEDIATE 'CREATE USER Invites IDENTIFIED BY 2024';
         DBMS_OUTPUT.PUT_LINE('Utilisateur "Invites" créé avec succès.');
     ELSE
-        DBMS_OUTPUT.PUT_LINE('L"utilisateur "Invites" existe déjà.');
+        DBMS_OUTPUT.PUT_LINE('utilisateur "Invites" existe déjà.');
     END IF;
 
     -- Vérifier si l'utilisateur 'Mannequins' existe
@@ -63,7 +63,7 @@ BEGIN
         EXECUTE IMMEDIATE 'CREATE USER Mannequins IDENTIFIED BY 2024';
         DBMS_OUTPUT.PUT_LINE('Utilisateur "Mannequins" créé avec succès.');
     ELSE
-        DBMS_OUTPUT.PUT_LINE('L"utilisateur "Mannequins" existe déjà.');
+        DBMS_OUTPUT.PUT_LINE('utilisateur "Mannequins" existe déjà.');
     END IF;
 
 
@@ -90,17 +90,17 @@ BEGIN
 
     ----verifier si l'utilisateur 'MaisonsDeModes' existe 
      SELECT COUNT(*)
-    INTO v_mannequins_count
+    INTO v_maisondemodes_count
     FROM DBA_USERS
     WHERE USERNAME = 'MaisonsDeModes';
 
-    IF v_maisondemodes_count = 0 then 
-    EXECUTE IMMEDIATE 'CREATE USER Createurs IDENTIFIED BY 2024';
+    IF v_maisondemodes_count = 0 THEN 
+    EXECUTE IMMEDIATE 'CREATE USER MaisonsDeModes IDENTIFIED BY 2024';
     DBMS_OUTPUT.PUT_LINE('Utilisateur "MaisonsDeModes" créé avec succès.');
 
      --- je donne des droits sur les tables Collection, Createur, Defile pour UTILISATEUR MAISONDEMODE
         
-        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModesteurs';
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes';
         DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "MaisonsDeModes" ');
