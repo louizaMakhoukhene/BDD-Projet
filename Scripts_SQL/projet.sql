@@ -509,7 +509,6 @@ END;
 ----------CREATEUR-----------------
 ----------LES VUES DU CREATEUR-------------
 
--------------oAffiche les collections du créateur avec les tenues associées--------------------------------
 -------------cette vue va associer les createurs a leur collections et les tenues associés-------------
 
 CREATE OR REPLACE VIEW Vue_Createur_Tenue_Collections AS 
@@ -563,6 +562,67 @@ GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs;
 ---droits de lecture et écriture sur la table Collection
 GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
+
+
+
+---------MAISON DE MODE-------------------
+
+
+
+----VUES---
+-----------Liste des collections produites par une maison de mode------------------------
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_Collections AS
+SELECT 
+    SELECT 
+    mm.nomMaisonMode,
+    c.nCollection,
+    c.nomCollection,
+    c.themeCollection,
+    c.saison,
+    c.nbrTenues
+FROM 
+    MaisonMode mm, Collection c
+WHERE 
+    mm.nomMaisonMode = c.nomMaisonMode;
+
+---------------------Informations des défilés organisés par une maison de mode------------------------------
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_Defiles AS
+SELECT 
+    mm.nomMaisonMode,
+    d.nDefile,
+    d.lieu,
+    d.dateDefile,
+    d.heureDebut,
+    d.heureFin,
+    d.theme,
+    d.descriptionDefile,
+    d.nbrPlaceMax
+FROM 
+    MaisonMode mm, Defile d
+WHERE 
+    mm.nomMaisonMode = d.nomMaisonMode;
+
+------------------------------Liste des mannequins participant aux défilés d’une maison de mode-----------------------
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_Defiles_Mannequins AS
+SELECT 
+    mm.nomMaisonMode,
+    d.nDefile,
+    m.nMannequin,
+    m.nom AS NomMannequin,
+    m.prenom AS PrenomMannequin,
+    m.genre,
+    m.morphologie
+FROM 
+    MaisonMode mm, Defile d, Participer p, Mannequin m
+WHERE 
+    mm.nomMaisonMode = d.nomMaisonMode
+    AND d.nDefile = p.nDefile
+    AND p.nMannequin = m.nMannequin;
+
+
+
+
+
 
 -- invites ------------------
 -- vues
