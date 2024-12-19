@@ -467,6 +467,31 @@ END;
 /
 
 
+--------------JOURNALISTE---------------------
+
+CREATE OR REPLACE TRIGGER Check_Journaliste_Limite_Defiles
+BEFORE INSERT ON AssisterJ
+FOR EACH ROW
+DECLARE
+    v_total_defiles INT;
+BEGIN
+    -- Compter le nombre de défilés auxquels le journaliste est déjà inscrit ce jour-là
+    SELECT COUNT(*)
+    INTO v_total_defiles
+    FROM AssisterJ a
+    JOIN Defile d ON a.nDefile = d.nDefile
+    WHERE a.nJournaliste = :NEW.nJournaliste
+      AND TRUNC(d.dateDefile) = TRUNC(:NEW.heureDepart);  -- Comparer la date sans l'heure
+
+    -- Vérifier si le journaliste est déjà inscrit à 5 défilés ce jour-là
+    IF v_total_defiles >= 5 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Un journaliste ne peut pas assister à plus de cinq défilés par jour.');
+    END IF;
+END;
+/
+
+
+
 ---------------------------------
 
 -- Les vues et droits d'accees 
