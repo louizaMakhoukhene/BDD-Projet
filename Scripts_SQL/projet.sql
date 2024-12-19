@@ -473,13 +473,61 @@ END;
 /
 
 
-
-
 ---------------------------------
 
 -- Les vues et droits d'accees 
 
 ---------------------------------
+
+
+----------CREATEUR-----------------
+----------LES VUES DU CREATEUR-------------
+
+-------------oAffiche les collections du créateur avec les tenues associées--------------------------------
+-------------cette vue va associer les createurs a leur collections et les tenues associés-------------
+
+CREATE OR REPLACE VIEW Vue_Createur_Tenue_Collections AS 
+SELECT 
+    cr.nCreateur,
+    cr.nom AS NomCreateur,
+    cr.prenom AS PrenomCreateur,
+    c.nCollection,
+    c.nomCollection,
+    c.themeCollection,
+    c.saison,
+    t.nTenue,
+    t.nomTenue,
+    t.description,
+    t.categorieTenue,
+    t.taille,
+    t.prix
+FROM 
+    Createur cr, Collection c, Tenue t
+WHERE 
+    cr.nCreateur = c.nCreateur
+    AND c.nCollection = t.nCollection; 
+
+------------------------Affiche les défilés où les collections du créateur sont présentées--------------------
+
+CREATE OR REPLACE VIEW Vue_Createur_Collections_Defile AS
+SELECT 
+    cr.nCreateur,
+    cr.nom AS NomCreateur,
+    cr.prenom AS PrenomCreateur,
+    c.nCollection,
+    c.nomCollection,
+    d.nDefile,
+    d.lieu,
+    d.dateDefile,
+    d.heureDebut,
+    d.heureFin,
+    d.theme,
+    d.descriptionDefile
+FROM 
+    Createur cr, Collection c, Defile d
+WHERE 
+    cr.nCreateur = c.nCreateur
+    AND c.nomMaisonMode = d.nomMaisonMode;
 
 -- invites ------------------
 -- vues
