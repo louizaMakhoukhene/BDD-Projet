@@ -469,7 +469,7 @@ END;
 
 --------------JOURNALISTE---------------------
 
-CREATE OR REPLACE TRIGGER Check_Journaliste_Limite_Defiles
+CREATE OR REPLACE TRIGGER Check_Journaliste
 BEFORE INSERT ON AssisterJ
 FOR EACH ROW
 DECLARE
