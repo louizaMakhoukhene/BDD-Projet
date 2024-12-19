@@ -34,6 +34,7 @@ CREATE OR REPLACE PROCEDURE Create_Users AS
     v_invites_count INT;
     v_mannequins_count INT;
     v_createurs_count INT;
+    v_maisondemodes_count INT;
 
 BEGIN
 
@@ -78,13 +79,37 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Utilisateur "Createurs" créé avec succès.');
 
 
-        --- je donne des droits sur les tables
+        --- je donne des droits sur les tables Collection et Tenue mour UTIKLISATEURS CREATEURS
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs';
         DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Createurs" ');
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
     END IF;
+
+
+    ----verifier si l'utilisateur 'MaisonsDeModes' existe 
+     SELECT COUNT(*)
+    INTO v_mannequins_count
+    FROM DBA_USERS
+    WHERE USERNAME = 'MaisonsDeModes';
+
+    IF v_maisondemodes_count = 0 then 
+    EXECUTE IMMEDIATE 'CREATE USER Createurs IDENTIFIED BY 2024';
+    DBMS_OUTPUT.PUT_LINE('Utilisateur "MaisonsDeModes" créé avec succès.');
+
+     --- je donne des droits sur les tables Collection, Createur, Defile pour UTILISATEUR MAISONDEMODE
+        
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModesteurs';
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes';
+        EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes';
+        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "MaisonsDeModes" ');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('utilisateur "MaisonsDeModes" existe déjà.');
+    END IF;
+
+
+
 END;
 /
 
@@ -568,7 +593,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 ---------MAISON DE MODE-------------------
 
 
-
 ----VUES---
 -----------Liste des collections produites par une maison de mode------------------------
 CREATE OR REPLACE VIEW Vue_MaisonDeMode_Collections AS
@@ -620,7 +644,18 @@ WHERE
     AND p.nMannequin = m.nMannequin;
 
 
+-- Droits pour les maisons de mode
+GRANT SELECT ON Vue_MaisonDeMode_Collections TO MaisonsDeModes;
+GRANT SELECT ON Vue_MaisonDeMode_Defiles TO MaisonsDeModes;
+GRANT SELECT ON Vue_MaisonDeMode_Defiles_Mannequins TO MaisonsDeModes;
 
+
+---droits de lecture et écriture sur la table Collection
+GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes;
+---droits de lecture et écriture sur la table Defile
+GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes;
+---droits de lecture et écriture sur la table Createur
+GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
 
 
 
