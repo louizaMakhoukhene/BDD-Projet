@@ -88,6 +88,10 @@ BEGIN
         --- je donne des droits sur les tables Collection et Tenue mour UTIKLISATEURS CREATEURS
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Tenue_Collections TO Createurs';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs';
+        
+
         DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Createurs" ');
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
