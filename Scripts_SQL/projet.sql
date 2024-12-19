@@ -87,7 +87,6 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
     END IF;
 
-
     ----verifier si l'utilisateur 'MaisonsDeModes' existe 
      SELECT COUNT(*)
     INTO v_maisondemodes_count
@@ -590,6 +589,13 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 
 
 
+
+
+
+
+
+
+
 ---------MAISON DE MODE-------------------
 
 
@@ -656,6 +662,64 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes;
 ---droits de lecture et écriture sur la table Createur
 GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
+
+
+
+
+
+
+
+--------MANNEQUIN-------------$*
+---VUES------------
+-----Vue des défilés où le mannequin est programme
+CREATE OR REPLACE VIEW Vue_Mannequin_Defiles AS
+SELECT 
+    m.nMannequin,
+    m.nom AS NomMannequin,
+    m.prenom AS PrenomMannequin,
+    m.genre,
+    m.morphologie,
+    d.nDefile,
+    d.lieu,
+    d.dateDefile,
+    d.heureDebut,
+    d.heureFin,
+    d.theme,
+    d.descriptionDefile
+FROM 
+    Mannequin m, Defile d, Participer p
+WHERE 
+    m.nMannequin = p.nMannequin
+    AND p.nDefile = d.nDefile;
+
+
+
+----- Vue des tenues attribuées au mannequin pour chaque défilé
+CREATE OR REPLACE VIEW Vue_Mannequin_Tenues AS
+SELECT 
+    m.nMannequin,
+    m.nom AS NomMannequin,
+    m.prenom AS PrenomMannequin,
+    t.nTenue,
+    t.nomTenue,
+    t.description AS DescriptionTenue,
+    t.categorieTenue,
+    t.taille,
+    t.prix,
+    d.nDefile,
+    d.dateDefile
+FROM 
+    Mannequin m, Tenue t, Defile d, Participer p
+WHERE 
+    m.nMannequin = p.nMannequin
+    AND p.nDefile = t.nDefile
+    AND t.nDefile = d.nDefile;
+
+
+
+
+
+
 
 
 
