@@ -466,6 +466,34 @@ BEGIN
 END;
 /
 
+----------INVITE-------------------------------
+
+CREATE OR REPLACE TRIGGER Check_Limit_dePlaces
+BEFORE INSERT ON AssisterI
+FOR EACH ROW
+DECLARE
+    total_invites INT;
+    places_disponibles INT;
+BEGIN
+    -- je compte le nombre d'invités qui assiste avec table ASSISTER I 
+    SELECT COUNT(*)
+    INTO total_invites
+    FROM AssisterI
+    WHERE nDefile = :NEW.nDefile;
+
+    -- Obtenir le nombre de places disponibles pour ce défilé
+    SELECT nbrPlaceMax
+    INTO places_disponibles
+    FROM Defile
+    WHERE nDefile = :NEW.nDefile;
+
+    -- Vérifier si le nombre d'invités dépasse la capacité maximale
+    IF total_invites >= places_disponibles THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Le nombre d''invités pour ce défilé dépasse la capacité maximale.');
+    END IF;
+END;
+/
+
 
 --------------JOURNALISTE---------------------
 
