@@ -266,6 +266,32 @@ BEGIN
 END;
 /
 
+
+---------------DEFILE------------------
+
+
+CREATE OR REPLACE TRIGGER Check_Lmt_tnue
+BEFORE INSERT ON Participer
+FOR EACH ROW
+DECLARE
+    v_total_tenues INT;
+BEGIN
+    
+    SELECT COUNT(*)
+    INTO v_total_tenues
+    FROM Participer
+    WHERE nDefile = :NEW.nDefile;
+
+    -- Vérifier si le nombre de tenues est inférieur à 10
+    IF v_total_tenues >= 10 THEN
+        
+        RETURN;
+    ELSE
+        -- Si le nombre de tenues est inférieur à 10, lever une erreur
+        RAISE_APPLICATION_ERROR(-20003, 'Un défilé doit contenir au moins 10 tenues.');
+    END IF;
+END;
+/
 -----------Sponsor---------
 
 CREATE OR REPLACE TRIGGER Verif_Nb_Defiles_Sponsor
@@ -307,7 +333,7 @@ BEGIN
 END;
 /
 
---
+
 CREATE OR REPLACE TRIGGER Verif_Nb_Tenues_Mannequin
 BEFORE INSERT ON Participer
 FOR EACH ROW
