@@ -36,8 +36,10 @@ CREATE OR REPLACE PROCEDURE Create_Users AS
     v_createurs_count INT;
     v_maisondemodes_count INT;
     v_mannequin_count INT;
+    v_journalistes_count INT;
 
 BEGIN
+
 
     -- Vérifier si l'utilisateur 'Invites' existe
     SELECT COUNT(*)
@@ -52,6 +54,7 @@ BEGIN
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Invites" existe déjà.');
     END IF;
+
 
     -- Vérifier si l'utilisateur 'Mannequins' existe
     SELECT COUNT(*)
@@ -84,7 +87,6 @@ BEGIN
         EXECUTE IMMEDIATE 'CREATE USER Createurs IDENTIFIED BY 2024';
         DBMS_OUTPUT.PUT_LINE('Utilisateur "Createurs" créé avec succès.');
 
-
         --- je donne des droits sur les tables Collection et Tenue mour UTIKLISATEURS CREATEURS
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Tenue TO Createurs';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs';
@@ -95,6 +97,7 @@ BEGIN
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
     END IF;
+
 
     ----verifier si l'utilisateur 'MaisonsDeModes' existe 
      SELECT COUNT(*)
@@ -123,10 +126,34 @@ BEGIN
 
 
 
+    -- Vérifier si l'utilisateur 'Journalistes' existe
+    SELECT COUNT(*)
+    INTO v_journalistes_count
+    FROM DBA_USERS
+    WHERE USERNAME = 'Journalistes';
+
+    IF v_journalistes_count = 0 THEN
+        -- Créer l'utilisateur 'Journalistes' si nécessaire
+        EXECUTE IMMEDIATE 'CREATE USER Journalistes IDENTIFIED BY 2024';
+        DBMS_OUTPUT.PUT_LINE('Utilisateur "Journalistes" créé avec succès.');
+
+        -- Droits de lecture sur les vues
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Journaliste_Collections_Defiles TO Journalistes';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Journaliste_MaisonsMode TO Journalistes';
+
+        -- Droits d'insertion et modification sur les tables d'interviews
+        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewM TO Journalistes';
+        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewC TO Journalistes';
+        EXECUTE IMMEDIATE 'GRANT INSERT, UPDATE ON InterviewI TO Journalistes';
+
+        DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Journalistes".');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Utilisateur "Journalistes" existe déjà.');
+    END IF;
+
+
 END;
 /
-
-
 
 
 CREATE TABLE MaisonMode (
@@ -549,7 +576,7 @@ END;
 
 -------------cette vue va associer les createurs a leur collections et les tenues associés-------------
 
-CREATE OR REPLACE VIEW Vue_Createur_Tenue_Collections AS 
+CREATE OR REPLACE VIEW Vue_Createur_1 AS 
 SELECT 
     cr.nCreateur,
     cr.nom AS NomCreateur,
@@ -572,7 +599,7 @@ WHERE
 
 ------------------------Affiche les défilés où les collections du créateur sont présentées--------------------
 
-CREATE OR REPLACE VIEW Vue_Createur_Collections_Defile AS
+CREATE OR REPLACE VIEW Vue_Createur_2 AS
 SELECT 
     cr.nCreateur,
     cr.nom AS NomCreateur,
@@ -610,7 +637,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 
 ----VUES---
 -----------Liste des collections produites par une maison de mode------------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_Collections AS
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_1 AS
 SELECT 
     SELECT 
     mm.nomMaisonMode,
@@ -625,7 +652,7 @@ WHERE
     mm.nomMaisonMode = c.nomMaisonMode;
 
 ---------------------Informations des défilés organisés par une maison de mode------------------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_Defiles AS
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_2 AS
 SELECT 
     mm.nomMaisonMode,
     d.nDefile,
@@ -642,7 +669,7 @@ WHERE
     mm.nomMaisonMode = d.nomMaisonMode;
 
 ------------------------------Liste des mannequins participant aux défilés d’une maison de mode-----------------------
-CREATE OR REPLACE VIEW Vue_MaisonDeMode_Defiles_Mannequins AS
+CREATE OR REPLACE VIEW Vue_MaisonDeMode_3 AS
 SELECT 
     mm.nomMaisonMode,
     d.nDefile,
@@ -679,7 +706,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
 --------MANNEQUIN-------------$*
 ---VUES------------
 -----Vue des défilés où le mannequin est programme
-CREATE OR REPLACE VIEW Vue_Mannequin_Defiles AS
+CREATE OR REPLACE VIEW Vue_Mannequin_1 AS
 SELECT 
     m.nMannequin,
     m.nom AS NomMannequin,
@@ -702,7 +729,7 @@ WHERE
 
 
 ----- Vue des tenues attribuées au mannequin pour chaque défilé
-CREATE OR REPLACE VIEW Vue_Mannequin_Tenues AS
+CREATE OR REPLACE VIEW Vue_Mannequin_2 AS
 SELECT 
     m.nMannequin,
     m.nom AS NomMannequin,
@@ -736,7 +763,7 @@ GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins;
 
 ------Collections des défilés accrédités pour les journalistes---------------
 
-CREATE OR REPLACE VIEW Vue_Journaliste_Collections_Defiles AS
+CREATE OR REPLACE VIEW Vue_Journaliste_1 AS
 SELECT 
     j.nJournaliste,
     d.nDefile,
@@ -758,7 +785,7 @@ WHERE
 
 
 ---------------Informations publiques des Maisons de Mode
-CREATE OR REPLACE VIEW Vue_Journaliste_MaisonsMode AS
+CREATE OR REPLACE VIEW Vue_Journaliste_2 AS
 SELECT 
     mm.nomMaisonMode,
     mm.nomFondateur,
@@ -766,7 +793,20 @@ SELECT
     mm.localisation,
     mm.siteWEB
 FROM 
-    MaisonMode mm;
+    MaisonMode mm
+WHERE 
+    mm.dateFondation >= TO_DATE('2000-01-01', 'YYYY-MM-DD'); -- Maisons fondées après 2000 OU AUTRE CONDITION DE RECHERCHE 
+
+
+------Droits----------------
+-- Droits de lecture sur les vues
+GRANT SELECT ON Vue_Journaliste_Collections_Defiles TO Journalistes;
+GRANT SELECT ON Vue_Journaliste_MaisonsMode TO Journalistes;
+
+-- Droits d'insertion et de mise à jour sur les tables d'interviews
+GRANT INSERT, UPDATE ON InterviewM TO Journalistes;
+GRANT INSERT, UPDATE ON InterviewC TO Journalistes;
+GRANT INSERT, UPDATE ON InterviewI TO Journalistes;
 
 
 -- invites ------------------
