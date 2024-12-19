@@ -91,7 +91,6 @@ BEGIN
         EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Tenue_Collections TO Createurs';
         EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_Createur_Collections_Defile TO Createurs';
         
-
         DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "Createurs" ');
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "Createurs" existe déjà.');
@@ -109,9 +108,14 @@ BEGIN
 
      --- je donne des droits sur les tables Collection, Createur, Defile pour UTILISATEUR MAISONDEMODE
         
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Collections TO MaisonsDeModes';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Defiles TO MaisonsDeModes';
+        EXECUTE IMMEDIATE 'GRANT SELECT ON Vue_MaisonDeMode_Defiles_Mannequins TO MaisonsDeModes';
+
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO MaisonsDeModes';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Defile TO MaisonsDeModes';
         EXECUTE IMMEDIATE 'GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes';
+
         DBMS_OUTPUT.PUT_LINE('Droits accordés à utilisateur "MaisonsDeModes" ');
     ELSE
         DBMS_OUTPUT.PUT_LINE('utilisateur "MaisonsDeModes" existe déjà.');
@@ -601,11 +605,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Collection TO Createurs;
 
 
 
-
-
-
-
-
 ---------MAISON DE MODE-------------------
 
 
@@ -677,9 +676,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Createur TO MaisonsDeModes;
 
 
 
-
-
-
 --------MANNEQUIN-------------$*
 ---VUES------------
 -----Vue des défilés où le mannequin est programme
@@ -733,6 +729,44 @@ GRANT SELECT ON Vue_Mannequin_Tenues TO Mannequins;
 
 
 
+
+--------------JOURNALISTE--------------
+---VUES---------
+
+
+------Collections des défilés accrédités pour les journalistes---------------
+
+CREATE OR REPLACE VIEW Vue_Journaliste_Collections_Defiles AS
+SELECT 
+    j.nJournaliste,
+    d.nDefile,
+    d.theme AS ThemeDefile,
+    d.dateDefile,
+    c.nCollection,
+    c.nomCollection,
+    c.themeCollection,
+    c.saison
+FROM 
+    Journaliste j, 
+    Accreditations a, 
+    Defile d, 
+    Collection c
+WHERE 
+    j.nJournaliste = a.nJournaliste
+    AND a.nDefile = d.nDefile
+    AND d.nomMaisonMode = c.nomMaisonMode;
+
+
+---------------Informations publiques des Maisons de Mode
+CREATE OR REPLACE VIEW Vue_Journaliste_MaisonsMode AS
+SELECT 
+    mm.nomMaisonMode,
+    mm.nomFondateur,
+    mm.dateFondation,
+    mm.localisation,
+    mm.siteWEB
+FROM 
+    MaisonMode mm;
 
 
 -- invites ------------------
