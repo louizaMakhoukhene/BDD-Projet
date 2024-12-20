@@ -595,24 +595,8 @@ END;
 
 ------------MAISONDEMODE-------------------------------
 
-CREATE OR REPLACE TRIGGER Check_1Crtr_1Maison
-BEFORE INSERT ON Createur
-FOR EACH ROW
-DECLARE
-    v_count INT;
-BEGIN
-    -- Vérifier si un créateur existe déjà pour cette maison de mode
-    SELECT COUNT(*)
-    INTO v_count
-    FROM Createur
-    WHERE nomMaisonMode = :NEW.nomMaisonMode;
-
-    -- Si un créateur existe déjà pour cette maison de mode, empêcher l'insertion d'un autre
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Une maison de mode ne peut avoir plus dun créateur sous contrat.');
-    END IF;
-END;
-/
+ALTER TABLE Createur
+ADD CONSTRAINT unique_maison_createur UNIQUE (nomMaisonMode);
 
 ---------------------------------
 
