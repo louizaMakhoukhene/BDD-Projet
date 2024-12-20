@@ -318,26 +318,10 @@ END;
 /
 
 
-CREATE OR REPLACE TRIGGER Check_Unique_Defile
-BEFORE INSERT ON Defile
-FOR EACH ROW
-DECLARE
-    v_count INT;
-BEGIN
-    
-    SELECT COUNT(*)
-    INTO v_count
-    FROM Defile
-    WHERE nomMaisonMode = :NEW.nomMaisonMode
-      AND dateDefile = :NEW.dateDefile
-      AND heureDebut = :NEW.heureDebut
-      AND lieu = :NEW.lieu;
+ALTER TABLE Defile
+ADD CONSTRAINT unique_defile
+UNIQUE (nomMaisonMode, dateDefile, heureDebut, lieu);
 
-    IF v_count > 0 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Un défilé ne peut être associé qu à une seule maison de mode par date, heure et lieu.');
-    END IF;
-END;
-/
 
 
 -----------Sponsor---------
